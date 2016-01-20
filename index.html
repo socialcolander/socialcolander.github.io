@@ -1,27 +1,179 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Socialcolander.GitHub.io by socialcolander</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Socialcolander.GitHub.io</h1>
-      <h2 class="project-tagline"></h2>
-    </section>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="Фильтрация твиттер ленты и отправка лучшиз твиттов вам на электронную почту.">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link rel="stylesheet" id="ppstyle" type="text/css" href="style.css">
+    <link rel='stylesheet' href='./css/feather.min.css'/><link rel='stylesheet' href='./css/font-awesome.min.css'/><link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="./js/jquery-2.1.0.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/blocs.js"></script>
+    
+    <title>Социальный дуршлак</title>
+</head>
+<body>
+<!-- Main container -->
+<div class="page-container">
+    <!-- Hero Bloc --><div id="hero-bloc" class="bloc hero b-parallax bg-highway bgc-outer-space d-bloc">
+	<div class="container bloc-sm hero-nav">
+		<nav class="navbar row nav-center">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">Social Colander</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-1">
+				<ul class="site-navigation nav navbar-nav pull-right">
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="v-center">
+		<div class="vc-content row">
+			<div class="col-sm-12">
+				<h1 class=" text-center lg-shadow">
+					😎 <strong>Социальный дуршлак 😎</strong>
+				</h1>
+				<h3 class=" text-center mg-lg lg-shadow">
+					<br />Сидите часами в твиттере? Боитесь пропустить что-то инетерсное?<br />Тогда вы зашли по адресу. Авторизуйтесь и получайте только лучшие записи себе на почту. Будьте в курсе последних событий 👍<br />
+				</h3>
+				<div class="text-center">
+					<a href="index.html" class="btn btn-xl btn-wire">Войти через Twitter</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Hero Bloc END --><!-- bloc-2 --><div class="bloc l-bloc bgc-white" id="bloc-2">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="text-center">
+					<span class="feather-icon icon-watch icon-lg"></span>
+				</div>
+				<h3 class="text-center mg-md">
+					<br />Вовремя
+				</h3>
+				<p class="text-center">
+					Выбирете любое, удобноее для получения, время
+				</p>
+			</div>
+			<div class="col-sm-4">
+				<div class="text-center">
+					<span class="fa fa-filter icon-lg"></span>
+				</div>
+				<h3 class="text-center mg-md">
+					<br />Только лучшее
+				</h3>
+				<p class="text-center">
+					Популярные и обсуждаемые твиты за сутки вам на почту
+				</p>
+			</div>
+			<div class="col-sm-4">
+				<div class="text-center">
+					<span class="fa fa-rocket icon-lg"></span>
+				</div>
+				<h3 class="text-center mg-md">
+					<br />Быстро и просто
+				</h3>
+				<p class="text-center">
+					Авторизируйтесь, введите email адрес и укажите время для письма
+				</p>
+			</div>
+		</div>
+	</div>
+</div><!-- bloc-2 END --><!-- bloc-3 --><div class="bloc l-bloc bgc-white" id="bloc-3">
+	<div class="container bloc-lg">
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+			<h3 class="text-center ">
+				<i>«Авторизуйтесь и сервис все сделает за вас. Вам не нужно читать твиттер по несколько часов в день, достаточно прочитать вечером лучшие записи, чтобы быть в курсе событий. Экономится уйма времени.»</i>
+			</h3>
+			<p class="text-center">
+				<strong>Юрий Матюхин</strong>
+			</p>
+		</div>
+	</div>
+</div><!-- bloc-3 END --><!-- ScrollToTop Button --><a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1')"><span class="fa fa-chevron-up"></span></a><!-- ScrollToTop Button END--><!-- Footer - bloc-4 --><div class="bloc l-bloc bgc-white" id="bloc-4">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col-sm-2 text-center">
+				<h3>
+					<strong>148K</strong>
+				</h3>
+				<p>
+					Пользователей
+				</p>
+			</div>
+			<div class="col-sm-2 text-center">
+				<h3>
+					<strong>1289</strong>
+				</h3>
+				<p>
+					Отправлено писем
+				</p>
+			</div>
+			<div class="col-sm-2 text-center">
+				<h3>
+					<strong>128K</strong>
+				</h3>
+				<p>
+					Новостей просмотрено
+				</p>
+			</div>
+			<div class="col-sm-2 text-center">
+				<h3>
+					<strong>2205</strong>
+				</h3>
+				<p>
+					Отсеяных твитов
+				</p>
+			</div>
+			<div class="col-sm-2 text-center">
+				<h3>
+					<strong>20K</strong>
+				</h3>
+				<p>
+					Лайков
+				</p>
+			</div>
+			<div class="col-sm-2 text-center">
+				<h3>
+					<strong>612</strong>
+				</h3>
+				<p>
+					Чашек чая выпито
+				</p>
+			</div>
+		</div>
+	</div>
+</div><!-- Footer - bloc-4 END --><!-- Footer - bloc-5 --><div class="bloc l-bloc bgc-white" id="bloc-5">
+	<div class="container bloc-sm">
+		<div class="row">
+			<div class="col-sm-12 col-md-6 col-md-offset-3">
+				<div class="col-xs-3 text-center">
+					<a class="social" href="#"><span class="fa fa-twitter icon-md"></span></a>
+				</div>
+				<div class="col-xs-3 text-center">
+					<a class="social" href="#"><span class="fa fa-facebook icon-md"></span></a>
+				</div>
+				<div class="col-xs-3 text-center">
+					<a class="social" href="#"><span class="fa fa-dribbble icon-md"></span></a>
+				</div>
+				<div class="col-xs-3 text-center">
+					<a class="social" href="#"><span class="fa fa-instagram icon-md"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Footer - bloc-5 END -->
+</div>
+<!-- Main container END -->
 
-    <section class="main-content">
+</body>
+    
+<!-- Google Analytics -->
 
-        <button class="js-twitter">Логин в твиттер</button>
+<!-- Google Analytics END -->
 
-    </section>
-
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="script.js"></script>
-  </body>
 </html>
