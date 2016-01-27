@@ -86,11 +86,9 @@
 				var oauthToken = urlToken[0].split('=')[1];
 				var verifier = urlToken[1].split('=')[1];
 
-				form.addEventListener('sumbit', function(e) {
-					tokenEl.value = localStorage.token;
-					oauthTokenEl.value = oauthToken;
-					verifierEl.value = verifier;
-				}, false);
+				tokenEl.value = localStorage.token;
+				oauthTokenEl.value = oauthToken;
+				verifierEl.value = verifier;
 			</script>
 
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
