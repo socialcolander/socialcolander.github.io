@@ -165,7 +165,7 @@
 					}
 
 					if (location.hostname == 'socialcolander.net')
-						history.pushState({}, '', 'http://socialcolander.net/step2.html');
+						history.pushState({}, '', 'https://socialcolander.net/step2.html');
 
 					$form.addEventListener('submit', function(event) {
 						event.preventDefault();
