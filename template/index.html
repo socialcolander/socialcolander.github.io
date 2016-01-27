@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Социальный дуршлак – лучшее из вашей ленты твиттера</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="./macbook_files/main.css">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<style>
+			html, body {
+				height: 100%;
+			}
+
+			body:before,
+			body:after {
+				content: '';
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: #000 url('bg_low2.jpg') 100% 50% no-repeat;
+				-webkit-background-size: cover;
+				background-size: cover;
+
+				-webkit-filter: blur(10px);
+				filter: blur(10px);
+			}
+
+			body:after {
+				background-color: transparent;
+				background-image: url(bg_left@2X.jpg);
+				-webkit-filter: blur(0);
+				filter: blur(0);
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Социальный<br>дуршлак</h1>
+				<p>Выбираем лучшие твиты<br> из вашей ленты и отправляем на почту.</p>
+				<br>
+			</header>
+
+		<!-- Signup Form -->
+
+
+			<!-- <form id="signup-form" method="post" action="http://html5up.net/uploads/demos/eventually/#">
+				<input type="email" name="email" id="email" placeholder="Email Address">
+				<input type="submit" value="Войти через Twitter">
+			</form> -->
+
+			<form id="signup-form" method="get" action="">
+				<input type="submit" value="Войти через Twitter" style="font-size: 1.25em;">
+			</form>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="http://html5up.net/uploads/demos/eventually/#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="http://html5up.net/uploads/demos/eventually/#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="http://html5up.net/uploads/demos/eventually/#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="http://html5up.net/uploads/demos/eventually/#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>2016 © Социальный дуршлак</li>
+					<li><a href="https://ymatuhin.ru/">ymatuhin</a></li>
+				</ul>
+			</footer>
+
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+
+			<script>
+				var form = document.forms[0];
+				var btn = form.querySelector('input[type="submit"]');
+
+				btn.addEventListener('click', function(e) {
+					var request = new XMLHttpRequest();
+					request.open('GET', 'http://sc.go2mike.ru/api/v1/login', true);
+
+					request.onload = function() {
+					  if (request.status >= 200 && request.status < 400) {
+					    var data = JSON.parse(request.responseText);
+						console.log('data', data);
+					  } else {
+						  console.error('ERROR')
+					  }
+					};
+
+					request.onerror = function() {
+						console.error('ERROR')
+					};
+
+					request.send();
+					e.preventDefault();
+				}, false);
+			</script>
+
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	</body>
+</html>
