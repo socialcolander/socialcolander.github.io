@@ -85,7 +85,6 @@
 				var oauthToken = urlToken[0].split('=')[1];
 				var verifier = urlToken[1].split('=')[1];
 
-				tokenEl.value = localStorage.token;
 				oauthTokenEl.value = oauthToken;
 				verifierEl.value = verifier;
 
@@ -93,7 +92,7 @@
 
 					var request = new XMLHttpRequest();
 					var data = {
-						token: urlToken,
+						token: localStorage.token,
 						oauthTokenEl: oauthToken,
 						verifierEl: verifier,
 						email: emailEl.value,
