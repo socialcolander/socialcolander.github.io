@@ -87,7 +87,10 @@
 					request.onload = function() {
 					  if (request.status >= 200 && request.status < 400) {
 					    var data = JSON.parse(request.responseText);
-						console.log('data', data);
+
+						localStorage.token = data.token;
+						form.action = data.redirect_url;
+						form.submit();
 					  } else {
 						  console.error('ERROR')
 					  }
