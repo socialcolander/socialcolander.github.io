@@ -133,7 +133,7 @@
 						$spinner.classList.add('visible');
 
 						var request = new XMLHttpRequest();
-						request.open('GET', 'http://sc.go2mike.ru/api/v1/login', true);
+						request.open('GET', 'https://sc.go2mike.ru/api/v1/login', true);
 
 						request.onload = function() {
 						  if (request.status >= 200 && request.status < 400) {
@@ -182,7 +182,7 @@
 							email: $email.value,
 							time: $select.value
 						};
-						request.open('POST', 'http://sc.go2mike.ru/api/v1/sign_in', true);
+						request.open('POST', 'https://sc.go2mike.ru/api/v1/sign_in', true);
 						request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
 						request.onload = function() {
