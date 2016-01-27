@@ -112,7 +112,7 @@
 				var $form = document.querySelector('#signup-form'),
 					$select = $form.querySelector('select'),
 					$email = $form.querySelector('input[type="email"]'),
-					$submit = $form.querySelector('input[type="submit"]'),
+					$submit = $form.querySelector('button'),
 					$spinner = $form.querySelector('.spinner'),
 					$token = $form.querySelector('input[name="oauth_token"]'),
 					page = location.pathname == '/' ? 'index' : location.pathname.slice(1, -5),
@@ -126,6 +126,8 @@
 				if (page == 'step2') stepPage();
 
 				function indexPage() {
+					console.log('index!');
+					console.log('$submit', $submit);
 					$form.addEventListener('submit', function(event) {
 						$submit.disabled = true;
 						$spinner.classList.add('visible');
