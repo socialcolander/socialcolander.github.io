@@ -144,12 +144,12 @@
 							$token.value = _token;
 							$form.submit();
 						  } else {
-							  console.error('ERROR')
+							  console.error('ERROR', request)
 						  }
 						};
 
 						request.onerror = function() {
-							console.error('ERROR')
+							console.error('ERROR', request)
 						};
 
 						request.send();
