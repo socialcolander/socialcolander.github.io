@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="./macbook_files/main.css">
+		<link rel="stylesheet" href="../macbook_files/main.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
@@ -23,7 +23,7 @@
 				left: 0;
 				right: 0;
 				bottom: 0;
-				background: #000 url('./bg_low2.jpg') 100% 50% no-repeat;
+				background: #000 url('../bg_low2.jpg') 100% 50% no-repeat;
 				-webkit-background-size: cover;
 				background-size: cover;
 
@@ -33,7 +33,7 @@
 
 			body:after {
 				background-color: transparent;
-				background-image: url('./bg_left@2x.jpg');
+				background-image: url('../bg_left@2x.jpg');
 				-webkit-filter: blur(0);
 				filter: blur(0);
 			}
@@ -43,21 +43,21 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1>Социальный<br>дуршлак</h1>
-				<p>Выбираем лучшие твиты<br> из вашей ленты и отправляем на почту.</p>
+				<h1>Шаг 2</h1>
+				<p>…</p>
 				<br>
 			</header>
 
 		<!-- Signup Form -->
 
+			<form id="signup-form" method="post" action="http://sc.go2mike.ru/api/v1/sign_in">
+				<input type="hidden" name="token" value="">
+				<input type="hidden" name="oauth_token" value="">
+				<input type="hidden" name="oauth_verifier" value="">
 
-			<!-- <form id="signup-form" method="post" action="http://html5up.net/uploads/demos/eventually/#">
-				<input type="email" name="email" id="email" placeholder="Email Address">
-				<input type="submit" value="Войти через Twitter">
-			</form> -->
-
-			<form id="signup-form" method="get" action="">
-				<input type="submit" value="Войти через Twitter" style="font-size: 1.25em;">
+				<input type="text" name="time" value="20:00" style="width: 80px">
+				<input type="email" name="email" placeholder="Email Address" required>
+				<input type="submit" value="Продолжить">
 			</form>
 
 		<!-- Footer -->
@@ -74,34 +74,22 @@
 				</ul>
 			</footer>
 
-			<link rel="stylesheet" href="./css/font-awesome.min.css">
+			<link rel="stylesheet" href="../css/font-awesome.min.css">
 
 			<script>
 				var form = document.forms[0];
-				var btn = form.querySelector('input[type="submit"]');
+				var tokenEl = form.querySelector('[name="token"]');
+				var oauthTokenEl = form.querySelector('[name="oauth_token"]');
+				var verifierEl = form.querySelector('[name="oauth_verifier"]');
 
-				btn.addEventListener('click', function(e) {
-					var request = new XMLHttpRequest();
-					request.open('GET', 'http://sc.go2mike.ru/api/v1/login', true);
+				var urlToken = (location.href.split('?')[1]).split('&');
+				var oauthToken = urlToken[0].split('=')[1];
+				var verifier = urlToken[1].split('=')[1];
 
-					request.onload = function() {
-					  if (request.status >= 200 && request.status < 400) {
-					    var data = JSON.parse(request.responseText);
-
-						localStorage.token = data.token;
-						form.action = data.redirect_url;
-						form.submit();
-					  } else {
-						  console.error('ERROR')
-					  }
-					};
-
-					request.onerror = function() {
-						console.error('ERROR')
-					};
-
-					request.send();
-					e.preventDefault();
+				form.addEventListener('sumbit', function(e) {
+					tokenEl.value = localStorage.token;
+					oauthTokenEl.value = oauthToken;
+					verifierEl.value = verifier;
 				}, false);
 			</script>
 
