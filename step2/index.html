@@ -85,16 +85,13 @@
 				var oauthToken = urlToken[0].split('=')[1];
 				var verifier = urlToken[1].split('=')[1];
 
-				oauthTokenEl.value = oauthToken;
-				verifierEl.value = verifier;
-
 				form.addEventListener('submit', function(e) {
 
 					var request = new XMLHttpRequest();
 					var data = {
 						token: localStorage.token,
-						oauthTokenEl: oauthToken,
-						verifierEl: verifier,
+						oauth_token: oauthToken,
+						oauth_verifier: verifier,
 						email: emailEl.value,
 						time: timeEl.value
 					};
