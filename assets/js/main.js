@@ -126,8 +126,6 @@
 				if (page == 'step2') stepPage();
 
 				function indexPage() {
-					console.log('index!');
-					console.log('$submit', $submit);
 					$form.addEventListener('submit', function(event) {
 						$submit.disabled = true;
 						$spinner.classList.add('visible');
@@ -135,7 +133,7 @@
 						var request = new XMLHttpRequest();
 						request.open('GET', 'https://go2mike.ru/api/v1/login', true);
 
-						request.onload = function() {
+						request.onload = function(e) {
 						  if (request.status >= 200 && request.status < 400) {
 						    var data = JSON.parse(request.responseText);
 							var _token = data.redirect_url.slice(data.redirect_url.indexOf('=') + 1);
@@ -144,12 +142,12 @@
 							$token.value = _token;
 							$form.submit();
 						  } else {
-							  console.error('ERROR', request)
+							  console.error('ERROR', e);
 						  }
 						};
 
-						request.onerror = function() {
-							console.error('ERROR', request)
+						request.onerror = function(e) {
+							console.error('ERROR', e);
 						};
 
 						request.send();
