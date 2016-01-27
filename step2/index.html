@@ -85,6 +85,8 @@
 				var oauthToken = urlToken[0].split('=')[1];
 				var verifier = urlToken[1].split('=')[1];
 
+				location.search = '';
+
 				form.addEventListener('submit', function(e) {
 
 					var request = new XMLHttpRequest();
