@@ -50,7 +50,7 @@
 
 		<!-- Signup Form -->
 
-			<form id="signup-form" method="post" action="http://sc.go2mike.ru/api/v1/sign_in">
+			<form id="signup-form" method="post" action="">
 				<input type="hidden" name="token" value="">
 				<input type="hidden" name="oauth_token" value="">
 				<input type="hidden" name="oauth_verifier" value="">
@@ -78,9 +78,8 @@
 
 			<script>
 				var form = document.forms[0];
-				var tokenEl = form.querySelector('[name="token"]');
-				var oauthTokenEl = form.querySelector('[name="oauth_token"]');
-				var verifierEl = form.querySelector('[name="oauth_verifier"]');
+				var emailEl = form.querySelector('[name="email"]');
+				var timeEl = form.querySelector('[name="time"]');
 
 				var urlToken = (location.href.split('?')[1]).split('&');
 				var oauthToken = urlToken[0].split('=')[1];
@@ -89,6 +88,32 @@
 				tokenEl.value = localStorage.token;
 				oauthTokenEl.value = oauthToken;
 				verifierEl.value = verifier;
+
+				form.addEventListener('submit', function(e) {
+					var request = new XMLHttpRequest();
+					var data = {
+						token: urlToken,
+						oauthTokenEl: oauthToken,
+						verifierEl: verifier,
+						email: emailEl.value,
+						time: timeEl.value
+					};
+					request.open('POST', 'http://sc.go2mike.ru/api/v1/sign_in', true);
+					request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+
+					request.onload = function() {
+					  if (request.status >= 200 && request.status < 400) {
+						console.error('Success!')
+					  } else {
+						console.error('ERROR')
+					  }
+					};
+
+					request.onerror = function() { console.error('ERROR') };
+					request.send(data);
+
+					e.preventDefault();
+				}, false);
 			</script>
 
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
