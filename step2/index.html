@@ -107,7 +107,7 @@
 					};
 
 					request.onerror = function() { console.error('ERROR') };
-					request.send(data);
+					request.send(JSON.stringify(data));
 
 					e.preventDefault();
 					return false;
