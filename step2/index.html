@@ -90,6 +90,7 @@
 				verifierEl.value = verifier;
 
 				form.addEventListener('submit', function(e) {
+
 					var request = new XMLHttpRequest();
 					var data = {
 						token: urlToken,
@@ -113,6 +114,8 @@
 					request.send(data);
 
 					e.preventDefault();
+        			window.history.back();
+					return false;
 				}, false);
 			</script>
 
