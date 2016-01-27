@@ -290,7 +290,7 @@
 
 /* Type */
 
-	body, input, select, textarea {
+	body, button, input, select, textarea {
 		color: rgba(255, 255, 255, 0.75);
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		font-weight: 300;
@@ -300,7 +300,7 @@
 
 		@media screen and (max-width: 1680px) {
 
-			body, input, select, textarea {
+			body, button, input, select, textarea {
 				font-size: 12pt;
 			}
 
@@ -308,7 +308,7 @@
 
 		@media screen and (max-width: 1280px) {
 
-			body, input, select, textarea {
+			body, button, input, select, textarea {
 				font-size: 11pt;
 			}
 
@@ -316,7 +316,7 @@
 
 		@media screen and (max-width: 980px) {
 
-			body, input, select, textarea {
+			body, button, input, select, textarea {
 				font-size: 12pt;
 			}
 
@@ -324,7 +324,7 @@
 
 		@media screen and (max-width: 736px) {
 
-			body, input, select, textarea {
+			body, button, input, select, textarea {
 				font-size: 12pt;
 			}
 
@@ -332,7 +332,7 @@
 
 		@media screen and (max-width: 480px) {
 
-			body, input, select, textarea {
+			body, button, input, select, textarea {
 				font-size: 12pt;
 			}
 
@@ -962,7 +962,8 @@
 		white-space: nowrap;
 	}
 
-	.twitter { background-color: #55acee !important }
+	.twitter { background-color: #55acee !important; padding-left: 1em; }
+	.twitter svg { fill: #fff; margin-right: .5em; margin-top: -.25em; }
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -992,7 +993,7 @@
 			opacity: 0.5;
 		}
 
-		@media screen and (max-width: 480px) {
+		/*@media screen and (max-width: 480px) {
 
 			input[type="submit"],
 			input[type="reset"],
@@ -1002,7 +1003,7 @@
 				padding: 0;
 			}
 
-		}
+		}*/
 
 /* Header */
 
