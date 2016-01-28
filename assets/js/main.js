@@ -105,6 +105,29 @@
 
 		})();
 
+		function request(type, url, data, cb) {
+			type = type || 'GET';
+			cb = cb || function () {};
+			url = url || '';
+
+			if (!url.length) return;
+
+			var request = new XMLHttpRequest();
+			request.open(type, url, true);
+
+			if (type == 'POST')
+				request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+
+			request.onerror = cb;
+			request.onload = function(e) {
+			  if (request.status >= 200 && request.status < 400) cb(null, JSON.parse(request.responseText));
+			  else cb(e);
+			};
+
+			if (data) request.send(JSON.stringify(data));
+			else request.send();
+		}
+
 	// Signup Form.
 		(function() {
 
@@ -126,32 +149,25 @@
 				if (page == 'step2') stepPage();
 
 				function indexPage() {
-					$form.addEventListener('submit', function(event) {
+					$form.addEventListener('submit', sumbitForm, false);
+
+					function sumbitForm(event) {
+						event.preventDefault();
+
 						$submit.disabled = true;
 						$spinner.classList.add('visible');
 
-						var request = new XMLHttpRequest();
-						request.open('GET', 'https://go2mike.ru/api/v1/login', true);
-
-						request.onload = function(e) {
-						  if (request.status >= 200 && request.status < 400) {
-						    var data = JSON.parse(request.responseText);
-							var _token = data.redirect_url.slice(data.redirect_url.indexOf('=') + 1);
+						request('GET', 'https://go2mike.ru/api/v1/login', null, function (err, data) {
+							console.log('err', err);
+							console.log('data', data);
 
 							localStorage.token = data.token;
-							$token.value = _token;
-							$form.submit();
-						  } else {
-							  console.error('ERROR', e);
-						  }
-						};
+							$token.value = data.redirect_url.slice(data.redirect_url.indexOf('=') + 1);
 
-						request.onerror = function(e) {
-							console.error('ERROR', e);
-						};
-
-						request.send();
-					});
+							if (!$token.value) sumbitForm(event);
+							else $form.submit();
+						});
+					}
 				}
 
 				function stepPage() {
@@ -167,12 +183,11 @@
 					if (location.hostname == 'socialcolander.net')
 						history.pushState({}, '', 'https://socialcolander.net/step2.html');
 
-					$form.addEventListener('submit', function(event) {
+					$form.addEventListener('submit', sumbitForm, false);
+					function sumbitForm (event) {
 						event.preventDefault();
-
 						toggleFields(true);
 
-						var request = new XMLHttpRequest();
 						var data = {
 							token: localStorage.token,
 							oauth_token: oauthToken,
@@ -180,28 +195,18 @@
 							email: $email.value,
 							time: $select.value
 						};
-						request.open('POST', 'https://go2mike.ru/api/v1/sign_in', true);
-						request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
-						request.onload = function() {
-						  if (request.status >= 200 && request.status < 400) {
-							location.href = 'success.html';
-						  } else {
-							toggleFields(false);
-						  }
-						};
-
-						request.onerror = function() {
-							toggleFields(false);
-						};
-						request.send(JSON.stringify(data));
-					});
+						request('GET', 'https://go2mike.ru/api/v1/sign_in', data, function (err, data) {
+							if (err) toggleFields(false);
+							else location.href = 'success.html';
+						});
+					}
 
 					function toggleFields(state) {
-						$submit.disabled = state;
-						$select.disabled = state;
-						$email.disabled = state;
-						$spinner.classList[state ? 'add' : 'remove']('visible');
+						if ($submit)  $submit.disabled = state;
+						if ($select)  $select.disabled = state;
+						if ($email)   $email.disabled = state;
+						if ($spinner) $spinner.classList[state ? 'add' : 'remove']('visible');
 					}
 				}
 
