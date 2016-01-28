@@ -196,8 +196,17 @@
 							oauth_token: oauthToken,
 							oauth_verifier: verifier,
 							email: $email.value,
-							time: $select.value
+							time: timeCount($select.value)
 						};
+
+						function timeCount(time) {
+							var hours = +time.split(':')[0];
+							var minutes = +time.split(':')[0];
+							var localTime = hours * 60 + minutes;
+							var utcTime = localTime + (new Date()).getTimezoneOffset();
+
+							return utcTime/60 + ':' + utcTime%60;
+						}
 
 						request('POST', 'https://go2mike.ru/api/v1/sign_in', data, function (err, data) {
 							if (err) toggleFields(false);
