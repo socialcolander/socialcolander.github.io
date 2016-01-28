@@ -132,6 +132,9 @@
 		(function() {
 
 			// Vars.
+
+				if (page != 'index' || page != 'step2') return;
+
 				var $form = document.querySelector('#signup-form'),
 					$select = $form.querySelector('select'),
 					$email = $form.querySelector('input[type="email"]'),
