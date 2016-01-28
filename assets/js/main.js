@@ -196,7 +196,7 @@
 							time: $select.value
 						};
 
-						request('GET', 'https://go2mike.ru/api/v1/sign_in', data, function (err, data) {
+						request('POST', 'https://go2mike.ru/api/v1/sign_in', data, function (err, data) {
 							if (err) toggleFields(false);
 							else location.href = 'success.html';
 						});
