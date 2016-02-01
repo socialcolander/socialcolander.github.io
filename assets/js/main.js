@@ -133,8 +133,6 @@
 
 			// Vars.
 
-				if (page != 'index' || page != 'step2') return;
-
 				var $form = document.querySelector('#signup-form'),
 					$select = $form.querySelector('select'),
 					$email = $form.querySelector('input[type="email"]'),
@@ -143,6 +141,9 @@
 					$token = $form.querySelector('input[name="oauth_token"]'),
 					page = location.pathname == '/' ? 'index' : location.pathname.slice(1, -5),
 					$message;
+
+				console.log('page', page);
+				if (page != 'index' && page != 'step2') return;
 
 			// Bail if addEventListener isn't supported.
 				if (!('addEventListener' in $form))
