@@ -205,7 +205,7 @@
 							var localTime = hours * 60 + minutes;
 							var utcTime = localTime + +(new Date()).getTimezoneOffset();
 
-							return utcTime/60 + ':' + utcTime%60;
+							return utcTime/60 + '-' + utcTime%60 == 0 ? '00' : utcTime%60;
 						}
 
 						request('POST', 'https://go2mike.ru/api/v1/sign_in', data, function (err, data) {
