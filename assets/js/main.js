@@ -142,7 +142,6 @@
 					page = location.pathname == '/' ? 'index' : location.pathname.slice(1, -5),
 					$message;
 
-				console.log('page', page);
 				if (page != 'index' && page != 'step2') return;
 
 			// Bail if addEventListener isn't supported.
@@ -202,9 +201,9 @@
 
 						function timeCount(time) {
 							var hours = +time.split(':')[0];
-							var minutes = +time.split(':')[0];
+							var minutes = +time.split(':')[1];
 							var localTime = hours * 60 + minutes;
-							var utcTime = localTime + (new Date()).getTimezoneOffset();
+							var utcTime = localTime + +(new Date()).getTimezoneOffset();
 
 							return utcTime/60 + ':' + utcTime%60;
 						}
