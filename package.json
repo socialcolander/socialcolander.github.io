@@ -1,0 +1,33 @@
+{
+  "name": "social_colander",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "browser-sync start --server --files '*.html, ./assets/styles/*.css, ./assets/scripts/build/*.js'",
+    "modules:dev": "rollup -m inline -c ./rollup.config.js",
+    "modules:prod": "rollup -c ./rollup.config.js",
+    "watch:js": "onchange './assets/scripts/*.js' -- npm run modules:dev",
+    "start": "parallelshell 'npm run server' 'npm run modules:dev'  'npm run watch:js'",
+    "build": "parallelshell 'npm run server' 'npm run modules:prod'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socialcolander/socialcolander.github.io.git"
+  },
+  "author": "ymatuhin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/socialcolander/socialcolander.github.io/issues"
+  },
+  "homepage": "https://github.com/socialcolander/socialcolander.github.io#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "onchange": "^2.4.0",
+    "parallelshell": "^2.0.0",
+    "rollup": "^0.26.3",
+    "rollup-plugin-babel": "^2.4.0",
+    "rollup-plugin-uglify": "^0.3.1"
+  }
+}
