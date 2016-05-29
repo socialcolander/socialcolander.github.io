@@ -70,6 +70,7 @@
 
 	table.body-wrap .container{
 		border: 1px solid #f0f0f0;
+		border-radius: 4px;
 	}
 
 
@@ -131,7 +132,7 @@
 	/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 	.container {
 		display:block!important;
-		max-width:600px!important;
+		max-width:780px!important;
 		margin:0 auto!important; /* makes it centered */
 		clear:both!important;
 	}
@@ -139,7 +140,7 @@
 	/* This should also be a block element, so that it will fill 100% of the .container */
 	.content {
 		padding:20px;
-		max-width:600px;
+		max-width:780px;
 		margin:0 auto;
 		display:block;
 	}
@@ -150,7 +151,9 @@
 	}
 
 	.mt0 { margin-top: 0 }
-	.mb0 { margin-bottom: 0 }
+	.mb0 { margin-bottom: 0 !important }
+	.pb0 { padding-bottom: 0 !important }
+	.pt0 { padding-top: 0 }
 	small {
 		font-size: 80%;
 	}
@@ -167,17 +170,51 @@
 		vertical-align: middle;
 	}
 	.list td {
-		padding: 10px 0;
+		padding: 12px 0;
 	}
 	.list_ava {
 		width: 80px;
-		vertical-align: middle;
+		vertical-align: top;
+		padding-top: 46px !important;
 	}
 	.author {
-		opacity: .5;
+		color: #AAB8C2;
+		font-size: 16px;
+		margin-bottom: 6px;
 	}
 	.author a {
-		color: #000;
+		color: #AAB8C2;
+	}
+	.level1 {
+		padding: 0 0 10px 40px !important;
+	}
+	.level2 {
+		padding: 0 0 10px 80px !important;
+	}
+	.tweet_photo {
+		margin: 0 0 20px;
+		box-shadow: 0 22px 70px 0 rgba(0,0,0,0.3);
+		border-radius: 4px;
+	}
+	.icon {
+		text-decoration: none;
+		color: #AAB8C2;
+	}
+	.icon.retweet,
+	.icon.like {
+		margin-left: 24px;
+	}
+	.icon svg {
+		display: inline-block;
+		vertical-align: middle;
+		width: 24px;
+		height: 24px;
+		fill: #AAB8C2;
+	}
+	.icon:hover,
+	.icon:hover svg {
+		color: #19CF86;
+		fill: #19CF86;
 	}
 </style>
 </head>
@@ -195,24 +232,68 @@
 			<table>
 				<tbody><tr>
 					<td>
-						<h2 class="mt0 tac">Лучшие твиты вешей ленты за 4&nbsp;февраля</h2>
+						<h1 class="mt0 tac">Социальный друшлак</h1>
+						<h2 class="mt0 tac">Лучшее за 4&nbsp;февраля</h2>
+						<br>
 						<table class="list">
 							<tr>
-								<td class="list_ava"><img src="http://lorempixel.com/200/200?2" alt="" class="ava">
+								<td class="list_ava"><a href="#"><img src="test.jpg" alt="" class="ava"></a>
 								<td>
-									<p class="mb0 author"><a href="#">@ymatuhin</a></p>
+									<p class="author">Юрий Матюхин <a href="#"><small>@ymatuhin</small></a></p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis rerum ducimus doloribus nesciunt vitae, voluptatum rem, fugit sint excepturi debitis earum quo recusandae ipsum autem, error consequatur! A architecto, saepe.</p>
+									<p class="mb0 icon-box">
+										<a href="#" class="icon reply"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 72"><path d="M41 31h-9V19c0-1.14-.647-2.183-1.668-2.688-1.022-.507-2.243-.39-3.15.302l-21 16C5.438 33.18 5 34.064 5 35s.437 1.82 1.182 2.387l21 16c.533.405 1.174.613 1.82.613.453 0 .908-.103 1.33-.312C31.354 53.183 32 52.14 32 51V39h9c5.514 0 10 4.486 10 10 0 2.21 1.79 4 4 4s4-1.79 4-4c0-9.925-8.075-18-18-18z"/></svg></a>
+										<a href="#" class="icon retweet"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 72"><path d="M70.676 36.644C70.166 35.636 69.13 35 68 35h-7V19c0-2.21-1.79-4-4-4H34c-2.21 0-4 1.79-4 4s1.79 4 4 4h18c.552 0 .998.446 1 .998V35h-7c-1.13 0-2.165.636-2.676 1.644-.51 1.01-.412 2.22.257 3.13l11 15C55.148 55.545 56.046 56 57 56s1.855-.455 2.42-1.226l11-15c.668-.912.767-2.122.256-3.13zM40 48H22c-.54 0-.97-.427-.992-.96L21 36h7c1.13 0 2.166-.636 2.677-1.644.51-1.01.412-2.22-.257-3.13l-11-15C18.854 15.455 17.956 15 17 15s-1.854.455-2.42 1.226l-11 15c-.667.912-.767 2.122-.255 3.13C3.835 35.365 4.87 36 6 36h7l.012 16.003c.002 2.208 1.792 3.997 4 3.997h22.99c2.208 0 4-1.79 4-4s-1.792-4-4-4z"/></svg> 205</a>
+										<a href="#" class="icon like"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 72"><path d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/></svg> 1031</a>
+									</p>
+								</td>
 							<tr>
-								<td class="list_ava"><img src="http://lorempixel.com/200/200?2" alt="" class="ava">
-								<td>
-									<p class="mb0 author"><a href="#">@ymatuhin</a> RT <a href="#">@sapegin</a></p>
+								<td colspan="2" class="level1">
+									<table class="list">
+										<tr>
+											<td class="list_ava"><a href="#"><img src="test.jpg" alt="" class="ava"></a>
+											<td>
+												<p class="author">Юрий Матюхин <a href="#"><small>@ymatuhin</small></a></p>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis rerum ducimus doloribus nesciunt vitae, voluptatum rem, fugit sint excepturi debitis earum quo recusandae ipsum autem, error consequatur! A architecto, saepe.</p>
+												<img src="test.jpg" class="tweet_photo" alt="">
+												<p class="mb0 icon-box">
+													<a href="#" class="icon reply"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 72"><path d="M41 31h-9V19c0-1.14-.647-2.183-1.668-2.688-1.022-.507-2.243-.39-3.15.302l-21 16C5.438 33.18 5 34.064 5 35s.437 1.82 1.182 2.387l21 16c.533.405 1.174.613 1.82.613.453 0 .908-.103 1.33-.312C31.354 53.183 32 52.14 32 51V39h9c5.514 0 10 4.486 10 10 0 2.21 1.79 4 4 4s4-1.79 4-4c0-9.925-8.075-18-18-18z"/></svg></a>
+													<a href="#" class="icon retweet"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 72"><path d="M70.676 36.644C70.166 35.636 69.13 35 68 35h-7V19c0-2.21-1.79-4-4-4H34c-2.21 0-4 1.79-4 4s1.79 4 4 4h18c.552 0 .998.446 1 .998V35h-7c-1.13 0-2.165.636-2.676 1.644-.51 1.01-.412 2.22.257 3.13l11 15C55.148 55.545 56.046 56 57 56s1.855-.455 2.42-1.226l11-15c.668-.912.767-2.122.256-3.13zM40 48H22c-.54 0-.97-.427-.992-.96L21 36h7c1.13 0 2.166-.636 2.677-1.644.51-1.01.412-2.22-.257-3.13l-11-15C18.854 15.455 17.956 15 17 15s-1.854.455-2.42 1.226l-11 15c-.667.912-.767 2.122-.255 3.13C3.835 35.365 4.87 36 6 36h7l.012 16.003c.002 2.208 1.792 3.997 4 3.997h22.99c2.208 0 4-1.79 4-4s-1.792-4-4-4z"/></svg> 205</a>
+													<a href="#" class="icon like"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 72"><path d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/></svg> 1031</a>
+												</p>
+											</td>
+										</tr>
+									</table>
+								</td>
+							<tr>
+								<td colspan="2" class="level2">
+									<table class="list">
+										<tr>
+											<td class="list_ava"><a href="#"><img src="test.jpg" alt="" class="ava"></a>
+											<td>
+												<p class="author">Юрий Матюхин <a href="#"><small>@ymatuhin</small></a></p>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis rerum ducimus doloribus nesciunt vitae, voluptatum rem, fugit sint excepturi debitis earum quo recusandae ipsum autem, error consequatur! A architecto, saepe.</p>
+												<p class="mb0 icon-box">
+													<a href="#" class="icon reply"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 72"><path d="M41 31h-9V19c0-1.14-.647-2.183-1.668-2.688-1.022-.507-2.243-.39-3.15.302l-21 16C5.438 33.18 5 34.064 5 35s.437 1.82 1.182 2.387l21 16c.533.405 1.174.613 1.82.613.453 0 .908-.103 1.33-.312C31.354 53.183 32 52.14 32 51V39h9c5.514 0 10 4.486 10 10 0 2.21 1.79 4 4 4s4-1.79 4-4c0-9.925-8.075-18-18-18z"/></svg></a>
+													<a href="#" class="icon retweet"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 72"><path d="M70.676 36.644C70.166 35.636 69.13 35 68 35h-7V19c0-2.21-1.79-4-4-4H34c-2.21 0-4 1.79-4 4s1.79 4 4 4h18c.552 0 .998.446 1 .998V35h-7c-1.13 0-2.165.636-2.676 1.644-.51 1.01-.412 2.22.257 3.13l11 15C55.148 55.545 56.046 56 57 56s1.855-.455 2.42-1.226l11-15c.668-.912.767-2.122.256-3.13zM40 48H22c-.54 0-.97-.427-.992-.96L21 36h7c1.13 0 2.166-.636 2.677-1.644.51-1.01.412-2.22-.257-3.13l-11-15C18.854 15.455 17.956 15 17 15s-1.854.455-2.42 1.226l-11 15c-.667.912-.767 2.122-.255 3.13C3.835 35.365 4.87 36 6 36h7l.012 16.003c.002 2.208 1.792 3.997 4 3.997h22.99c2.208 0 4-1.79 4-4s-1.792-4-4-4z"/></svg> 205</a>
+													<a href="#" class="icon like"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 72"><path d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/></svg> 1031</a>
+												</p>
+											</td>
+										</tr>
+									</table>
+								</td>
+							<tr>
+								<td class="list_ava mb0"><a href="#"><img src="test.jpg" alt="" class="ava"></a>
+								<td class="pb0">
+									<p class="author">Юрий Матюхин <a href="#"><small>@ymatuhin</small></a></p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis rerum ducimus doloribus nesciunt vitae, voluptatum rem, fugit sint excepturi debitis earum quo recusandae ipsum autem, error consequatur! A architecto, saepe.</p>
+									<p class="mb0 icon-box">
+										<a href="#" class="icon reply"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 72"><path d="M41 31h-9V19c0-1.14-.647-2.183-1.668-2.688-1.022-.507-2.243-.39-3.15.302l-21 16C5.438 33.18 5 34.064 5 35s.437 1.82 1.182 2.387l21 16c.533.405 1.174.613 1.82.613.453 0 .908-.103 1.33-.312C31.354 53.183 32 52.14 32 51V39h9c5.514 0 10 4.486 10 10 0 2.21 1.79 4 4 4s4-1.79 4-4c0-9.925-8.075-18-18-18z"/></svg></a>
+										<a href="#" class="icon retweet"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 72"><path d="M70.676 36.644C70.166 35.636 69.13 35 68 35h-7V19c0-2.21-1.79-4-4-4H34c-2.21 0-4 1.79-4 4s1.79 4 4 4h18c.552 0 .998.446 1 .998V35h-7c-1.13 0-2.165.636-2.676 1.644-.51 1.01-.412 2.22.257 3.13l11 15C55.148 55.545 56.046 56 57 56s1.855-.455 2.42-1.226l11-15c.668-.912.767-2.122.256-3.13zM40 48H22c-.54 0-.97-.427-.992-.96L21 36h7c1.13 0 2.166-.636 2.677-1.644.51-1.01.412-2.22-.257-3.13l-11-15C18.854 15.455 17.956 15 17 15s-1.854.455-2.42 1.226l-11 15c-.667.912-.767 2.122-.255 3.13C3.835 35.365 4.87 36 6 36h7l.012 16.003c.002 2.208 1.792 3.997 4 3.997h22.99c2.208 0 4-1.79 4-4s-1.792-4-4-4z"/></svg> 205</a>
+										<a href="#" class="icon like"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 72"><path d="M38.723,12c-7.187,0-11.16,7.306-11.723,8.131C26.437,19.306,22.504,12,15.277,12C8.791,12,3.533,18.163,3.533,24.647 C3.533,39.964,21.891,55.907,27,56c5.109-0.093,23.467-16.036,23.467-31.353C50.467,18.163,45.209,12,38.723,12z"/></svg> 1031</a>
+									</p>
+								</td>
 						</table>
-
-
-						<br>
-						<p class="tac">Предложения, ошибки и пожелания отправляйте нам<br /> на электропочту <a href="#">help@socialcollander.net</a>.</p>
-						<p class="tac mb0">2016 &copy; <a href="https://socialcollander.net">Социальный дуршлак</a></p>
 					</p></td>
 				</tr>
 			</tbody></table>
@@ -232,12 +313,16 @@
 		<td class="container">
 
 			<!-- content -->
-			<div class="content">
+			<div class="content / pt0">
 				<table>
 					<tbody><tr>
 						<td align="center">
-							<p>Не хотите больше получать письма? <a href="https://leemunroe.github.io/responsive-html-email-template/email.html#"><unsubscribe>Отпишитесь</unsubscribe> от них</a>.
+							<p class="tac">Предложения, ошибки и пожелания отправляйте нам на&nbsp;<a href="mailto:help@socialcollander.net?subject=Предложение, ошибка или пожелание">help@socialcollander.net</a></p>
+							<p class="m0">Не хотите больше получать письма? Вы очень поможете нам, если <a href="mailto:help@socialcollander.net?subject=Отписываюсь потому что…">расскажите</a> почему.
+								<br>
+								А <a href="https://leemunroe.github.io/responsive-html-email-template/email.html#"><unsubscribe>отписаться</unsubscribe></a> от них можно всегда.
 							</p>
+							<p class="tac">2016 &copy; <a href="https://socialcollander.net">Социальный дуршлак</a></p>
 						</td>
 					</tr>
 				</tbody></table>
