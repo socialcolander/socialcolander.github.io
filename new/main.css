@@ -1,0 +1,87 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+p, input, button, textarea {
+	font-family: PT Sans;
+}
+
+body {
+	max-width: 768px;
+	margin: 0 auto;
+	padding: 24px;
+	background: linear-gradient(to top right, rgba(0, 183, 255, .1), rgba(255, 255, 199, .1));
+	background-attachment: fixed;
+	font: 20px/1.7 PT Serif, Arial, sans-serif;
+}
+
+
+h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 48px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+img {
+	display: block;
+	margin: 34px auto 46px;
+}
+
+mark {
+	display: inline-block;
+	padding: 0 .25em;
+	font-size: .4em;
+	line-height: 1.4;
+	vertical-align: top;
+	background: #FFE98A;
+	font-family: PT Sans;
+}
+
+.slogan {
+	margin: -8px 0 0;
+	text-align: center;
+	font-style: italic;
+    font-family: PT Serif;
+}
+
+#signup-form {
+	text-align: center;
+	margin: 46px 0;
+}
+.button {
+	border: 0;
+	color: #ffffff !important;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 400;
+	padding: 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.twitter { background-color: #55acee !important; padding-left: 1em; }
+.twitter svg { fill: #fff; margin-right: .5em; margin-top: -.25em; vertical-align: middle; }
+
+.row {
+	overflow: hidden;
+}
+
+.col {
+	float: left;
+	width: 50%;
+	padding-right: 16px;
+}
+
+.col + .col {
+	padding-right: 0;
+	padding-left: 16px;
+}
