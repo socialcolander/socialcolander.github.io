@@ -1,6 +1,19 @@
+
 @import './document/document.pcss';
 @import './document/links.pcss';
 @import './document/loader.pcss';
+
+@import './components/components.pcss';
+
+#__bs_notify__ {
+	background: #333 !important;
+	top: auto !important;
+    bottom: 0;
+    border-radius: 0 !important;
+    padding: 2px 6px !important;
+    font-size: 14px !important;
+    border-top-left-radius: 4px !important;
+}
 
 p, input, button, textarea {
 	font-family: PT Sans;
@@ -116,15 +129,4 @@ hr {
 }
 #footer p {
 	font-family: PT Serif;
-}
-
-
-.lang {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	position: absolute;
-	right: 18px;
-	top: 12px;
-	line-height: 1.2;
 }

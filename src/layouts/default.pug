@@ -1,0 +1,17 @@
+doctype html
+html(lang=global.lang)
+	head
+		block vars
+
+		title= title
+		meta(name='description', content=description)
+		link(rel='alternate', href=global.alternate_lang_path, hreflang=global.alternate_lang)
+
+		link(rel="stylesheet", href="/index.min.css")
+
+	body
+		.container
+			block content
+
+		//- script(src="/common.js")
+		script(src="/index.js")

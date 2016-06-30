@@ -6,8 +6,7 @@ module.exports = {
 		"./dist/**/*.js",
 		"./dist/**/*.html"
 	],
-	reloadDelay: 0,
-	snippetOptions: {
-		async: true
-	}
+	ghostMode: false,
+	reloadDelay: 200,
+	logPrefix: 'Social Colander'
 }
