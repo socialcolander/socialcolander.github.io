@@ -15,11 +15,10 @@
     "view:prod": "$(npm bin)/pug -H -O pug.config.js ./src --out dist/",
     "styles:dev": "$(npm bin)/postcss -w --local-plugins -c postcss.json",
     "styles:prod": "$(npm bin)/postcss --local-plugins -c postcss.json",
-    "assets": "cp -r ./src/assets ./dist/assets",
+    "assets": "cp -r ./src/assets ./dist/assets && cp ./src/CNAME ./dist",
     "watch:assets": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
-    "commit": "git add dist && git commit",
 	"predeploy": "npm run build",
-    "deploy": "git subtree push --prefix dist origin master"
+    "deploy": "git add . && git commit && git subtree push --prefix dist origin master"
   },
   "repository": {
     "type": "git",
