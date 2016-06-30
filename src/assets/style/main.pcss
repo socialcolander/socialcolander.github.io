@@ -1,0 +1,130 @@
+@import './document/document.pcss';
+@import './document/links.pcss';
+@import './document/loader.pcss';
+
+p, input, button, textarea {
+	font-family: PT Sans;
+}
+
+
+[class*="wrap_"] { margin: auto }
+
+.ta-c { text-align: center }
+.wrap_small { max-width: 768px }
+.wrap_medium { max-width: 960px }
+.wrap_big { max-width: 1152px }
+
+
+h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 48px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+img {
+	display: block;
+	margin: 34px auto 46px;
+}
+
+mark {
+	display: inline-block;
+	padding: 0 .25em;
+	font-size: .4em;
+	line-height: 1.4;
+	vertical-align: top;
+	background: #FFE98A;
+	font-family: PT Sans;
+}
+
+.slogan {
+	margin: -8px 0 0;
+	text-align: center;
+	font-style: italic;
+    font-family: PT Serif;
+}
+
+#signup-form {
+	text-align: center;
+	margin: 46px 0;
+}
+.button {
+	border: 0;
+	color: #ffffff !important;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 400;
+	padding: 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	line-height: 24px;
+	height: 48px;
+}
+
+.twitter {
+	background: linear-gradient(to top right, rgba(46, 49, 146, 1), rgba(27, 255, 255, 1));
+	background: #008ACE;
+	box-shadow: 5px 5px 0 0 rgba(0, 138, 206, .25);
+
+	/*border-radius: 2px;*/
+}
+.twitter svg {
+	transition: transform .15s ease;
+	fill: #fff;
+	margin-left: .5em; margin-top: -.25em; vertical-align: middle; }
+
+.twitter:hover svg {
+	transform: scale(1.25);
+}
+
+.row {
+	overflow: hidden;
+}
+
+.col {
+	float: left;
+	width: 50%;
+	padding-right: 16px;
+}
+
+.col + .col {
+	padding-right: 0;
+	padding-left: 16px;
+}
+
+hr {
+	margin: 48px 0;
+	padding: 0;
+	border: 0;
+	height: 1px;
+	background: #bbb;
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(50%, rgba(0, 0, 0, .25)), color-stop(100%, rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(0, 0, 0, .25) 50%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(0, 0, 0, .25) 50%, rgba(255,255,255,0) 100%);
+}
+
+#footer {
+	padding-bottom: 24px;
+	font-size: 16px;
+}
+#footer hr {
+	margin: 40px auto;
+}
+#footer p {
+	font-family: PT Serif;
+}
+
+
+.lang {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	right: 18px;
+	top: 12px;
+	line-height: 1.2;
+}

@@ -2,11 +2,14 @@ import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
-  entry: './assets/scripts/main.js',
-  dest: './assets/scripts/build/main.js',
+  entry: './src/assets/script/main.js',
+  dest: './src/assets/script/main.min.js',
   format: 'umd',
+  moduleName: 'SC',
   plugins: [
-    babel(),
-    uglify()
+    babel({
+        exclude: './node_modules/**',
+    }),
+    // uglify()
   ]
 };
