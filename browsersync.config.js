@@ -1,10 +1,13 @@
 module.exports = {
-	server: "src",
+	server: "dist",
 	port: "2000",
 	files: [
-		"./src/style/**/*.css",
-		"./src/style/**/*.js",
-		"./**/*.html",
+		"./dist/**/*.css",
+		"./dist/**/*.js",
+		"./dist/**/*.html"
 	],
 	reloadDelay: 0,
+	snippetOptions: {
+		async: true
+	}
 }

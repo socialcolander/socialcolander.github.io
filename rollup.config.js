@@ -2,8 +2,8 @@ import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
-  entry: './src/assets/script/main.js',
-  dest: './src/assets/script/main.min.js',
+  entry: './src/index.js',
+  dest: './dist/index.min.js',
   format: 'umd',
   moduleName: 'SC',
   plugins: [

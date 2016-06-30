@@ -1,8 +1,0 @@
-{
-	"use": [
-		"potcss-cssnext"
-	],
-	"watch": true,
-	"input": "./src/style/main.min.css",
-	"output": "./src/style/main.css",
-}
