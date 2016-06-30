@@ -17,7 +17,8 @@
     "styles:prod": "$(npm bin)/postcss --local-plugins -c postcss.json",
     "assets": "cp -r ./src/assets ./dist/assets",
     "watch:assets": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
-    "deploy": "git add dist && git commit && git subtree push --prefix dist origin master"
+    "commit": "git add dist && git commit",
+    "push": "git subtree push --prefix dist origin master"
   },
   "repository": {
     "type": "git",
