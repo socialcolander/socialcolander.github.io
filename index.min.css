@@ -1,19 +1,104 @@
-@import './document/document.pcss';
-@import './document/links.pcss';
-@import './document/loader.pcss';
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0 auto;
+	padding: 24px;
+	background: linear-gradient(to top right, rgba(0, 183, 255, .1), rgba(255, 255, 199, .1));
+	background-attachment: fixed;
+	font: 18px/1.7 PT Serif, Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+a:link { color: #008ACE; }
+
+a:visited { color: #B40EB4; }
+
+a:hover { color: #CC0000; }
+
+a:hover { border-color: #f0b2b2 !important; }
+
+a:visited { border-color: #e0b2e0; }
+
+a:link { border-color: #b2ccf0; }
+
+.loader {
+	font-size: 10px;
+
+	position: relative;
+
+	display: inline-block;
+
+	margin: -4px auto 0;
+
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation: load8 1.1s infinite linear;
+	animation: load8 1.1s infinite linear;
+	vertical-align: top;
+	text-indent: -9999em;
+
+	border-top: 5px solid rgba(255, 255, 255, .2);
+	border-right: 5px solid rgba(255, 255, 255, .2);
+	border-bottom: 5px solid rgba(255, 255, 255, .2);
+	border-left: 5px solid #fff;
+}
+
+.loader,
+.loader:after {
+	width: 32px;
+	height: 32px;
+
+	border-radius: 50%;
+}
+
+@-webkit-keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
 
 p, input, button, textarea {
 	font-family: PT Sans;
 }
 
-
 [class*="wrap_"] { margin: auto }
 
 .ta-c { text-align: center }
-.wrap_small { max-width: 768px }
-.wrap_medium { max-width: 960px }
-.wrap_big { max-width: 1152px }
 
+.wrap_small { max-width: 768px }
+
+.wrap_medium { max-width: 960px }
+
+.wrap_big { max-width: 1152px }
 
 h1 {
 	margin: 0;
@@ -51,6 +136,7 @@ mark {
 	text-align: center;
 	margin: 46px 0;
 }
+
 .button {
 	border: 0;
 	color: #ffffff !important;
@@ -66,19 +152,25 @@ mark {
 }
 
 .twitter {
+	background: -webkit-linear-gradient(bottom left, rgba(46, 49, 146, 1), rgba(27, 255, 255, 1));
 	background: linear-gradient(to top right, rgba(46, 49, 146, 1), rgba(27, 255, 255, 1));
 	background: #008ACE;
 	box-shadow: 5px 5px 0 0 rgba(0, 138, 206, .25);
 
 	/*border-radius: 2px;*/
 }
+
 .twitter svg {
+	-webkit-transition: -webkit-transform .15s ease;
+	transition: -webkit-transform .15s ease;
 	transition: transform .15s ease;
+	transition: transform .15s ease, -webkit-transform .15s ease;
 	fill: #fff;
 	margin-left: .5em; margin-top: -.25em; vertical-align: middle; }
 
 .twitter:hover svg {
-	transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	        transform: scale(1.25);
 }
 
 .row {
@@ -111,13 +203,14 @@ hr {
 	padding-bottom: 24px;
 	font-size: 16px;
 }
+
 #footer hr {
 	margin: 40px auto;
 }
+
 #footer p {
 	font-family: PT Serif;
 }
-
 
 .lang {
 	list-style-type: none;
