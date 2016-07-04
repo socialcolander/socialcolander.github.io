@@ -20,8 +20,8 @@
     "view:en:watch": "",
     "styles:dev": "$(npm bin)/postcss -w --local-plugins -c postcss.json",
     "styles:prod": "$(npm bin)/postcss --local-plugins -c postcss.json",
-    "assets": "cp -r ./src/_assets ./dist/_assets && cp ./src/CNAME ./dist",
-    "watch:assets": "$(npm bin)/onchange './src/_assets/**/*' -- npm run assets",
+    "assets": "cp -r ./src/assets ./dist/assets && cp ./src/CNAME ./dist",
+    "watch:assets": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
     "predeploy": "npm run build",
     "deploy": "git add . && git commit && git subtree push --prefix dist origin master && git push"
   },
