@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/contacts.js"],"names":[],"mappings":";;;;;;;;AAAA;;;;;AAEA,KAAM,WAAW;AAChB,QAAM;AADU,EAAjB;;mBAIe,Q","file":"1.index.js","sourcesContent":["'use strict'\n\nconst contacts = {\n\ttest: 1\n}\n\nexport default contacts\n\n\n\n/** WEBPACK FOOTER **\n ** ./src/contacts.js\n **/"],"sourceRoot":""}

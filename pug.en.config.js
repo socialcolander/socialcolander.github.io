@@ -1,7 +1,7 @@
 {
 	"basedir": "./src",
 	"global": {
-		"name": "Social1 Colander",
+		"name": "Social Colander",
 		"lang": "en",
 		"alternate_lang": "ru",
 

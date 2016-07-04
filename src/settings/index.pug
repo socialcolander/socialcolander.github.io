@@ -1,0 +1,35 @@
+extends /_layouts/default
+
+block vars
+	- var title = 'Settings'
+	- var description = 'Description'
+
+block content
+	include /_components/lang/lang
+
+	header.page-header
+		h1=title
+		p.slogan: a(href='/')= global.name
+
+	.wrap_small
+		p Вы
+			b  успешно
+			|  вошли через твиттер.
+			br
+			|  Чтобы начать получать письма — укажите свой email и выберите удобное время для получения.
+
+
+		form.settings-form
+			input(type='email', placeholder="Электронная почта", required)
+
+			select(required)
+				option(value="08") Раним утром (08:00)
+				option(value="08") Раним утром (08:00)
+				option(value="10") Утром (10:00)
+				option(value="14") В обед (14:00)
+				option(value="18") Под вечер (18:00)
+				option(value="20", selected) Вечером (20:00)
+				option(value="22") Ближе к ночи (22:00)
+				option(value="24") Ночью (24:00)
+
+			button Выслать подтверждение

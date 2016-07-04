@@ -1,9 +1,13 @@
 
-@import './document/document.pcss';
-@import './document/links.pcss';
-@import './document/loader.pcss';
+@import './_components/document/document.pcss';
+@import './_components/document/links.pcss';
+@import './_components/document/loader.pcss';
+@import './_components/document/fields.pcss';
+@import './_components/footer/footer.pcss';
 
-@import './components/components.pcss';
+@import './_components/components.pcss';
+@import './settings/settings.pcss';
+@import './message/message.pcss';
 
 #__bs_notify__ {
 	background: #333 !important;
@@ -20,9 +24,14 @@ p, input, button, textarea {
 }
 
 
-[class*="wrap_"] { margin: auto }
+[class*="wrap_"] {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto
+}
 
 .ta-c { text-align: center }
+.wrap_xsmall { max-width: 576px }
 .wrap_small { max-width: 768px }
 .wrap_medium { max-width: 960px }
 .wrap_big { max-width: 1152px }
@@ -60,40 +69,6 @@ mark {
     font-family: PT Serif;
 }
 
-#signup-form {
-	text-align: center;
-	margin: 46px 0;
-}
-.button {
-	border: 0;
-	color: #ffffff !important;
-	cursor: pointer;
-	display: inline-block;
-	font-weight: 400;
-	padding: 12px 24px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 20px;
-	line-height: 24px;
-	height: 48px;
-}
-
-.twitter {
-	background: linear-gradient(to top right, rgba(46, 49, 146, 1), rgba(27, 255, 255, 1));
-	background: #008ACE;
-	box-shadow: 5px 5px 0 0 rgba(0, 138, 206, .25);
-
-	/*border-radius: 2px;*/
-}
-.twitter svg {
-	transition: transform .15s ease;
-	fill: #fff;
-	margin-left: .5em; margin-top: -.25em; vertical-align: middle; }
-
-.twitter:hover svg {
-	transform: scale(1.25);
-}
-
 .row {
 	overflow: hidden;
 }
@@ -120,13 +95,5 @@ hr {
 	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(0, 0, 0, .25) 50%, rgba(255,255,255,0) 100%);
 }
 
-#footer {
-	padding-bottom: 24px;
-	font-size: 16px;
-}
-#footer hr {
-	margin: 40px auto;
-}
-#footer p {
-	font-family: PT Serif;
-}
+
+[hidden] { display: none; }

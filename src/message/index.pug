@@ -1,0 +1,14 @@
+extends /_layouts/default
+
+block vars
+	- var title = 'Успешно'
+	- var description = 'Description'
+	- var pageClass = 'message'
+	- var noLang = true
+	- var noFooter = true
+
+block content
+	.message
+		header.page-header
+			h1=title
+			p Вы подтвердили вашу почту

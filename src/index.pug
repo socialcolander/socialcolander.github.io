@@ -1,75 +1,78 @@
-extends /layouts/default
+extends /_layouts/default
 
 block vars
 	- var title = global.name
 	- var description = 'Description'
 
 block content
-	include /components/lang/lang
 	h1=title
 		| #{' '}
 		mark beta
 
-	p.slogan Лучшие твиты из вашей ленты на почту
-	img(src='/assets/colander_trimmed.gif', alt='')
+	p.slogan Социальная лента без воды
+	img(src='/_assets/colander_trimmed.gif', alt='')
+
+	include ./_components/registration/reg
+	br
+
 	.wrap_small
-		p
-			i Социальный дуршлак
-			|  — сервис, который фильтрует твиты из вашей ленты на основе рейтнга. Мы считаем рейтинг по среднему количеству лайков, ретвитов и других параметров.
-		p
-			| После этого мы выбираем
-			b 5%
-			|  твитов с наивысшим рейтингом, но не меньше 15 штук и отправляем их вам на почту, в указанное вами время.
-	form#signup-form(method='get', action='https://api.twitter.com/oauth/authenticate')
-		input(type='hidden', value='', name='oauth_token')
-		button.twitter.button
-			| Войти через
-			svg(xmlns='http://www.w3.org/2000/svg', width='26', height='28', viewbox='0 0 26 28')
-				path(d='M25.312 6.375q-1.047 1.531-2.531 2.609.016.219.016.656 0 2.031-.594 4.055t-1.805 3.883-2.883 3.289-4.031 2.281-5.047.852q-4.234 0-7.75-2.266.547.063 1.219.063 3.516 0 6.266-2.156-1.641-.031-2.938-1.008t-1.781-2.492q.516.078.953.078.672 0 1.328-.172-1.75-.359-2.898-1.742t-1.148-3.211v-.063q1.062.594 2.281.641-1.031-.688-1.641-1.797t-.609-2.406q0-1.375.688-2.547 1.891 2.328 4.602 3.727t5.805 1.555q-.125-.594-.125-1.156 0-2.094 1.477-3.57t3.57-1.477q2.188 0 3.687 1.594 1.703-.328 3.203-1.219-.578 1.797-2.219 2.781 1.453-.156 2.906-.781z')
-			.loader Loading...
-		p
-			| Зарегистрировано пользователей —
-			b 2
-			|  из 100 доступных.
-			br
-			| 		Это бета версия, у нас маленький сервер и поэтому количество пользователей ограничено.
+		h2 Как все началось
+		p В какой-то момент я обнаружил, что слишком часто захожу в социальные сети читая новости, которых становилось все больше.
+			|  Чтобы оптимизировать это процесс, остаться в курсе событий и не пропустить самое интересное, мне пришла в голову идея фильтровать содержимое лент.
+			|  К моему удивлению, я ничего не нашел для этого. Так и появилась идея сделать такой сервис.
+
+		br
+		h2 Что делает дуршлаг
+		p Он фильтрует вашу ленту от воды. Основная идея — поиск лучшего из ленты, сортировка и отправка вам на почту раз в
+			| #{' '}
+			code X
+			|  времени. Выбрать лучшее — не простая задача. Сейчас алгоритм выбора очень простой, тут пока нет машинного обучения и нейронных сетей.
+			| Нужно проверить нужно ли это кому-то еще кроме меня.
+
+		br
+		h3 В чем польза
+		ol
+			li
+				i Лучшая лента новостей.
+				|  Вы читаете только то, что интересно и актуально для вас, а не для СМИ.
+			li
+				i Экономия времени.
+				|  Читайте письма с выборкой лучших твитов, а не всю ленту.
+			li
+				i Не упустите крутые твиты.
+				|  Листая ленту можно случайно пропустить интересный твит. С нашими письмами такого не произойдет.
+			li
+				i Можете повлиять на сервис.
+				|  Мы только запускаемся. Плана у нас нет, только ориентиры. Если у вас есть идеи или предложения — мы с радостью выслушаем вас.
+
 	br
-	.row.wrap_medium(class='/')
-		.col
-			h2.ta-c Польза
-			| 		фильтр твиттера
-			| 		избранное +в твиттере
-			| 		лучшее
-			| 		актуальные новости
-			| 		новости твиттер
-			| 		твиттер лента новостей
-			p
-				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptates earum tenetur omnis eligendi. Et rem maiores repellendus magni illum, cumque maxime possimus eos aperiam praesentium quod inventore nulla dolorem?
-		.col
-			h2.ta-c Как работает
-			p
-				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptates earum tenetur omnis eligendi. Et rem maiores repellendus magni illum, cumque maxime possimus eos aperiam praesentium quod inventore nulla dolorem?
-	br
-	.row.wrap_medium(class='/')
-		.col
-			h2.ta-c Планы
-			| 		фильтр твиттера
-			| 		избранное +в твиттере
-			| 		лучшее
-			| 		актуальные новости
-			| 		новости твиттер
-			| 		твиттер лента новостей
-			p
-				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptates earum tenetur omnis eligendi. Et rem maiores repellendus magni illum, cumque maxime possimus eos aperiam praesentium quod inventore nulla dolorem?
-		.col
-			h2.ta-c Пожелания
-			p
-				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptates earum tenetur omnis eligendi. Et rem maiores repellendus magni illum, cumque maxime possimus eos aperiam praesentium quod inventore nulla dolorem?
-	footer#footer.wrap_small
-		hr
-		p.copyright.ta-c(class='/')
-			a(href='https://ymatuhin.ru') Юрий Матюхин
-			|  и
-			a(href='#') Михаил Жуков
-			br
-			| 		2016 © Социальный дуршлак
+	.wrap_small
+		h3 Ограничения
+		p Это первая бета, количество пользователей ограничено по техническим причинам, чтобы наш маленький сервер не упал под нагрузкой.
+			|  После успешного тестирования и исправления критичных багов, мы обязательно уберем этот лимит.
+
+		br
+		include ./_components/registration/reg
+		br
+		br
+
+		h3 Отзывы
+		p Будет здорово, если вы поделитесь своим мнением или идей о сервисе с нами.
+			|  Это можно сделать написав нам на общую почту
+			| #{' '}
+			a(href='mailto:info@socialcolander.net') info@socialcolander.net
+			|  или мне в твиттер
+			| #{' '}
+			a(href='https://twitter.com/ymatuhin') @ymatuhin
+
+
+		//- br
+		//- h3 В жизни
+
+		br
+		h3 Над чем предстоит работать
+		ul
+			li Добавить социальные сети: вконтакте, фейсбук (?), rss (?)
+			li Улучшить дизайн писем и сайта
+			li Усовершенствовать алгоритм выбора лучших сообщений
+			li Добавить параметры для настройки
