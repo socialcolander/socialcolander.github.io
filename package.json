@@ -27,7 +27,7 @@
     "assets": "cp -r ./src/assets ./dist/assets && cp ./src/_root/* ./dist",
     "watch:assets": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
     "watch:root": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && git subtree pull --prefix dist origin master",
     "deploy": "git add . && git commit && git subtree push --prefix dist origin master && git push"
   },
   "repository": {
