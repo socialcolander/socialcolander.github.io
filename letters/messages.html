@@ -73,7 +73,7 @@
 	------------------------------------- */
 	table.body-wrap {
 		width: 100%;
-		padding: 20px;
+		padding: 12px;
 	}
 
 	table.body-wrap .container{
@@ -114,9 +114,10 @@
 
 	h1 {
 		font-size: 36px;
+		font-weight: 500;
 	}
 	h2 {
-		font-size: 28px;
+		font-size: 24px;
 	}
 	h3 {
 		font-size: 22px;
@@ -148,7 +149,7 @@
 
 	/* This should also be a block element, so that it will fill 100% of the .container */
 	.content {
-		padding:20px;
+		padding:12px;
 		max-width:780px;
 		margin:0 auto;
 		display:block;
@@ -181,8 +182,9 @@
 	.list td {
 		padding: 12px 0;
 	}
-	.list_ava {
-		width: 80px;
+	td.list_ava {
+		width: 60px;
+		padding-right: 20px;
 		vertical-align: top;
 		padding-top: 46px !important;
 	}
@@ -245,6 +247,39 @@
 		height: 18px;
 		margin-right: 4px;
 	}
+
+
+	@media (max-width: 480px) {
+		table.body-wrap {
+			padding: 0;
+			border-collapse: collapse;
+		}
+
+		table.body-wrap .container {
+			border: 0;
+			border-radius: 0;
+		}
+
+		.footer-wrap {
+			padding-top: 10px;
+		}
+
+		td.list_ava {
+			width: 48px;
+			padding-right: 12px;
+		}
+
+		.ava {
+			height: 48px;
+		}
+
+		.level1 {
+			padding-left: 20px !important;
+		}
+		.level2 {
+			padding-left: 40px !important;
+		}
+	}
 </style>
 </head>
 
@@ -261,7 +296,12 @@
 			<table>
 				<tbody><tr>
 					<td>
-						<h1 class="mt0 tac">Социальный дуршлак</h1>
+						<h1 class="mt0 tac">
+							<img src="./logo.png" width="64" height="64" class="logo" alt="">
+							<br>
+							Социальный дуршлаг
+						</h1>
+
 						<h2 class="mt0 tac">4&nbsp;февраля — 5&nbsp;февраля</h2>
 						<br>
 						<table class="list">
@@ -350,9 +390,9 @@
 							<p class="tac">Предложения, ошибки и пожелания отправляйте нам на&nbsp;<a href="mailto:help@socialcollander.net?subject=Предложение, ошибка или пожелание">help@socialcollander.net</a></p>
 							<p class="m0">Не хотите больше получать письма? Вы очень поможете нам, если <a href="mailto:help@socialcollander.net?subject=Отписываюсь потому что…">расскажите</a> почему.
 								<br>
-								А <a href="https://leemunroe.github.io/responsive-html-email-template/email.html#"><unsubscribe>отписаться</unsubscribe></a> от них можно всегда.
+								А <a href="//socialcolander.net/unscribe?user_id=..."><unsubscribe>отписаться</unsubscribe></a> от них можно в любой момент.
 							</p>
-							<p class="tac">2016 &copy; <a href="https://socialcollander.net">Социальный дуршлак</a></p>
+							<p class="tac">2016 &copy; <a href="https://socialcollander.net">Социальный дуршлаг</a></p>
 						</td>
 					</tr>
 				</tbody></table>
