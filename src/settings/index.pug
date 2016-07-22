@@ -1,32 +1,27 @@
 extends /_layouts/default
 
 block vars
-	- var title = 'Настройки'
-	- var description = 'Description'
+	- var title = global.settings.title
+	- var description = global.settings.description
 
 block content
 	h1=title
 
 	.wrap_small
-		p Вы
-			b  успешно
-			|  вошли через твиттер.
+		p!= global.settings.success
 			br
-			|  Чтобы начать получать письма — укажите свой email и выберите удобное время для получения.
+			| #{global.settings.ready}
 
 		br
 		form.settings-form
-			input(type='email', placeholder="Электронная почта", required)
+			input(type='email', placeholder=global.settings.placeholder_email, required)
 			| #{' '}
 			select(required)
-				option(value="08") Раним утром (08:00)
-				option(value="08") Раним утром (08:00)
-				option(value="10") Утром (10:00)
-				option(value="14") В обед (14:00)
-				option(value="18") Под вечер (18:00)
-				option(value="20", selected) Вечером (20:00)
-				option(value="22") Ближе к ночи (22:00)
-				option(value="24") Ночью (24:00)
+				each time in global.settings.times
+					if time.value == '20'
+						option(value=time.value, selected)= time.text
+					else
+						option(value=time.value)= time.text
 
 			br
-			button Выслать подтверждение
+			button= global.settings.submit

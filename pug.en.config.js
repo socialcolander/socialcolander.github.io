@@ -37,6 +37,23 @@
 				author_who: 'the author of the idea'
 			},
 			tags: '#twitter #filtration'
+		},
+		settings: {
+			title: 'Step 2: Enter the e-mail and time',
+			description: 'Social colander — Registration — Step 2',
+			success: 'You <b>successfully</b> entered via twitter.',
+			ready: 'To start receiving letters - enter your email address and choose a convenient time to receive.',
+			submit: 'Send confirmation',
+			placeholder_email: 'E-mail',
+			times: [
+				{Value: "08", text: 'From early in the morning (8:00)'},
+				{Value: "10", text: 'In the morning (10:00)'},
+				{Value: "14", text: 'In the afternoon (14:00)'},
+				{Value: "18", text: 'In the evening (18:00)'},
+				{Value: "20", text: 'In the evening (20:00)'},
+				{Value: "22", text: 'Towards the Night (22:00)'},
+				{Value: "24", text: 'During the night (24:00)'}
+			]
 		}
 	}
 }
