@@ -1,15 +1,11 @@
 extends /_layouts/default
 
 block vars
-	- var title = 'Settings'
+	- var title = 'Настройки'
 	- var description = 'Description'
 
 block content
-	include /_components/lang/lang
-
-	header.page-header
-		h1=title
-		p.slogan: a(href='/')= global.name
+	h1=title
 
 	.wrap_small
 		p Вы
@@ -18,10 +14,10 @@ block content
 			br
 			|  Чтобы начать получать письма — укажите свой email и выберите удобное время для получения.
 
-
+		br
 		form.settings-form
 			input(type='email', placeholder="Электронная почта", required)
-
+			| #{' '}
 			select(required)
 				option(value="08") Раним утром (08:00)
 				option(value="08") Раним утром (08:00)
@@ -32,4 +28,5 @@ block content
 				option(value="22") Ближе к ночи (22:00)
 				option(value="24") Ночью (24:00)
 
+			br
 			button Выслать подтверждение

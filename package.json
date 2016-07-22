@@ -5,23 +5,28 @@
   "scripts": {
     "clear": "rm -rf ./dist && mkdir ./dist",
     "prebuild": "npm run clear",
-    "build": "$(npm bin)/npm-run-all -p view modules:prod styles:prod assets",
-    "watch": "$(npm bin)/npm-run-all -p view:watch styles:dev watch:js watch:assets",
+    "build": "$(npm bin)/npm-run-all view modules:prod styles:prod assets",
+    "watch": "$(npm bin)/npm-run-all -p view:watch styles:dev watch:js watch:assets watch:root",
     "dev": "$(npm bin)/npm-run-all build -p server watch",
     "server": "$(npm bin)/browser-sync start -c ./browsersync.config.js",
     "modules:dev": "$(npm bin)/webpack -w -d",
     "modules:prod": "$(npm bin)/webpack -p",
     "watch:js": "$(npm bin)/onchange './src/**/*.js' -- npm run modules:dev",
-    "view": "$(npm bin)/npm-run-all -p view:ru",
-    "view:watch": "$(npm bin)/npm-run-all -p view:ru:watch",
-    "view:ru": "$(npm bin)/pug -H -O pug.ru.config.js ./src --out dist/",
-    "view:ru:watch": "$(npm bin)/pug -w -H -O pug.ru.config.js ./src --out dist/",
-    "view:en": "",
-    "view:en:watch": "",
+    "view": "$(npm bin)/npm-run-all -p view:ru view:en",
+    "view:watch": "$(npm bin)/npm-run-all -p view:ru:watch view:en:watch",
+    "view:ru": "$(npm bin)/pug -H -O pug.ru.config.js ./src --out dist/ru",
+    "view:ru:watch": "$(npm bin)/pug -w -H -O pug.ru.config.js ./src --out dist/ru",
+    "view:en": "$(npm bin)/pug -H -O pug.en.config.js ./src --out dist/",
+    "view:en:watch": "$(npm bin)/pug -w -H -O pug.en.config.js ./src --out dist/",
     "styles:dev": "$(npm bin)/postcss -w --local-plugins -c postcss.json",
     "styles:prod": "$(npm bin)/postcss --local-plugins -c postcss.json",
-    "assets": "cp -r ./src/assets ./dist/assets && cp ./src/CNAME ./dist",
+    "prestyles:purify": "cat ./dist/**/*.html ./dist/*.js > ./dist/all_content",
+    "styles:purify": "$(npm bin)/purifycss ./dist/index.min.css ./dist/all_content --min --info --out ./dist/index.min.css",
+    "poststyles:purify": "rm ./dist/all_content",
+    "poststyles:prod": "npm run styles:purify",
+    "assets": "cp -r ./src/assets ./dist/assets && cp ./src/_root/* ./dist",
     "watch:assets": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
+    "watch:root": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
     "predeploy": "npm run build",
     "deploy": "git add . && git commit && git subtree push --prefix dist origin master && git push"
   },
@@ -59,11 +64,11 @@
     "postcss-short": "^1.4.0",
     "pug": "^2.0.0-beta3",
     "pug-cli": "^1.0.0-alpha6",
+    "purify-css": "^1.1.9",
     "webpack": "^1.13.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
-    "babel-runtime": "^6.9.2",
-    "turbolinks": "^5.0.0"
+    "babel-runtime": "^6.9.2"
   }
 }

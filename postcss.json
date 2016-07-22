@@ -1,5 +1,9 @@
 {
 	"use": ["lost", "postcss-cssnext", "postcss-import", "postcss-nested", "postcss-bem", "postcss-short"],
 	"input": "./src/index.pcss",
-	"output": "./dist/index.min.css"
+	"output": "./dist/index.min.css",
+	"postcss-import": {
+		"root": "./",
+		"path": [""]
+	}
 }
