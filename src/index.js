@@ -14,7 +14,7 @@ class App {
 			const contacts = require('./contacts').default
 		})
 
-		const resp = await fetch('http://localhost:2000/')
+		// const resp = await fetch('http://localhost:2000/')
 	}
 }
 
