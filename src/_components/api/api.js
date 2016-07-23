@@ -3,7 +3,7 @@
 import http from './http.js'
 
 const debug = window.debug('🌏 api')
-const path = 'https://go2mike.ru/api/v1/'
+const path = 'https://api.socialcolander.net/api/v1/'
 
 class Api {
 	constructor() {}
@@ -11,11 +11,7 @@ class Api {
 
 	login() {
 		debug('login')
-
-		http(`${path}login`).then(json => {
-			console.log('# json', json)
-		})
-
+		return http(`${path}user/login`)
 	}
 
 	formSubmit(e) {

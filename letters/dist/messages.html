@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 
-<title>Social Colander</title>
+<title>Социальный дуршлаг</title>
 <style>
 	/* -------------------------------------
 			GLOBAL
@@ -73,7 +73,7 @@
 	------------------------------------- */
 	table.body-wrap {
 		width: 100%;
-		padding: 20px;
+		padding: 12px;
 	}
 
 	table.body-wrap .container{
@@ -114,9 +114,10 @@
 
 	h1 {
 		font-size: 36px;
+		font-weight: 500;
 	}
 	h2 {
-		font-size: 28px;
+		font-size: 24px;
 	}
 	h3 {
 		font-size: 22px;
@@ -148,7 +149,7 @@
 
 	/* This should also be a block element, so that it will fill 100% of the .container */
 	.content {
-		padding:20px;
+		padding:12px;
 		max-width:780px;
 		margin:0 auto;
 		display:block;
@@ -181,8 +182,9 @@
 	.list td {
 		padding: 12px 0;
 	}
-	.list_ava {
-		width: 80px;
+	td.list_ava {
+		width: 60px;
+		padding-right: 20px;
 		vertical-align: top;
 		padding-top: 46px !important;
 	}
@@ -245,28 +247,66 @@
 		height: 18px;
 		margin-right: 4px;
 	}
+
+
+	@media (max-width: 480px) {
+		table.body-wrap {
+			padding: 0;
+			border-collapse: collapse;
+		}
+
+		table.body-wrap .container {
+			border: 0;
+			border-radius: 0;
+		}
+
+		.footer-wrap {
+			padding-top: 10px;
+		}
+
+		td.list_ava {
+			width: 48px;
+			padding-right: 12px;
+		}
+
+		.ava {
+			height: 48px;
+		}
+
+		.level1 {
+			padding-left: 20px !important;
+		}
+		.level2 {
+			padding-left: 40px !important;
+		}
+	}
 </style>
 </head>
 
 <body bgcolor="#f6f6f6" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;height: 100%;width: 100%!important;">
 
 <!-- body -->
-<table class="body-wrap" style="margin: 0;padding: 20px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;">
+<table class="body-wrap" style="margin: 0;padding: 12px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;">
 	<tbody style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"><tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 		<td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"></td>
 		<td class="container" bgcolor="#FFFFFF" style="margin: 0 auto!important;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;border: 1px solid #f0f0f0;border-radius: 4px;display: block!important;max-width: 780px!important;clear: both!important;">
 
 			<!-- content -->
-			<div class="content" style="margin: 0 auto;padding: 20px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 780px;display: block;">
+			<div class="content" style="margin: 0 auto;padding: 12px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 780px;display: block;">
 			<table style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;">
 				<tbody style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"><tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 					<td style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
-						<h1 class="mt0 tac" style="margin: 40px 0 10px;padding: 0;font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size: 36px;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: 200;margin-top: 0;text-align: center;">Социальный друшлак</h1>
-						<h2 class="mt0 tac" style="margin: 40px 0 10px;padding: 0;font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size: 28px;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: 200;margin-top: 0;text-align: center;">4&nbsp;февраля — 5&nbsp;февраля</h2>
+						<h1 class="mt0 tac" style="margin: 40px 0 10px;padding: 0;font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size: 36px;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: 500;margin-top: 0;text-align: center;">
+							<img src="./logo.png" width="64" height="64" class="logo" alt="" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;">
+							<br style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
+							Социальный дуршлаг
+						</h1>
+
+						<h2 class="mt0 tac" style="margin: 40px 0 10px;padding: 0;font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size: 24px;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: 200;margin-top: 0;text-align: center;">4&nbsp;февраля — 5&nbsp;февраля</h2>
 						<br style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 						<table class="list" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;vertical-align: middle;width: 100%;">
 							<tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
-								<td class="list_ava" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 80px;vertical-align: top;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
+								<td class="list_ava" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 60px;padding-right: 20px;vertical-align: top;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
 								</td><td style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 									<a href="#" class="retweet_link icon retweet" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #19CF86;border: 0;fill: #19CF86;margin-left: -24px;"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 75 72" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;display: inline-block;vertical-align: middle;width: 18px;height: 18px;fill: #19CF86;color: #19CF86;margin-right: 4px;"><path d="M70.676 36.644C70.166 35.636 69.13 35 68 35h-7V19c0-2.21-1.79-4-4-4H34c-2.21 0-4 1.79-4 4s1.79 4 4 4h18c.552 0 .998.446 1 .998V35h-7c-1.13 0-2.165.636-2.676 1.644-.51 1.01-.412 2.22.257 3.13l11 15C55.148 55.545 56.046 56 57 56s1.855-.455 2.42-1.226l11-15c.668-.912.767-2.122.256-3.13zM40 48H22c-.54 0-.97-.427-.992-.96L21 36h7c1.13 0 2.166-.636 2.677-1.644.51-1.01.412-2.22-.257-3.13l-11-15C18.854 15.455 17.956 15 17 15s-1.854.455-2.42 1.226l-11 15c-.667.912-.767 2.122-.255 3.13C3.835 35.365 4.87 36 6 36h7l.012 16.003c.002 2.208 1.792 3.997 4 3.997h22.99c2.208 0 4-1.79 4-4s-1.792-4-4-4z" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"></path></svg> Артем Сапегин <span style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;border-bottom: 1px solid rgba(25, 207, 134, .25);">@sapegin</span></a>
 									<p class="author" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.6;margin-bottom: 6px;font-weight: normal;color: #AAB8C2;">Юрий Матюхин <a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #AAB8C2;border-bottom-color: #ddd;"><small style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 80%;line-height: 1.6;">@ymatuhin</small></a></p>
@@ -281,7 +321,7 @@
 								<td colspan="2" class="level1" style="margin: 0;padding: 0 0 10px 40px !important;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 									<table class="list" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;vertical-align: middle;width: 100%;">
 										<tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
-											<td class="list_ava" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 80px;vertical-align: top;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
+											<td class="list_ava" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 60px;padding-right: 20px;vertical-align: top;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
 											</td><td style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 												<p class="author" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.6;margin-bottom: 6px;font-weight: normal;color: #AAB8C2;">Юрий Матюхин <a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #AAB8C2;border-bottom-color: #ddd;"><small style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 80%;line-height: 1.6;">@ymatuhin</small></a></p>
 												<p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis rerum ducimus doloribus nesciunt vitae, voluptatum rem, fugit sint excepturi debitis earum quo recusandae ipsum autem, error consequatur! A architecto, saepe.</p>
@@ -299,7 +339,7 @@
 								<td colspan="2" class="level2" style="margin: 0;padding: 0 0 10px 80px !important;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 									<table class="list" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;vertical-align: middle;width: 100%;">
 										<tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
-											<td class="list_ava" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 80px;vertical-align: top;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
+											<td class="list_ava" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 60px;padding-right: 20px;vertical-align: top;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
 											</td><td style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 												<p class="author" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.6;margin-bottom: 6px;font-weight: normal;color: #AAB8C2;">Юрий Матюхин <a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #AAB8C2;border-bottom-color: #ddd;"><small style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 80%;line-height: 1.6;">@ymatuhin</small></a></p>
 												<p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis rerum ducimus doloribus nesciunt vitae, voluptatum rem, fugit sint excepturi debitis earum quo recusandae ipsum autem, error consequatur! A architecto, saepe.</p>
@@ -313,7 +353,7 @@
 									</table>
 								</td>
 							</tr><tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
-								<td class="list_ava mb0" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 80px;vertical-align: top;margin-bottom: 0 !important;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
+								<td class="list_ava mb0" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 60px;padding-right: 20px;vertical-align: top;margin-bottom: 0 !important;padding-top: 46px !important;"><a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #348eda;"><img src="test.jpg" alt="" class="ava" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 100%;width: 60px;height: 60px;float: left;border-radius: 50%;"></a>
 								</td><td class="pb0" style="margin: 0;padding: 12px 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;padding-bottom: 0 !important;">
 									<p class="author" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.6;margin-bottom: 6px;font-weight: normal;color: #AAB8C2;">Юрий Матюхин <a href="#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #AAB8C2;border-bottom-color: #ddd;"><small style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 80%;line-height: 1.6;">@ymatuhin</small></a></p>
 									<p style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis rerum ducimus doloribus nesciunt vitae, voluptatum rem, fugit sint excepturi debitis earum quo recusandae ipsum autem, error consequatur! A architecto, saepe.</p>
@@ -343,16 +383,16 @@
 		<td class="container" style="margin: 0 auto!important;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;display: block!important;max-width: 780px!important;clear: both!important;">
 
 			<!-- content -->
-			<div class="content / pt0" style="margin: 0 auto;padding: 20px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 780px;display: block;padding-top: 0;">
+			<div class="content / pt0" style="margin: 0 auto;padding: 12px;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;max-width: 780px;display: block;padding-top: 0;">
 				<table style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;width: 100%;">
 					<tbody style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;"><tr style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 						<td align="center" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
 							<p class="tac" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;text-align: center;color: #666;">Предложения, ошибки и пожелания отправляйте нам на&nbsp;<a href="mailto:help@socialcollander.net?subject=Предложение, ошибка или пожелание" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">help@socialcollander.net</a></p>
 							<p class="m0" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;color: #666;">Не хотите больше получать письма? Вы очень поможете нам, если <a href="mailto:help@socialcollander.net?subject=Отписываюсь потому что…" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">расскажите</a> почему.
 								<br style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">
-								А <a href="https://leemunroe.github.io/responsive-html-email-template/email.html#" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;"><unsubscribe style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">отписаться</unsubscribe></a> от них можно всегда.
+								А <a href="//socialcolander.net/unscribe?user_id=..." style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;"><unsubscribe style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;">отписаться</unsubscribe></a> от них можно в любой момент.
 							</p>
-							<p class="tac" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;text-align: center;color: #666;">2016 &copy; <a href="https://socialcollander.net" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">Социальный дуршлак</a></p>
+							<p class="tac" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6;margin-bottom: 10px;font-weight: normal;text-align: center;color: #666;">2016 &copy; <a href="https://socialcollander.net" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">Социальный дуршлаг</a></p>
 						</td>
 					</tr>
 				</tbody></table>
