@@ -11,6 +11,7 @@ const config = {
 	],
 	output: {
 		path: './dist',
+		publicPath: '/',
 		filename: 'index.js'
 	},
 	module: {
