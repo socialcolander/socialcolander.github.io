@@ -1,0 +1,12 @@
+extends /_layouts/default
+
+block vars
+	- var title = global.messages.confirm.title
+	- var description = global.messages.confirm.description
+	- var pageClass = 'message:confirm'
+
+block content
+	.message
+		header.page-header
+			h1=title
+			p!= global.messages.confirm.message

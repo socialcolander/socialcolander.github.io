@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const isProd = process.env.NODE_ENV === 'production'
 
 const config = {
+	root: './dist',
+	extensions: ['', '.js'],
 	cache: true,
 	entry: [
 		// 'babel-polyfill',

@@ -3,6 +3,7 @@ extends /_layouts/default
 block vars
 	- var title = global.settings.title
 	- var description = global.settings.description
+	- var pageClass = 'settings'
 
 block content
 	h1=title
@@ -25,3 +26,6 @@ block content
 
 			br
 			button= global.settings.submit
+
+	script
+		| window.messages = window.messages || {}

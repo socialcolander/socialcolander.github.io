@@ -1,20 +1,21 @@
 'use strict'
 
-import './_services/helpers.js'
-import './_services/lang.service.js'
-import './_components/registration/reg.js'
+import './_services/helpers'
+import './_services/lang.service'
+
+import Home from './_root/home'
+import Settings from './settings/settings'
 
 class App {
 	constructor() {
 		this.init()
 	}
 
-	async init() {
-		require.ensure([], require => {
-			const contacts = require('./contacts').default
-		})
+	init() {
+		const path = location.pathname.replace('/ru/', '/')
 
-		// const resp = await fetch('http://localhost:2000/')
+		if (path == '/') new Home()
+		if (path == '/settings/') new Settings()
 	}
 }
 

@@ -1,0 +1,12 @@
+extends /_layouts/default
+
+block vars
+	- var title = global.messages.unsubscribe.title
+	- var description = global.messages.unsubscribe.description
+	- var pageClass = 'message:unsubscribe'
+
+block content
+	.message
+		header.page-header
+			h1=title
+			p!= global.messages.unsubscribe.message

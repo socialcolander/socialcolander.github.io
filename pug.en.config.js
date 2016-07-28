@@ -54,6 +54,23 @@
 				{Value: "22", text: 'Towards the Night (22:00)'},
 				{Value: "24", text: 'During the night (24:00)'}
 			]
+		},
+		messages: {
+			confirm: {
+				title: 'Step 3: Confirm email',
+				description: '',
+				message: 'We have sent you an email to confirm your subscription. <br> Open it and click on the “Confirm” button, you will receive a letter with the best tweets from your tape. <br> Thanks ♥',
+			},
+			success: {
+				title: 'Email is confirmed',
+				description: '',
+				message: 'All is well. <br> We will prepare a letter with the best tweets at the time you specify. '
+			},
+			unsubscribe: {
+				title: 'You have successfully unsubscribed',
+				description: '',
+				message: 'Thank you enjoyed colander, if you do not like something - please contact us <a href="mailto:help@socialcollander.net?subject=Otpisyvayus because chto..."> help@socialcollander.net </a><br> We have carefully read all the letters and listen to your advice.'
+			}
 		}
 	}
 }
