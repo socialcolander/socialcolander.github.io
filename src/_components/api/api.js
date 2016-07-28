@@ -8,14 +8,16 @@ const path = 'https://api.socialcolander.net/api/v1/'
 class Api {
 	constructor() {}
 
-
-	login() {
+	updateUser(data) {
 		debug('login')
-		return http(`${path}user/login`)
-	}
-
-	formSubmit(e) {
-		const $form = e.target
+		return http(`${path}user`, {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		})
 	}
 }
 

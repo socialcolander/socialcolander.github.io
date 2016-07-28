@@ -14,18 +14,29 @@ block content
 			| #{global.settings.ready}
 
 		br
-		form.settings-form
-			input(type='email', placeholder=global.settings.placeholder_email, required)
-			| #{' '}
-			select(required)
+
+		form.settings-form.js-settings-form(method="POST", action="https://api.socialcolander.net/api/v1/user")
+			input(type='hidden', name="token", value='')
+			input(type='hidden', name="time", value='')
+			input(type='email', name="email", placeholder=global.settings.placeholder_email, required)
+			br
+			select(required).js-time
 				each time in global.settings.times
 					if time.value == '20'
 						option(value=time.value, selected)= time.text
 					else
 						option(value=time.value)= time.text
 
+			select(required).js-zone
+				each time_zones in global.settings.time_zones
+					if time_zones.value == '3.0'
+						option(value=time_zones.value, selected)= time_zones.title
+					else
+						option(value=time_zones.value)= time_zones.title
+
 			br
 			button= global.settings.submit
 
-	script
-		| window.messages = window.messages || {}
+	script.
+		window.messages = window.messages || {}
+		window.messages.redirect = "#{global.settings.messages.redirect}"
