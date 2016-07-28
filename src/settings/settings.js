@@ -3,7 +3,6 @@
 const debug = window.debug('📄 settings')
 import Api from '../_components/api/api.js'
 
-
 export default class Settings {
 	constructor() {
 		this.session_id = location.hash.slice(1)
