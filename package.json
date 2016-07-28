@@ -29,7 +29,7 @@
     "watch:root": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
     "predeploy": "npm run build",
     "deploy": "git add . && git commit",
-    "postdeploy": "git subtree push --prefix dist origin master && git pull && git push git push -u origin develop --force"
+    "postdeploy": "git subtree push --prefix dist origin master && git pull && git push -u origin develop"
   },
   "repository": {
     "type": "git",
