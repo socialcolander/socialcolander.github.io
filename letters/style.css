@@ -1,0 +1,243 @@
+* { margin: 0; padding: 0; font-family: inherit; }
+
+body {
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+	font-size: 100%;
+	line-height: 1.5;
+
+	-webkit-font-smoothing:antialiased;
+	-webkit-text-size-adjust:none;
+	width: 100% !important;
+	height: 100%;
+}
+
+img { max-width: 100%; }
+
+a {
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+/* -------------------------------------
+		ELEMENTS
+------------------------------------- */
+a {
+	color: #348eda;
+}
+
+/* -------------------------------------
+		BODY WRAP
+------------------------------------- */
+table.body-wrap {
+	width: 100%;
+	padding: 12px;
+}
+
+table.body-wrap .container{
+	border: 1px solid #f0f0f0;
+	border-radius: 4px;
+}
+
+
+/* -------------------------------------
+		FOOTER
+------------------------------------- */
+table.footer-wrap {
+	width: 100%;
+	clear:both!important;
+}
+
+.footer-wrap .container p {
+	font-size:12px;
+	color:#666;
+
+}
+
+table.footer-wrap a{
+	color: #999;
+	border-bottom-color: #ddd;
+}
+
+
+/* -------------------------------------
+		TYPOGRAPHY
+------------------------------------- */
+h1, h2, h3{
+	line-height: 1.1;
+	margin-bottom:15px;
+	color:#000;
+	margin: 40px 0 10px;
+	line-height: 1.2;
+	font-weight:200;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: 500;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+p, ul {
+	font-weight: normal;
+	font-size:16px;
+}
+
+ul li {
+	margin-left:5px;
+	list-style-position: inside;
+}
+
+/* ---------------------------------------------------
+		RESPONSIVENESS
+		Nuke it from orbit. It's the only way to be sure.
+------------------------------------------------------ */
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+	display:block !important;
+	max-width: 600px !important;
+	margin:0 auto !important; /* makes it centered */
+	clear:both !important;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+.content {
+	padding:12px;
+	max-width: 600px;
+	margin:0 auto;
+	display:block;
+}
+
+/* Let's make sure tables in the content area are 100% wide */
+.content table {
+	width: 100%;
+}
+
+
+/* Custom styles */
+.header {
+	padding: 14px 12px 0;
+	margin: 0 auto;
+	max-width: 600px;
+	width: 100%;
+}
+.header td {
+}
+.header__logo { min-width: 78px; width: 78px; padding-right: 12px; }
+.header img {
+	/*vertical-align: top;*/
+}
+
+.header h1 {
+	line-height: 40px;
+	margin: -4px 0 0;
+	/*font-weight: bold;*/
+	/*padding-top: 4px;*/
+}
+
+.header h2 {
+	margin: 0;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1;
+	padding-left: 3px;
+}
+
+.tweet__time-cell {
+	text-align: right;
+}
+.tweet__time { }
+.tweet__avatar-cell {
+	width: 32px;
+	padding-right: 6px;
+}
+
+.tweet__avatar {
+	display: block;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+}
+.tweet__author-cell {
+	font-size: 18px;
+	line-height: 1.2;
+}
+.tweet__author-name {
+	font-weight: bold;
+	border: 0;
+	color: #000;
+}
+
+.tweet__author-shortname,
+.tweet__time,
+.tweet__retweet {
+	color: #8899a6;
+	font-size: 14px;
+	border: 0;
+}
+.tweet__author-shortname b,
+.tweet__time b,
+.tweet__retweet b {
+	color: #6a7b88;
+}
+
+.tweet__retweet { display: block; }
+.tweet__retweet,
+.tweet__retweet b { color: #19cf86; }
+.tweet__media {
+	margin: 6px 0;
+}
+
+.tweet + .tweet {
+	margin-top: 24px;
+}
+.tweet__counters {
+	color: #8899a6;
+	font-size: 14px;
+}
+.tweet__text {
+	padding: 6px 0 0;
+}
+.tweet__answer {
+	margin: 6px 0;
+	border: solid 1px #e1e8ed;
+	padding: 6px 12px;
+	border-radius: 4px;
+}
+
+/* MEDIA */
+@media (max-width: 480px) {
+	table.body-wrap {
+		padding: 0;
+		border-collapse: collapse;
+	}
+
+	table.body-wrap .container {
+		border: 0;
+		border-radius: 0;
+	}
+
+	.footer-wrap {
+		padding-top: 10px;
+	}
+	.header {
+		padding-bottom: 14px;
+	}
+
+	.header h1 {
+		font-size: 28px;
+		line-height: 1.1;
+	}
+	.header h2 {
+		padding-top: 6px;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+}
