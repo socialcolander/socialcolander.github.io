@@ -16,7 +16,7 @@
 			</td>
 			<td>
 				<h1>Социальный дуршлаг</h1>
-				<h2>4&nbsp;февраля — 5&nbsp;февраля</h2>
+				<h2>{{ date }}</h2>
 			</td>
 		</tr>
 	</table>
@@ -30,7 +30,7 @@
 
 					<!-- content -->
 					<div class="content">
-						<table class="tweet">
+						<!-- <table class="tweet"> -->
 							<!-- User info -->
 							<tr>
 								<td class="tweet__avatar-cell">
@@ -61,38 +61,43 @@
 								<p class="tweet__counters"><b>14</b> лайков, <b>2</b> ретвита</p>
 							</td></tr>
 						</table>
+						{% for tweet in tweets %}
 						<table class="tweet">
 							<!-- User info -->
 							<tr>
 								<td class="tweet__avatar-cell">
-									<img class="tweet__avatar" src="https://pbs.twimg.com/profile_images/553711083064541184/9VsY9i09_bigger.jpeg" alt="">
+									<img class="tweet__avatar" src="{{ tweet.avatar }}" alt="">
 								</td>
 								<td class="tweet__author-cell">
-									<a href="#" class="tweet__retweet">
-										<b>Yury Matuhin</b> поделился заметкой
+									{% if tweet.retweeter %}
+									<a href="{{ tweet.retweeter.profileurl }}" class="tweet__retweet">
+										<b>{{ tweet.retweeter.username }}</b> поделился заметкой
 									</a>
-									<a href="#" class="tweet__author-name">Dan Abramov</a>
-									<a href="#" class="tweet__author-shortname">@dan_abramov</a>
+									{% endif %}
+									<a href="{{ tweet.profileurl }}" class="tweet__author-name">{{ tweet.username }}</a>
+									<a href="{{ tweet.profileurl }}" class="tweet__author-shortname">@{{ tweet.screenname }}</a>
 								</td>
 								<td class="tweet__time-cell">
-									<span class="tweet__time">вчера в 15:40</span>
+									<span class="tweet__time">{{ tweet.created_at }}</span>
 								</td>
 							</tr>
 
 							<!-- Tweet text -->
 							<tr>
 								<td colspan="3" class="tweet__text">
-									<p>My biggest barrier to comprehension are cyclical dependencies in concepts. Like you need to know A to learn B, but also vice versa.</p>
+									{{ tweet.text }}
 								</td>
 							</tr>
 
 							<!-- Tweet counters -->
 							<tr><td colspan="3">
-								<p class="tweet__counters"><b>214</b> лайков, <b>43</b> ретвита</p>
+								<p class="tweet__counters">
+									<b>{{ tweet.favorite_count }}</b> лайков,
+									<b>{{ tweet.retweet_count }}</b> ретвита</p>
 							</td></tr>
 						</table>
-
-						<table class="tweet">
+						{% endfor %}
+						<!-- <table class="tweet">
 							<!-- User info -->
 							<tr>
 								<td class="tweet__avatar-cell">
@@ -129,7 +134,7 @@
 							<tr><td colspan="3">
 								<p class="tweet__counters"><b>214</b> лайков, <b>43</b> ретвита</p>
 							</td></tr>
-						</table>
+						</table> -->
 					</div>
 					<!-- /content -->
 				</td>
