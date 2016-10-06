@@ -211,6 +211,9 @@ ul li {
 	padding: 6px 12px;
 	border-radius: 4px;
 }
+.tweet__answer p { font-size: 14px; }
+.tweet__answer .tweet__author-name { font-size: 15px; }
+.tweet__answer .tweet__author-shortname { font-size: 13px; }
 
 /* MEDIA */
 @media (max-width: 480px) {
