@@ -130,12 +130,13 @@ ul li {
 }
 .header td {
 }
-.header__logo { min-width: 78px; width: 78px; padding-right: 12px; }
+.header__logo { min-width: 48px; width: 48px; padding-right: 12px; }
 .header img {
 	/*vertical-align: top;*/
 }
 
 .header h1 {
+	font-size: 28px;
 	line-height: 40px;
 	margin: -4px 0 0;
 	/*font-weight: bold;*/
@@ -145,7 +146,7 @@ ul li {
 .header h2 {
 	margin: 0;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 1;
 	padding-left: 3px;
 }
