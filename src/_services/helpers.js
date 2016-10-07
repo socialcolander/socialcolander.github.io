@@ -4,6 +4,7 @@ import debugModule from 'debug';
 window.debug = name => debugModule('_' + name);
 localStorage.debug = '_*'
 
+// array methods in elements
 ;['forEach', 'map', 'filter', 'reduce', 'reduceRight', 'every', 'some'].forEach(p =>
     NodeList.prototype[p] = HTMLCollection.prototype[p] = Array.prototype[p]
 )

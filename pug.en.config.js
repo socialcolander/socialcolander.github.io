@@ -11,6 +11,7 @@
 		name: "Social Colander",
 		description: "A service that will filter your social feed from the water. Get only the best posts from Twitter in the mail at a convenient time.",
 		twitter_sign_in: "Sign in with Twitter",
+
 		home: {
 			intro: "Recently, I noticed that too often I go to the twitter over time, the number of people, for which I should be increased and the reading of the news took too much time To optimize this process, stay up to date..and do not miss the fun, it was decided to filter the contents of the tapes.But it is not very well do that, let me suffer machines.and there was “Social colander”.",
 			features: {
@@ -90,6 +91,10 @@
 				{value: '11.0', title: '(GMT +11:00) Magadan, Solomon Islands, New Caledonia' },
 				{value: '12.0', title: '(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka' }
 			]
+		},
+		settings_success: {
+			title: 'Settings have been updated',
+			description: 'We saved your settings, you will now receive e-mail to the address specified in the selected time.'
 		},
 		messages: {
 			confirm: {
