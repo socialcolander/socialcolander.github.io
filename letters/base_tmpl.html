@@ -30,37 +30,6 @@
 
 					<!-- content -->
 					<div class="content">
-						<!-- <table class="tweet"> -->
-							<!-- User info -->
-							<tr>
-								<td class="tweet__avatar-cell">
-									<img class="tweet__avatar" src="https://pbs.twimg.com/profile_images/553711083064541184/9VsY9i09_bigger.jpeg" alt="">
-								</td>
-								<td class="tweet__author-cell">
-									<a href="#" class="tweet__author-name">Dan Abramov</a>
-									<a href="#" class="tweet__author-shortname">@dan_abramov</a>
-								</td>
-								<td class="tweet__time-cell">
-									<span class="tweet__time">сегодня в 10:32</span>
-								</td>
-							</tr>
-
-							<!-- Tweet media -->
-							<tr><td colspan="3">
-								<img class="tweet__media" src="https://dummyimage.com/600x240/000/fff" alt="">
-							</td></tr>
-
-							<!-- Tweet text -->
-							<tr>
-								<td colspan="3" class="tweet__text">
-									<p>My biggest barrier to comprehension are cyclical dependencies in concepts. Like you need to know A to learn B, but also vice versa.</p>
-								</td>
-							</tr>
-
-							<tr><td colspan="3">
-								<p class="tweet__counters"><b>14</b> лайков, <b>2</b> ретвита</p>
-							</td></tr>
-						</table>
 						{% for tweet in tweets %}
 						<table class="tweet">
 							<!-- User info -->
@@ -97,44 +66,6 @@
 							</td></tr>
 						</table>
 						{% endfor %}
-						<!-- <table class="tweet">
-							<!-- User info -->
-							<tr>
-								<td class="tweet__avatar-cell">
-									<img class="tweet__avatar" src="https://pbs.twimg.com/profile_images/553711083064541184/9VsY9i09_bigger.jpeg" alt="">
-								</td>
-								<td class="tweet__author-cell">
-									<a href="#" class="tweet__author-name">Dan Abramov</a>
-									<a href="#" class="tweet__author-shortname">@dan_abramov</a>
-								</td>
-								<td class="tweet__time-cell">
-									<span class="tweet__time">вчера в 15:40</span>
-								</td>
-							</tr>
-
-							<!-- Tweet text -->
-							<tr>
-								<td colspan="3" class="tweet__text">
-									<p>My biggest barrier to comprehension are cyclical dependencies in concepts. Like you need to know A to learn B, but also vice versa.</p>
-								</td>
-							</tr>
-
-							<!-- Tweet text -->
-							<tr>
-								<td colspan="3" class="tweet__answer-cell">
-									<div class="tweet__answer">
-										<a href="#" class="tweet__author-name">Dan Abramov</a>
-										<a href="#" class="tweet__author-shortname">@dan_abramov</a>
-										<p>My biggest barrier to comprehension are cyclical dependencies in concepts. Like you need to know A to learn B, but also vice versa.</p>
-									</div>
-								</td>
-							</tr>
-
-							<!-- Tweet counters -->
-							<tr><td colspan="3">
-								<p class="tweet__counters"><b>214</b> лайков, <b>43</b> ретвита</p>
-							</td></tr>
-						</table> -->
 					</div>
 					<!-- /content -->
 				</td>
