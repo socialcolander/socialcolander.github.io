@@ -107,6 +107,14 @@
 				description: '',
 				message: 'Спасибо что пользовались дуршлагом, если вам что-то не понравилось — напишите нам <a href="mailto:help@socialcollander.net?subject=Отписываюсь потому что…">help@socialcollander.net</a><br>Мы внимательно читаем все письма и слушаем ваши советы.',
 			}
+		},
+		activate: {
+			title: 'Подтверждаем пользователя…',
+			success: 'Вы подтвердили вашу почту.',
+			error: 'Что-то пошло не так и ваша почта не подтвердилась. Попробуйте перезагрузить страницу. Если это не поможет, напишите нам на <a href="mailto:info@socialcolander.net"> info@socialcolander.net</a>',
+			messages: {
+				redirect: '',
+			},
 		}
 	}
 }

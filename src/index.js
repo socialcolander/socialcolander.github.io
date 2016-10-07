@@ -5,6 +5,7 @@ import './_services/lang.service'
 
 import Home from './_root/home'
 import Settings from './settings/settings'
+import Activate from './activate/activate'
 
 class App {
 	constructor() {
@@ -16,6 +17,7 @@ class App {
 
 		if (path == '/') new Home()
 		if (path == '/settings/') new Settings()
+		if (path.indexOf('/activate/') !== -1) new Activate()
 	}
 }
 

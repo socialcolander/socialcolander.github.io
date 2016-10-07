@@ -21,4 +21,10 @@ html(lang=global.lang)
 	body
 		block content
 
+		script.
+			window.messages = window.messages || {}
+			window.messages.settings = window.messages.settings || {}
+			window.messages.settings.redirect = "#{global.settings.messages.redirect}"
+			window.messages.activate.redirect = "#{global.activate.messages.redirect}"
+
 		script(src="/index.js")

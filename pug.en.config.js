@@ -107,6 +107,14 @@
 				description: '',
 				message: 'Thank you enjoyed colander, if you do not like something - please contact us <a href="mailto:help@socialcollander.net?subject=Otpisyvayus because chto..."> help@socialcollander.net </a><br> We have carefully read all the letters and listen to your advice.'
 			}
+		},
+		activate: {
+			title: 'We confirm the user…',
+			success: 'you have confirmed your email.',
+			error: 'Something went wrong, and your mail has not been confirmed. Try reloading the page. If this does not help, please contact us at <a href="mailto:info@socialcolander.net"> info@socialcolander.net </a>',
+			messages: {
+				redirect: '',
+			},
 		}
 	}
 }

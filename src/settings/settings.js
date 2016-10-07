@@ -20,7 +20,7 @@ export default class Settings {
 		history.pushState({}, '', '/settings/');
 
 		if (!this.session_id && !location.host.includes('localhost')) {
-			alert(window.messages.redirect)
+			alert(window.messages.settings.redirect)
 			return location.href = "/"
 		}
 
