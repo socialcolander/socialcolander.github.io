@@ -57,6 +57,18 @@
 									{{ tweet.text }}
 								</td>
 							</tr>
+							{% if tweet.in_reply_src %}
+							<!-- Tweet text -->
+							<tr>
+								<td colspan="3" class="tweet__answer-cell">
+									<div class="tweet__answer">
+										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-name">{{ tweet.in_reply_src.username }}</a>
+										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-shortname">@{{ tweet.in_reply_src.screenname }}</a>
+										<p>{{ tweet.in_reply_src.text }}</p>
+									</div>
+								</td>
+							</tr>
+							{% endif %}
 
 							<!-- Tweet counters -->
 							<tr><td colspan="3">
