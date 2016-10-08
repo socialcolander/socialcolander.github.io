@@ -120,6 +120,7 @@
 		max-width: 600px;
 		margin:0 auto;
 		display:block;
+		margin-bottom: -32px;
 	}
 
 	/* Let's make sure tables in the content area are 100% wide */
@@ -203,8 +204,8 @@
 		margin: 6px 0;
 	}
 
-	.tweet + .tweet {
-		margin-top: 24px;
+	.tweet {
+		margin-bottom: 32px;
 	}
 	.tweet__counters {
 		color: #8899a6;
@@ -259,10 +260,10 @@
 	<table class="header" style="margin: 0 auto;padding: 14px 12px 0;font-family: inherit;max-width: 600px;width: 100%;">
 		<tr style="margin: 0;padding: 0;font-family: inherit;">
 			<td class="header__logo" style="margin: 0;padding: 0;font-family: inherit;min-width: 48px;width: 48px;padding-right: 12px;">
-				<img src="./logo_crooped.png" height="32" class="logo" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;">
+				<img src="https://socialcolander.net/assets/img/logo_crooped.png" height="32" class="logo" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;">
 			</td>
 			<td style="margin: 0;padding: 0;font-family: inherit;">
-				<h1 style="margin: -4px 0 0;padding: 0;font-family: inherit;line-height: 40px;margin-bottom: 15px;color: #000;font-weight: 500;font-size: 28px;">Социальный дуршлаг</h1>
+				<h1 style="margin: -4px 0 0;padding: 0;font-family: inherit;line-height: 40px;color: #000;font-weight: 500;font-size: 28px;">Социальный дуршлаг</h1>
 				<h2 style="margin: 0;padding: 0;font-family: inherit;line-height: 1;margin-bottom: 15px;color: #000;font-weight: 400;font-size: 16px;padding-left: 3px;">{{ date }}</h2>
 			</td>
 		</tr>
@@ -276,9 +277,9 @@
 				<td class="container" bgcolor="#FFFFFF" style="margin: 0 auto !important;padding: 0;font-family: inherit;border: 1px solid #f0f0f0;border-radius: 4px;display: block !important;max-width: 600px !important;clear: both !important;">
 
 					<!-- content -->
-					<div class="content" style="margin: 0 auto;padding: 12px;font-family: inherit;max-width: 600px;display: block;">
+					<div class="content" style="margin: 0 auto;padding: 12px;font-family: inherit;max-width: 600px;display: block;margin-bottom: -32px;">
 						{% for tweet in tweets %}
-						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;margin-bottom: 32px;width: 100%;">
 							<!-- User info -->
 							<tr style="margin: 0;padding: 0;font-family: inherit;">
 								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
@@ -328,7 +329,7 @@
 					<td class="container" style="margin: 0 auto !important;padding: 0;font-family: inherit;display: block !important;max-width: 600px !important;clear: both !important;">
 
 						<!-- content -->
-						<div class="content / pt0" style="margin: 0 auto;padding: 12px;font-family: inherit;max-width: 600px;display: block;">
+						<div class="content / pt0" style="margin: 0 auto;padding: 12px;font-family: inherit;max-width: 600px;display: block;margin-bottom: -32px;">
 							<table style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
 								<tbody style="margin: 0;padding: 0;font-family: inherit;">
 									<tr style="margin: 0;padding: 0;font-family: inherit;">

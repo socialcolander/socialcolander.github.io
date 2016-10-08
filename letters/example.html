@@ -1,0 +1,825 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="margin: 0;padding: 0;font-family: inherit;">
+<head style="margin: 0;padding: 0;font-family: inherit;">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" style="margin: 0;padding: 0;font-family: inherit;">
+	<meta name="viewport" content="width=device-width" style="margin: 0;padding: 0;font-family: inherit;">
+	<meta charset="utf-8">
+
+	<title style="margin: 0;padding: 0;font-family: inherit;">Ð¡Ð¾ÑÐ¸Ð°Ð»ÑÐ½ÑÐ¹ Ð´ÑÑÑÐ»Ð°Ð³</title>
+	<style style="margin: 0;padding: 0;font-family: inherit;">* { margin: 0; padding: 0; font-family: inherit; }
+
+	body {
+		font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+		font-size: 100%;
+		line-height: 1.5;
+
+		-webkit-font-smoothing:antialiased;
+		-webkit-text-size-adjust:none;
+		width: 100% !important;
+		height: 100%;
+	}
+
+	img { max-width: 100%; }
+
+	a {
+		text-decoration: none;
+		border-bottom: 1px solid;
+	}
+
+	/* -------------------------------------
+			ELEMENTS
+	------------------------------------- */
+	a {
+		color: #348eda;
+	}
+
+	/* -------------------------------------
+			BODY WRAP
+	------------------------------------- */
+	table.body-wrap {
+		width: 100%;
+		padding: 12px;
+	}
+
+	table.body-wrap .container{
+		border: 1px solid #f0f0f0;
+		border-radius: 4px;
+	}
+
+
+	/* -------------------------------------
+			FOOTER
+	------------------------------------- */
+	table.footer-wrap {
+		width: 100%;
+		clear:both!important;
+	}
+
+	.footer-wrap .container p {
+		font-size:12px;
+		color:#666;
+
+	}
+
+	table.footer-wrap a{
+		color: #999;
+		border-bottom-color: #ddd;
+	}
+
+
+	/* -------------------------------------
+			TYPOGRAPHY
+	------------------------------------- */
+	h1, h2, h3{
+		line-height: 1.1;
+		margin-bottom:15px;
+		color:#000;
+		margin: 40px 0 10px;
+		line-height: 1.2;
+		font-weight:200;
+	}
+
+	h1 {
+		font-size: 36px;
+		font-weight: 500;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	h3 {
+		font-size: 22px;
+	}
+
+	p, ul {
+		font-weight: normal;
+		font-size:16px;
+	}
+
+	ul li {
+		margin-left:5px;
+		list-style-position: inside;
+	}
+
+	/* ---------------------------------------------------
+			RESPONSIVENESS
+			Nuke it from orbit. It's the only way to be sure.
+	------------------------------------------------------ */
+
+	/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+	.container {
+		display:block !important;
+		max-width: 600px !important;
+		margin:0 auto !important; /* makes it centered */
+		clear:both !important;
+	}
+
+	/* This should also be a block element, so that it will fill 100% of the .container */
+	.content {
+		padding:12px;
+		max-width: 600px;
+		margin:0 auto;
+		display:block;
+	}
+
+	/* Let's make sure tables in the content area are 100% wide */
+	.content table {
+		width: 100%;
+	}
+
+
+	/* Custom styles */
+	.header {
+		padding: 14px 12px 0;
+		margin: 0 auto;
+		max-width: 600px;
+		width: 100%;
+	}
+	.header td {
+	}
+	.header__logo { min-width: 48px; width: 48px; padding-right: 12px; }
+	.header img {
+		/*vertical-align: top;*/
+	}
+
+	.header h1 {
+		font-size: 28px;
+		line-height: 40px;
+		margin: -4px 0 0;
+		/*font-weight: bold;*/
+		/*padding-top: 4px;*/
+	}
+
+	.header h2 {
+		margin: 0;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1;
+		padding-left: 3px;
+	}
+
+	.tweet__time-cell {
+		text-align: right;
+	}
+	.tweet__time { }
+	.tweet__avatar-cell {
+		width: 32px;
+		padding-right: 6px;
+	}
+
+	.tweet__avatar {
+		display: block;
+		border-radius: 50%;
+		width: 32px;
+		height: 32px;
+	}
+	.tweet__author-cell {
+		font-size: 18px;
+		line-height: 1.2;
+	}
+	.tweet__author-name {
+		font-weight: bold;
+		border: 0;
+		color: #000;
+	}
+
+	.tweet__author-shortname,
+	.tweet__time,
+	.tweet__retweet {
+		color: #8899a6;
+		font-size: 14px;
+		border: 0;
+	}
+	.tweet__author-shortname b,
+	.tweet__time b,
+	.tweet__retweet b {
+		color: #6a7b88;
+	}
+
+	.tweet__retweet { display: block; }
+	.tweet__retweet,
+	.tweet__retweet b { color: #19cf86; }
+	.tweet__media {
+		margin: 6px 0;
+	}
+
+	.tweet + .tweet {
+		margin-top: 24px;
+	}
+	.tweet__counters {
+		color: #8899a6;
+		font-size: 14px;
+	}
+	.tweet__text {
+		padding: 6px 0 0;
+	}
+	.tweet__answer {
+		margin: 6px 0;
+		border: solid 1px #e1e8ed;
+		padding: 6px 12px;
+		border-radius: 4px;
+	}
+	.tweet__answer p { font-size: 14px; }
+	.tweet__answer .tweet__author-name { font-size: 15px; }
+	.tweet__answer .tweet__author-shortname { font-size: 13px; }
+
+	/* MEDIA */
+	@media (max-width: 480px) {
+		table.body-wrap {
+			padding: 0;
+			border-collapse: collapse;
+		}
+
+		table.body-wrap .container {
+			border: 0;
+			border-radius: 0;
+		}
+
+		.footer-wrap {
+			padding-top: 10px;
+		}
+		.header {
+			padding-bottom: 14px;
+		}
+
+		.header h1 {
+			font-size: 28px;
+			line-height: 1.1;
+		}
+		.header h2 {
+			padding-top: 6px;
+			font-size: 16px;
+			line-height: 1.4;
+		}
+	}
+</style>
+</head>
+
+<body bgcolor="#f6f6f6" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif !important;font-size: 100%;line-height: 1.5;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;height: 100%;width: 100% !important;">
+	<table class="header" style="margin: 0 auto;padding: 14px 12px 0;font-family: inherit;max-width: 600px;width: 100%;">
+		<tr style="margin: 0;padding: 0;font-family: inherit;">
+			<td class="header__logo" style="margin: 0;padding: 0;font-family: inherit;min-width: 48px;width: 48px;padding-right: 12px;">
+				<img src="./logo_crooped.png" height="32" class="logo" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;">
+			</td>
+			<td style="margin: 0;padding: 0;font-family: inherit;">
+				<h1 style="margin: -4px 0 0;padding: 0;font-family: inherit;line-height: 40px;margin-bottom: 15px;color: #000;font-weight: 500;font-size: 28px;">Ð¡Ð¾ÑÐ¸Ð°Ð»ÑÐ½ÑÐ¹ Ð´ÑÑÑÐ»Ð°Ð³</h1>
+				<h2 style="margin: 0;padding: 0;font-family: inherit;line-height: 1;margin-bottom: 15px;color: #000;font-weight: 400;font-size: 16px;padding-left: 3px;">2016.10.7 18:30</h2>
+			</td>
+		</tr>
+	</table>
+
+	<!-- body -->
+	<table class="body-wrap" style="margin: 0;padding: 12px;font-family: inherit;width: 100%;">
+		<tbody style="margin: 0;padding: 0;font-family: inherit;">
+			<tr style="margin: 0;padding: 0;font-family: inherit;">
+				<td style="margin: 0;padding: 0;font-family: inherit;"></td>
+				<td class="container" bgcolor="#FFFFFF" style="margin: 0 auto !important;padding: 0;font-family: inherit;border: 1px solid #f0f0f0;border-radius: 4px;display: block !important;max-width: 600px !important;clear: both !important;">
+
+					<!-- content -->
+					<div class="content" style="margin: 0 auto;padding: 12px;font-family: inherit;max-width: 600px;display: block;">
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/783986111626506240/kRZY8jJP_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="null" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">Sex Secrethood</a>
+									<a href="null" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@sexsecrethood</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:18:46 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									Ð¡ÐµÑÑÐµÐ·Ð½Ð¾Ð¹ ÑÑÐ¾ÑÐ¸ÐºÐ¸ Ð²Ð°Ð¼ Ð² Ð»ÐµÐ½ÑÑ:
+- https://t.co/SNnBoU6Bmb
+- https://t.co/0ZmjnXaf7n
+- https://t.co/qSBekajhdi (&amp;lt;-- Ð´â¦ https://t.co/fQEUpngPl3
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">9</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/780314806259740672/l2nqdeoX_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/CYJMVRpADl" class="tweet__retweet" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #19cf86;font-size: 14px;border: 0;display: block;">
+										<b style="margin: 0;padding: 0;font-family: inherit;color: #19cf86;">Valentin Semirulnik</b> Ð¿Ð¾Ð´ÐµÐ»Ð¸Ð»ÑÑ Ð·Ð°Ð¼ÐµÑÐºÐ¾Ð¹
+									</a>
+
+									<a href="https://t.co/v69BTCoKXW" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">ÐÐ¼Ð¸ÑÑÐ¸Ð¹</a>
+									<a href="https://t.co/v69BTCoKXW" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@Shakaef</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:30:11 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									Ð¡Ð¿Ð°ÑÐ¸Ð±Ð¾, @mumiytroll_) https://t.co/aWeGjIb1vY
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/599236752407175168/CooVstwc_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__retweet" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #19cf86;font-size: 14px;border: 0;display: block;">
+										<b style="margin: 0;padding: 0;font-family: inherit;color: #19cf86;">ÐÐ»ÑÑ Ð¡ÑÑÐ°Ð¹ÐºÃ³Ð²</b> Ð¿Ð¾Ð´ÐµÐ»Ð¸Ð»ÑÑ Ð·Ð°Ð¼ÐµÑÐºÐ¾Ð¹
+									</a>
+
+									<a href="https://t.co/gefrAzp9eE" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">Kirill Chernakov</a>
+									<a href="https://t.co/gefrAzp9eE" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@Kiryous</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 18:01:32 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									Graceful degradation â ÑÑÐ¾ Ð¿ÑÐ¾ Ð½Ð°ÑÐºÐ¾Ð¼Ð°Ð½Ð°, ÐºÐ¾ÑÐ¾ÑÑÐ¹ Ð½Ð°ÑÐ°Ð» Ð±Ð¾ÑÐµÐº
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/740437049103265794/YoWjpqwO_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="http://t.co/dn1V1CsPyQ" class="tweet__retweet" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #19cf86;font-size: 14px;border: 0;display: block;">
+										<b style="margin: 0;padding: 0;font-family: inherit;color: #19cf86;">ÐÐ½Ð´ÑÐµÐ¹ Ð¡Ð¸ÑÐ½Ð¸Ðº</b> Ð¿Ð¾Ð´ÐµÐ»Ð¸Ð»ÑÑ Ð·Ð°Ð¼ÐµÑÐºÐ¾Ð¹
+									</a>
+
+									<a href="http://t.co/KGvE5nwrDn" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">Nick Marchenko</a>
+									<a href="http://t.co/KGvE5nwrDn" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@neonick</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 18:01:33 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÑÐ±ÑÐ°Ð»Ð¸ ÐÐ°Ð»ÑÐ½Ð¸Ð¹ ÐÐ¾ÑÑÐ¾Ðº (ÑÐ°ÐºÐµÑÑ, ÐÐ»Ð°Ð´Ð¸Ð²Ð¾ÑÑÐ¾Ðº-2000) Ð¸ Ð¡ÐµÐ²Ð°ÑÑÐ¾Ð¿Ð¾Ð»Ñ https://t.co/oTfGZrsqXm ÐÑ ÑÐ¾ÑÑ Ð½Ðµ ÑÐµÑÐºÐ²Ð¸.
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">2</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/640904319840178176/KmbkFzWK_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/IsheJfOGOx" class="tweet__retweet" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #19cf86;font-size: 14px;border: 0;display: block;">
+										<b style="margin: 0;padding: 0;font-family: inherit;color: #19cf86;">PostCSS</b> Ð¿Ð¾Ð´ÐµÐ»Ð¸Ð»ÑÑ Ð·Ð°Ð¼ÐµÑÐºÐ¾Ð¹
+									</a>
+
+									<a href="null" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">Ruslan Abdullaev</a>
+									<a href="null" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@rajdee_mhm</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:48:11 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									My fork of postcss-font-magician released ð https://t.co/QBx52vupWU â¦
+
+â added support for &quot;font-display&quot;, &quot;font-stretch&quot;, &quot;unicode-range&quot;
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/762968721539342336/erOtjNRo_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">ÐÐ»ÑÑ Ð¡ÑÑÐ°Ð¹ÐºÃ³Ð²</a>
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@straykov</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 18:10:37 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÑÐ²ÑÐµÐ¼Ñ Ð±ÑÑÐ³Ð°Ð»ÑÐµÑÑ!!! https://t.co/kFFdOjpTsp
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/762968721539342336/erOtjNRo_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">ÐÐ»ÑÑ Ð¡ÑÑÐ°Ð¹ÐºÃ³Ð²</a>
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@straykov</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:30:17 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÐ¾ÑÐ¾ÑÐµ, ÑÑÑ Ð¼Ð¾Ð¶Ð½Ð¾ ÑÐµÐ·Ð°ÑÑ ÑÑÑÐºÐ¾Ð¹ ÑÑÐ¾Ð¿Ð¾ÑÐ°
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/762968721539342336/erOtjNRo_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">ÐÐ»ÑÑ Ð¡ÑÑÐ°Ð¹ÐºÃ³Ð²</a>
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@straykov</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:15:15 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÐ¼, Ð½ÐµÑ, Ð²Ð¸Ð»ÐºÐ° ÑÐ»Ð¾Ð¼Ð°Ð»Ð°ÑÑ
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/762968721539342336/erOtjNRo_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">ÐÐ»ÑÑ Ð¡ÑÑÐ°Ð¹ÐºÃ³Ð²</a>
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@straykov</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:14:12 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÐ¾Ð²ÑÑÑÑ Ð¿Ð°ÑÐ¼ÐµÐ·Ð°Ð½ Ð¿Ð»Ð°ÑÑÐ¼Ð°ÑÑÐ¾Ð²Ð¾Ð¹ Ð²Ð¸Ð»ÐºÐ¾Ð¹, ÑÑÐ¾Ð±Ñ Ð·Ð°ÐµÑÑÑ ÑÐ¾ÑÐ¾ÑÐµÐµ Ð²Ð¸Ð½Ð¾.
+
+ÐÐ»ÑÑ, 22 Ð³Ð¾Ð´Ð¸ÐºÐ°, Ð´Ð¾ÑÑÐ¸Ð³ ÑÐµÐ³Ð¾-ÑÐ¾ Ð² Ð¶Ð¸Ð·Ð½Ð¸, Ð° ÑÐµÐ³Ð¾-ÑÐ¾ (Ð½Ð¾Ð¶Ð°) â Ð½ÐµÑ
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/712213955901521920/UqHzUD8n_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="http://t.co/FvngqEttt8" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">For Web</a>
+									<a href="http://t.co/FvngqEttt8" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@forwebdev</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:12:40 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÐ¾Ð»ÑÑÐ¾Ð¹ ÑÐ°ÑÑÐºÐ°Ð· Ð¾ ÑÐµÐ´Ð¸Ð·Ð°Ð¹Ð½Ðµ Ð´ÐµÑÐºÑÐ¾Ð¿Ð½Ð¾Ð¹ Ð²ÐµÑÑÐ¸Ð¸ Ð¥ÑÐ¾Ð¼Ð°, Ð¿ÐµÑÐµÐ²Ð¾Ð´ Ð½Ð° Ð¥Ð°Ð±ÑÐµ â https://t.co/QLPHCW49fb https://t.co/5P9lLFeZmP
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">2</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/764771234966036480/QEc3_3_u_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/IsheJfOGOx" class="tweet__retweet" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #19cf86;font-size: 14px;border: 0;display: block;">
+										<b style="margin: 0;padding: 0;font-family: inherit;color: #19cf86;">PostCSS</b> Ð¿Ð¾Ð´ÐµÐ»Ð¸Ð»ÑÑ Ð·Ð°Ð¼ÐµÑÐºÐ¾Ð¹
+									</a>
+
+									<a href="http://t.co/63WE01es59" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">Andrey Sitnik</a>
+									<a href="http://t.co/63WE01es59" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@andreysitnik</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:26:28 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									SugarSS 0.2 fixes wrong source map mppings and shows warning more on syntax mistakes
+https://t.co/hDmPlF4dlg
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/712213955901521920/UqHzUD8n_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="http://t.co/FvngqEttt8" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">For Web</a>
+									<a href="http://t.co/FvngqEttt8" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@forwebdev</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:06:46 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÐ½ÑÐ¾Ð³ÑÐ°ÑÐ¸ÐºÐ° Ð¾Ð± Ð¸Ð½ÑÑÑÑÐ¼ÐµÐ½ÑÐ°Ñ, Ð¿Ð¾Ð¼Ð¾Ð³Ð°ÑÑÐ¸Ñ Ð¿Ð¸ÑÐ°ÑÑ Ð½Ð° JS Ð² ÑÑÐ½ÐºÑÐ¸Ð¾Ð½Ð°Ð»ÑÐ½Ð¾Ð¼ ÑÑÐ¸Ð»Ðµ â https://t.co/wUgHYHiXJU https://t.co/1PUdQoAzNN
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/667918751/subavatar_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="null" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">Illya Klymov</a>
+									<a href="null" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@xanf_ua</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:42:19 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÑÐµÐ½Ñ ÑÐ¾ÑÑ Ð·Ð°Ð¼ÐµÐ½Ð¸ÑÑ Ð¿ÑÐµÐ´ÑÑÐ°Ð²Ð¸ÑÐµÐ»ÐµÐ¹ ÑÐ°Ð¼Ð¾Ð¶Ð½Ð¸ ÑÐºÑÐ¸Ð¿ÑÐ¾Ð¼. Ð¥Ð¾ÑÑ Ð½Ð° ÑÐµÐ»Ð»Ðµ, ÑÐ¾ÑÑ Ð½Ð° Ð½Ð¾Ð´Ðµ,  Ð¿ÑÑÑÑ Ð´Ð°Ð¶Ðµ Ð½Ð° PHP
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">1</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/752226548451799040/xZ-_HvIg_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/CYJMVRpADl" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">Valentin Semirulnik</a>
+									<a href="https://t.co/CYJMVRpADl" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@7rulnik</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:44:49 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÐ¿ https://t.co/oUPLKs7xbr
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+						<table class="tweet" style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+							<!-- User info -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td class="tweet__avatar-cell" style="margin: 0;padding: 0;font-family: inherit;width: 32px;padding-right: 6px;">
+									<img class="tweet__avatar" src="http://pbs.twimg.com/profile_images/762968721539342336/erOtjNRo_normal.jpg" alt="" style="margin: 0;padding: 0;font-family: inherit;max-width: 100%;display: block;border-radius: 50%;width: 32px;height: 32px;">
+								</td>
+								<td class="tweet__author-cell" style="margin: 0;padding: 0;font-family: inherit;font-size: 18px;line-height: 1.2;">
+
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;">ÐÐ»ÑÑ Ð¡ÑÑÐ°Ð¹ÐºÃ³Ð²</a>
+									<a href="https://t.co/ey3nLeRdSy" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 14px;border: 0;">@straykov</a>
+								</td>
+								<td class="tweet__time-cell" style="margin: 0;padding: 0;font-family: inherit;text-align: right;">
+									<span class="tweet__time" style="margin: 0;padding: 0;font-family: inherit;color: #8899a6;font-size: 14px;border: 0;">Fri Oct 07 17:40:11 +0000 2016</span>
+								</td>
+							</tr>
+
+							<!-- Tweet text -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;">
+								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;">
+									ÐÑÐ¾Ð¹Ð´ÑÑ Ð³Ð¾Ð´ Ð¸ Ð²Ñ Ð½Ðµ ÑÐ·Ð½Ð°ÐµÑÐµ Ð¡Ð°ÑÑÐ½Ð°, Ð¿Ð¾Ð¿Ð¾Ð¼Ð½Ð¸ÑÐµ Ð¼Ð¾Ð¸ ÑÐ»Ð¾Ð²Ð° https://t.co/QbnSeQHMnP
+								</td>
+							</tr>
+
+							<!-- Tweet counters -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> Ð»Ð°Ð¹ÐºÐ¾Ð²,
+									<b style="margin: 0;padding: 0;font-family: inherit;">0</b> ÑÐµÑÐ²Ð¸ÑÐ°</p>
+							</td></tr>
+						</table>
+
+					</div>
+					<!-- /content -->
+				</td>
+			</tr>
+		</tbody></table>
+
+
+		<!-- footer -->
+		<table class="footer-wrap" style="margin: 0;padding: 0;font-family: inherit;width: 100%;clear: both!important;">
+			<tbody style="margin: 0;padding: 0;font-family: inherit;">
+				<tr style="margin: 0;padding: 0;font-family: inherit;">
+					<td style="margin: 0;padding: 0;font-family: inherit;"></td>
+					<td class="container" style="margin: 0 auto !important;padding: 0;font-family: inherit;display: block !important;max-width: 600px !important;clear: both !important;">
+
+						<!-- content -->
+						<div class="content / pt0" style="margin: 0 auto;padding: 12px;font-family: inherit;max-width: 600px;display: block;">
+							<table style="margin: 0;padding: 0;font-family: inherit;width: 100%;">
+								<tbody style="margin: 0;padding: 0;font-family: inherit;">
+									<tr style="margin: 0;padding: 0;font-family: inherit;">
+										<td align="center" style="margin: 0;padding: 0;font-family: inherit;">
+											<p class="tac" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 12px;color: #666;">ÐÑÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ, Ð¾ÑÐ¸Ð±ÐºÐ¸ Ð¸ Ð¿Ð¾Ð¶ÐµÐ»Ð°Ð½Ð¸Ñ Ð¾ÑÐ¿ÑÐ°Ð²Ð»ÑÐ¹ÑÐµ Ð½Ð°Ð¼ Ð½Ð°&nbsp;<a href="mailto:help@socialcollander.net?subject=ÐÑÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ, Ð¾ÑÐ¸Ð±ÐºÐ° Ð¸Ð»Ð¸ Ð¿Ð¾Ð¶ÐµÐ»Ð°Ð½Ð¸Ðµ" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">help@socialcollander.net</a>
+											</p>
+											<p class="m0" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 12px;color: #666;">ÐÐµ ÑÐ¾ÑÐ¸ÑÐµ Ð±Ð¾Ð»ÑÑÐµ Ð¿Ð¾Ð»ÑÑÐ°ÑÑ Ð¿Ð¸ÑÑÐ¼Ð°? ÐÑ Ð¾ÑÐµÐ½Ñ Ð¿Ð¾Ð¼Ð¾Ð¶ÐµÑÐµ, ÐµÑÐ»Ð¸
+												<a href="mailto:help@socialcollander.net?subject=ÐÑÐ¿Ð¸ÑÑÐ²Ð°ÑÑÑ Ð¿Ð¾ÑÐ¾Ð¼Ñ ÑÑÐ¾â¦" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">ÑÐ°ÑÑÐºÐ°Ð¶Ð¸ÑÐµ Ð½Ð°Ð¼</a>
+												Ð¿Ð¾ÑÐµÐ¼Ñ.
+												<br style="margin: 0;padding: 0;font-family: inherit;">
+												Ð
+												<a href="//socialcolander.net/unscribe?user_id=..." style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">
+													<unsubscribe style="margin: 0;padding: 0;font-family: inherit;">Ð¾ÑÐ¿Ð¸ÑÐ°ÑÑÑÑ Ð¾Ñ Ð¿Ð¸ÑÐµÐ¼</unsubscribe>
+												</a>
+												Ð¼Ð¾Ð¶Ð½Ð¾ Ð²ÑÐµÐ³Ð´Ð°.
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- /content -->
+
+					</td>
+					<td style="margin: 0;padding: 0;font-family: inherit;"></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- /footer -->
+
+
+	<!-- /body -->
+</body>
+</html>

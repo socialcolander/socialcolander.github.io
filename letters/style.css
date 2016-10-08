@@ -74,6 +74,7 @@ h1, h2, h3{
 h1 {
 	font-size: 36px;
 	font-weight: 500;
+	margin: 0;
 }
 
 h2 {
@@ -113,6 +114,7 @@ ul li {
 	max-width: 600px;
 	margin:0 auto;
 	display:block;
+	margin-bottom: -32px;
 }
 
 /* Let's make sure tables in the content area are 100% wide */
@@ -196,8 +198,8 @@ ul li {
 	margin: 6px 0;
 }
 
-.tweet + .tweet {
-	margin-top: 24px;
+.tweet {
+	margin-bottom: 32px;
 }
 .tweet__counters {
 	color: #8899a6;
