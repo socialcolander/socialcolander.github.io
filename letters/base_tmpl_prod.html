@@ -312,7 +312,7 @@
 									<div class="tweet__answer" style="margin: 6px 0;padding: 6px 12px;font-family: inherit;border: solid 1px #e1e8ed;border-radius: 4px;">
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;font-size: 15px;">{{ tweet.in_reply_src.username }}</a>
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 13px;border: 0;">@{{ tweet.in_reply_src.screenname }}</a>
-										<p style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;">{{ tweet.in_reply_src.text }}</p>
+										<p style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;">{{ tweet.in_reply_src.text | safe }}</p>
 									</div>
 								</td>
 							</tr>
@@ -321,8 +321,12 @@
 							<!-- Tweet counters -->
 							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
 								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
+									{% if tweet.favorite_count > 0 %}
 									<b style="margin: 0;padding: 0;font-family: inherit;">{{ tweet.favorite_count }}</b> лайков,
+									{% endif %}
+									{% if tweet.retweet_count > 0 }
 									<b style="margin: 0;padding: 0;font-family: inherit;">{{ tweet.retweet_count }}</b> ретвита</p>
+									{% endif %}
 							</td></tr>
 						</table>
 						{% endfor %}
@@ -353,7 +357,7 @@
 												почему.
 												<br style="margin: 0;padding: 0;font-family: inherit;">
 												А
-												<a href="//socialcolander.net/unscribe?user_id=..." style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">
+												<a href="//socialcolander.net/unscribe?user_id={{ unsubscibe_token }}" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #999;border-bottom-color: #ddd;">
 													<unsubscribe style="margin: 0;padding: 0;font-family: inherit;">отписаться от писем</unsubscribe>
 												</a>
 												можно всегда.
