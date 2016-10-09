@@ -54,7 +54,7 @@
 							<!-- Tweet text -->
 							<tr>
 								<td colspan="3" class="tweet__text">
-									{{ tweet.text }}
+									{{ tweet.text | safe }}
 								</td>
 							</tr>
 							{% if tweet.in_reply_src %}
@@ -64,7 +64,7 @@
 									<div class="tweet__answer">
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-name">{{ tweet.in_reply_src.username }}</a>
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-shortname">@{{ tweet.in_reply_src.screenname }}</a>
-										<p>{{ tweet.in_reply_src.text }}</p>
+										<p>{{ tweet.in_reply_src.text | safe }}</p>
 									</div>
 								</td>
 							</tr>
