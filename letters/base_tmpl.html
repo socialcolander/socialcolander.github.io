@@ -6,6 +6,7 @@
 
 	<title>Социальный дуршлаг</title>
 	<link rel="stylesheet" href="./style.css">
+	<style></style>
 </head>
 
 <body bgcolor="#f6f6f6">
@@ -54,7 +55,7 @@
 							<!-- Tweet text -->
 							<tr>
 								<td colspan="3" class="tweet__text">
-									{{ tweet.text }}
+									{{ tweet.text | safe }}
 								</td>
 							</tr>
 							{% if tweet.in_reply_src %}
