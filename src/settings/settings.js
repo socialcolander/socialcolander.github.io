@@ -39,8 +39,10 @@ export default class Settings {
 		}
 
 		Api.updateUser(requestObj).then(({ user }) => {
-			if (user.active) location.pathname = '/settings/sucess/'
-			else location.pathname = '/confirm/'
+			if (user.active) {
+				alert(window.messages.settings.sucess)
+				location.pathname = '/'
+			} else location.pathname = '/confirm/'
 		})
 	}
 

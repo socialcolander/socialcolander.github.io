@@ -47,6 +47,7 @@
 			submit: 'Send confirmation',
 			placeholder_email: 'E-mail',
 			messages: {
+				sucess: 'We saved your settings, you will now receive e-mail to the address specified in the selected time.',
 				redirect: 'You must log in to access the settings',
 			},
 			times: [
@@ -91,10 +92,6 @@
 				{value: '11.0', title: '(GMT +11:00) Magadan, Solomon Islands, New Caledonia' },
 				{value: '12.0', title: '(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka' }
 			]
-		},
-		settings_success: {
-			title: 'Settings have been updated',
-			description: 'We saved your settings, you will now receive e-mail to the address specified in the selected time.'
 		},
 		messages: {
 			confirm: {
