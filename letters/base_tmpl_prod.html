@@ -1,17 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" style="margin: 0;padding: 0;font-family: inherit;">
-<head style="margin: 0;padding: 0;font-family: inherit;">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" style="margin: 0;padding: 0;font-family: inherit;">
-	<meta name="viewport" content="width=device-width" style="margin: 0;padding: 0;font-family: inherit;">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
 
-	<title style="margin: 0;padding: 0;font-family: inherit;">Социальный дуршлаг</title>
-	<link rel="stylesheet" href="./style.css" style="margin: 0;padding: 0;font-family: inherit;">
-	<style style="margin: 0;padding: 0;font-family: inherit;">* { margin: 0; padding: 0; font-family: inherit; }
+	<title>Социальный дуршлаг</title>
+	<link rel="stylesheet" href="./style.css">
+	<style>body * { margin: 0; padding: 0; font-family: inherit; }
 
 	body {
 		font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
 		font-size: 100%;
 		line-height: 1.5;
+		margin: 0;
 
 		-webkit-font-smoothing:antialiased;
 		-webkit-text-size-adjust:none;
@@ -256,7 +257,7 @@
 </style>
 </head>
 
-<body bgcolor="#f6f6f6" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif !important;font-size: 100%;line-height: 1.5;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;height: 100%;width: 100% !important;">
+<body bgcolor="#f6f6f6" style="font-size: 100%;line-height: 1.5;margin: 0;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;height: 100%;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif !important;width: 100% !important;">
 	<table class="header" style="margin: 0 auto;padding: 14px 12px 0;font-family: inherit;max-width: 600px;width: 100%;">
 		<tr style="margin: 0;padding: 0;font-family: inherit;">
 			<td class="header__logo" style="margin: 0;padding: 0;font-family: inherit;min-width: 48px;width: 48px;padding-right: 12px;">
@@ -299,12 +300,23 @@
 								</td>
 							</tr>
 
+							{% for text_obj in tweet.prepared_text %}
+							{% if text_obj.obj_type == "text" %}
 							<!-- Tweet text -->
 							<tr style="margin: 0;padding: 0;font-family: inherit;">
 								<td colspan="3" class="tweet__text" style="margin: 0;padding: 6px 0 0;font-family: inherit;font-size: 16px;">
-									{{ tweet.text | safe }}
+									{{ text_obj.data | safe }}
 								</td>
 							</tr>
+							{% elif text_obj.obj_type == "img" %}
+							<!-- Tweet media -->
+							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
+								<img class="tweet__media" src="{{ text_obj.data }}" alt="" style="margin: 6px 0;padding: 0;font-family: inherit;max-width: 100%;">
+							</td></tr>
+							{% else %}
+							<!-- {{text_obj.obj_type}} - {{text_obj.data}} -->
+							{% endif %}
+							{% endfor %}
 							{% if tweet.in_reply_src %}
 							<!-- Tweet text -->
 							<tr style="margin: 0;padding: 0;font-family: inherit;">
@@ -312,7 +324,15 @@
 									<div class="tweet__answer" style="margin: 6px 0;padding: 6px 12px;font-family: inherit;border: solid 1px #e1e8ed;border-radius: 4px;">
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-name" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #000;font-weight: bold;border: 0;font-size: 15px;">{{ tweet.in_reply_src.username }}</a>
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-shortname" style="margin: 0;padding: 0;font-family: inherit;text-decoration: none;border-bottom: 1px solid;color: #8899a6;font-size: 13px;border: 0;">@{{ tweet.in_reply_src.screenname }}</a>
-										<p style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;">{{ tweet.in_reply_src.text | safe }}</p>
+										{% for text_obj in tweet.in_reply_src.prepared_text %}
+										{% if text_obj.obj_type == "text" %}
+										<p style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;">{{ text_obj.data | safe }}</p>
+										{% elif text_obj.obj_type == "img" %}
+										<img class="tweet__media" src="{{ text_obj.data }}" alt="" style="margin: 6px 0;padding: 0;font-family: inherit;max-width: 100%;">
+										{% else %}
+										<!-- {{text_obj.obj_type}} - {{text_obj.data}} -->
+										{% endif %}
+										{% endfor %}
 									</div>
 								</td>
 							</tr>
@@ -322,9 +342,9 @@
 							<tr style="margin: 0;padding: 0;font-family: inherit;"><td colspan="3" style="margin: 0;padding: 0;font-family: inherit;">
 								<p class="tweet__counters" style="margin: 0;padding: 0;font-family: inherit;font-weight: normal;font-size: 14px;color: #8899a6;">
 									{% if tweet.favorite_count > 0 %}
-									<b style="margin: 0;padding: 0;font-family: inherit;">{{ tweet.favorite_count }}</b> лайков,
+									<b style="margin: 0;padding: 0;font-family: inherit;">{{ tweet.favorite_count }}</b> лайков{% if tweet.retweet_count > 0 %},{% endif %}
 									{% endif %}
-									{% if tweet.retweet_count > 0 }
+									{% if tweet.retweet_count > 0 %}
 									<b style="margin: 0;padding: 0;font-family: inherit;">{{ tweet.retweet_count }}</b> ретвита</p>
 									{% endif %}
 							</td></tr>
