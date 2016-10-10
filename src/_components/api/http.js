@@ -21,8 +21,7 @@ function networkError(msg) {
 function parseJSON(response) {
 	debug('response', response)
 	const promise = response.json()
-	response.text().then(data => debug('responseTEXT', data))
-	promise.then(data => debug('responseJSON', data))
+	promise.then(data => debug('responseJSON', data, JSON.stringify(data)))
 	return promise
 }
 
