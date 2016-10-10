@@ -15,15 +15,19 @@ function checkStatus(response) {
 }
 
 function networkError(msg) {
-	alert(msg)
+	debug('Error', msg)
 }
 
 function parseJSON(response) {
-	return response.json()
+	debug('response', response)
+	const promise = response.json()
+	response.text().then(data => debug('responseTEXT', data))
+	promise.then(data => debug('responseJSON', data))
+	return promise
 }
 
 export default function() {
-	debug('fetch', arguments)
+	debug('request', arguments)
 
 	return fetch.apply(null, arguments)
 		.then(checkStatus, networkError)
