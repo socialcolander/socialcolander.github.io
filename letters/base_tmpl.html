@@ -75,7 +75,7 @@
 							<tr><td colspan="3">
 								<p class="tweet__counters">
 									{% if tweet.favorite_count > 0 %}
-									<b>{{ tweet.favorite_count }}</b> лайков,
+									<b>{{ tweet.favorite_count }}</b> лайков{% if tweet.retweet_count > 0 %},{% endif %}
 									{% endif %}
 									{% if tweet.retweet_count > 0 %}
 									<b>{{ tweet.retweet_count }}</b> ретвита</p>
