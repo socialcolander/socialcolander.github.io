@@ -5,6 +5,7 @@ const config = {
 	root: './dist',
 	extensions: ['', '.js'],
 	cache: true,
+	devtool: 'source-map',
 	entry: [
 		// 'babel-polyfill',
 		'./src/index.js'
