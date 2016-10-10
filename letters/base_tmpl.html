@@ -52,12 +52,23 @@
 								</td>
 							</tr>
 
+							{% for text_obj in tweet.prepared_text %}
+							{% if text_obj.obj_type == "text" %}
 							<!-- Tweet text -->
 							<tr>
 								<td colspan="3" class="tweet__text">
-									{{ tweet.text | safe }}
+									{{ text_obj.data | safe }}
 								</td>
 							</tr>
+							{% elif text_obj.obj_type == "img" %}
+							<!-- Tweet media -->
+							<tr><td colspan="3">
+								<img class="tweet__media" src="{{ text_obj.data }}" alt="">
+							</td></tr>
+							{% else %}
+							<!-- {{text_obj.obj_type}} - {{text_obj.data}} -->
+							{% endif %}
+							{% endfor %}
 							{% if tweet.in_reply_src %}
 							<!-- Tweet text -->
 							<tr>
@@ -65,7 +76,15 @@
 									<div class="tweet__answer">
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-name">{{ tweet.in_reply_src.username }}</a>
 										<a href="{{ tweet.in_reply_src.profileurl }}" class="tweet__author-shortname">@{{ tweet.in_reply_src.screenname }}</a>
-										<p>{{ tweet.in_reply_src.text | safe }}</p>
+										{% for text_obj in tweet.in_reply_src.prepared_text %}
+										{% if text_obj.obj_type == "text" %}
+										<p>{{ text_obj.data | safe }}</p>
+										{% elif text_obj.obj_type == "img" %}
+										<img class="tweet__media" src="{{ text_obj.data }}" alt="">
+										{% else %}
+										<!-- {{text_obj.obj_type}} - {{text_obj.data}} -->
+										{% endif %}
+										{% endfor %}
 									</div>
 								</td>
 							</tr>
