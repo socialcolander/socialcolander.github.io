@@ -19,6 +19,10 @@
 	to   { opacity: 0; }
 }
 
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -41,7 +45,7 @@ body {
 
 h1, h2, h3, strong, b {
 	font-weight: 700;
-	color: #333;
+	color: rgb(38, 38, 38);
 }
 
 @media (max-width: 800px) {
@@ -260,12 +264,13 @@ hr {
 	background: #1b95e0;
 	color: #fff !important;
 	font-size: 20px;
-	font-family: Arial, sans-serif;
+	font-family: 'PT Sans', Arial, sans-serif;
 	font-weight: 100;
 	border-radius: 4px;
 	padding: 6px 24px 4px;
 	cursor: pointer;
 	letter-spacing: .025em;
+	font-weight: 700;
 
 	margin: 1.75em 0;
 }
