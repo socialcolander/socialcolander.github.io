@@ -40,7 +40,7 @@ export default class Settings {
 
 		Api.updateUser(requestObj).then(({ user }) => {
 			if (user.active) {
-				alert(window.messages.settings.sucess)
+				alert(window.messages.settings.success)
 				location.href = '/'
 			}
 			else location.pathname = '/confirm/'
