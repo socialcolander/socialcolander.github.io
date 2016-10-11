@@ -4,30 +4,30 @@
   "description": "",
   "scripts": {
     "clear": "rm -rf ./dist && mkdir ./dist",
-    "prebuild": "npm run clear",
-    "build": "$(npm bin)/npm-run-all view modules:prod styles:prod assets",
-    "watch": "$(npm bin)/npm-run-all -p view:watch styles:dev watch:js watch:assets watch:root",
-    "dev": "$(npm bin)/npm-run-all build -p server watch",
-    "server": "$(npm bin)/browser-sync start -c ./browsersync.config.js",
-    "modules:dev": "$(npm bin)/webpack -w -d --display-error-details",
-    "modules:prod": "$(npm bin)/webpack -p --display-error-details",
-    "watch:js": "$(npm bin)/onchange './src/**/*.js' -- npm run modules:dev",
-    "view": "$(npm bin)/npm-run-all -p view:ru view:en",
-    "view:watch": "$(npm bin)/npm-run-all -p view:ru:watch view:en:watch",
-    "view:ru": "$(npm bin)/pug -H -O pug.ru.config.js ./src --out dist/ru",
-    "view:ru:watch": "$(npm bin)/pug -w -H -O pug.ru.config.js ./src --out dist/ru",
-    "view:en": "$(npm bin)/pug -H -O pug.en.config.js ./src --out dist/",
-    "view:en:watch": "$(npm bin)/pug -w -H -O pug.en.config.js ./src --out dist/",
-    "styles:dev": "$(npm bin)/postcss -w --local-plugins -c postcss.json",
-    "styles:prod": "$(npm bin)/postcss --local-plugins -c postcss.json",
-    "prestyles:purify": "cat ./dist/**/*.html ./dist/*.js > ./dist/all_content",
-    "styles:purify": "$(npm bin)/purifycss ./dist/index.min.css ./dist/all_content --min --info --out ./dist/index.min.css",
-    "poststyles:purify": "rm ./dist/all_content",
-    "poststyles:prod": "npm run styles:purify",
+    "prebuild": "run-s clear",
+
+    "start": "run-s build",
+    "server": "run-s start watch_and_server",
+
+    "build": "run-s view modules:prod styles:prod assets",
+    "watch": "run-p view:watch styles:dev watch:js watch:assets",
+    "browsersync": "browser-sync start -c ./browsersync.config.js",
+    "watch_and_server": "run-p browsersync watch",
+
+    "modules:dev": "webpack -w -d --display-error-details",
+    "modules:prod": "webpack -p --display-error-details",
+    "watch:js": "onchange './src/**/*.js' -- npm run modules:dev",
+
+    "view": "pug -H -O pug.config.js ./src --out dist",
+    "view:watch": "pug -w -H -O pug.config.js ./src --out dist",
+
+    "styles:dev": "postcss -w --local-plugins -c postcss.json",
+    "styles:prod": "postcss --local-plugins -c postcss.json",
+
     "assets": "cp -r ./src/assets ./dist/assets && cp ./src/_root/* ./dist",
-    "watch:assets": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
-    "watch:root": "$(npm bin)/onchange './src/assets/**/*' -- npm run assets",
-    "predeploy": "npm run build",
+    "watch:assets": "onchange './src/assets/**/*' -- run-s assets",
+
+    "predeploy": "run-s build",
     "deploy": "git add . && git commit",
     "postdeploy": "git subtree push --prefix dist origin master && git subtree pull -q --prefix dist origin master && git pull -q && git push -q -u origin develop"
   },

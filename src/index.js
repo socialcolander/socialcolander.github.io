@@ -1,7 +1,6 @@
 'use strict'
 
 import './_services/helpers'
-import './_services/lang.service'
 import fieldsSync from './_services/saveInStorage.service'
 
 import Home from './_root/home'
@@ -13,15 +12,24 @@ class App {
 		this.init()
 	}
 
+	redirectFromRu() {
+		if (location.pathname.includes('/ru/')) {
+			location.pathname.replace('/ru/', '/')
+		}
+	}
+
 	init() {
-		const path = location.pathname.replace('/ru/', '/')
+		this.redirectFromRu()
+		this.initRoutes()
+		fieldsSync()
+	}
+
+	initRoutes() {
+		const path = location.pathname
 
 		if (path == '/') new Home()
 		if (path == '/settings/') new Settings()
 		if (path.indexOf('/activate/') !== -1) new Activate()
-
-		console.log(`# fieldsSync`, fieldsSync)
-		fieldsSync()
 	}
 }
 

@@ -16,7 +16,8 @@ export default class Settings {
 		debug('init', this.token)
 
 		if (!this.token) {
-			alert(window.messages.activate.redirect)
+			if (window.messages.activate.redirect)
+				alert(window.messages.activate.redirect)
 
 			if (!location.host.includes('localhost'))
 				location.href = "/"
