@@ -1,6 +1,7 @@
 'use strict'
 
 import './_services/helpers'
+import loadFont from './_services/font_loader'
 import fieldsSync from './_services/saveInStorage.service'
 
 import Home from './_root/home'
@@ -21,6 +22,8 @@ class App {
 	init() {
 		this.redirectFromRu()
 		this.initRoutes()
+
+		loadFont('pt_serif_and_sans', '/assets/fonts/webfont');
 		fieldsSync()
 	}
 
