@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "clear": "rm -rf ./dist && mkdir ./dist",
+    "clear": "rm -r ./dist/*",
     "prebuild": "run-s clear",
 
     "start": "run-s build",
@@ -25,11 +25,7 @@
     "styles:prod": "postcss --local-plugins -c postcss.json",
 
     "assets": "cp -r ./src/assets ./dist/assets && cp ./src/_root/* ./dist",
-    "watch:assets": "onchange './src/assets/**/*' -- run-s assets",
-
-    "predeploy": "run-s build",
-    "deploy": "git add . && git commit",
-    "postdeploy": "git subtree push --prefix dist origin master && git subtree pull -q --prefix dist origin master && git pull -q && git push -q -u origin develop"
+    "watch:assets": "onchange './src/assets/**/*' -- run-s assets"
   },
   "repository": {
     "type": "git",
