@@ -1,3 +1,7 @@
 [submodule "dist"]
 	path = dist
 	url = git@github.com:socialcolander/socialcolander.github.io.git
+[submodule "letters"]
+	path = letters
+	url = git@github.com:socialcolander/socialcolander.github.io.git
+	branch = letters
