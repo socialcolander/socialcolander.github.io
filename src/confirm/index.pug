@@ -1,6 +1,7 @@
 extends /_layouts/default
 
 block vars
+	- var step_title = global.messages.confirm.step_title
 	- var title = global.messages.confirm.title
 	- var description = global.messages.confirm.description
 	- var pageClass = 'message:confirm'
@@ -8,5 +9,6 @@ block vars
 block content
 	.message
 		header.page-header
+			p: strong=step_title
 			h1=title
 			p!= global.messages.confirm.message

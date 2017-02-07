@@ -6,6 +6,10 @@ html {
 	box-sizing: border-box;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	margin: 0;
 	padding: 48px;
@@ -16,10 +20,13 @@ body {
 	font-size: 120%;
 	font-family: 'PT Serif', Georgia, serif;
 	line-height: 1.6;
+
+	display: flex;
 }
 
 .content {
 	max-width: 800px;
+	margin: auto 0;
 }
 
 h1, h2, h3, strong, b {
@@ -31,4 +38,15 @@ h1, h2, h3, strong, b {
 	body {
 		font-size: 100%;
 	}
+}
+
+footer {
+	margin-top: 10vh;
+	padding: 0 0 12px;
+}
+
+.letter-example {
+	border-radius: 6px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	box-shadow: 4px 4px 30px rgba(0, 0, 0, .1)
 }

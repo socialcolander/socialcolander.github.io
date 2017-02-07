@@ -15,20 +15,21 @@
 
 		"//": "Webpack configs",
 		"webpack": "webpack --display-error-details",
-		"scripts": "run-s webpack -- -p",
-		"watch:scripts": "run-s webpack -- -w -d",
+		"scripts": "npm run webpack -- -p",
+		"watch:scripts": "npm run webpack -- -w -d",
 		"watch:js": "# onchange './src/**/*.js' -- npm run watch:scripts",
 
 		"//": "View compile (pug/jade)",
 		"view": "pug -H -O pug.config.js ./src --out dist",
-		"watch:view": "run-s view -- -w",
+		"watch:view": "onchange './src/**/*.pug' -- run-s view",
+		"watch:view_config": "onchange './pug.config.js' -- run-s view",
 
 		"//": "PostCSS to css",
 		"styles": "postcss --local-plugins -c postcss.json",
-		"watch:styles": "run-s styles -- -w",
+		"watch:styles": "npm run styles -- -w",
 
 		"//": "Assets helpers",
-		"assets": "cp -r ./src/assets ./dist/assets && cp ./src/_root/* ./dist",
+		"assets": "cp -r ./src/assets/* ./dist/assets && cp ./src/_root/* ./dist",
 		"watch:assets": "onchange './src/assets/**/*' -- run-s assets"
 	},
 	"repository": {

@@ -1,11 +1,13 @@
 extends /_layouts/default
 
 block vars
+	- var step_title = global.settings.step_title
 	- var title = global.settings.title
 	- var description = global.settings.description
 	- var pageClass = 'settings'
 
 block content
+	p: strong=step_title
 	h1=title
 
 	.wrap_small

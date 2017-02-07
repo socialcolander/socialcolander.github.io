@@ -5,38 +5,29 @@ block vars
 	- var description = global.description
 
 block content
-	h1
-		img.logo(src='/assets/img/logo_crooped.png', width='64', height='40', alt='Социальный дуршлаг')
-		| #{title}
-	p.lead= description
+	.first-screen
+		h1
+			img.logo(src='/assets/img/logo_crooped.png', width='64', height='40', alt='Социальный дуршлаг')
+			| #{title}
+		p.lead= description
 
-	include ./_components/registration/reg.pug
+		include ./_components/registration/reg.pug
 
-	p= global.home.intro
-
-
-	h2= global.home.features.title
+	h2 Как это работает
 	ol
-		each feature in global.home.features.list
-			li
-				i= feature.title
-				| #{'. '}
-				| #{feature.description}
+		li Авторизуйтесь через твиттер
+		li Укажите вашу почту и время
+		li На вашу почту придет письмо с подтверждением
+		li Подтвердите почту и получите ваше первое письмо
+		li Сутки спустя вы начнете получать письма в указанное вами время
+		li Приятного чтения
 
-	h3= global.home.reviews.title
-	p!= global.home.reviews.text
 
-	blockquote
-		p
-			| #{global.home.reviews.author_text}
-			small
-				| —
-				| #{' '}
-				a(href='//twitter.com/ymatuhin')= global.home.reviews.author
-				| , #{' '}
-				cite= global.home.reviews.author_who
+	br
+	br
+	h2 Пример письма
+	img.letter-example(src="/assets/img/example.png", alt="Социальный дуршлак, пример письма")
 
-	hr
 	footer.quiet
 		small
 			| 2016 © #{' '}
