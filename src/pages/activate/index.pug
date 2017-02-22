@@ -7,8 +7,9 @@ block vars
 	- var pageClass = 'message:unsubscribe'
 
 block content
-	.message
-		header.page-header
-			h1=title
-			p.js-success(hidden)!= success
-			p.js-error(hidden)!= error
+	.first-screen
+		.message
+			header.page-header
+				h1=title
+				p.lead.js-success(hidden)!= success
+				p.lead.js-error(hidden)!= error

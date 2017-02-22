@@ -3,10 +3,11 @@ extends /layouts/default
 block vars
 	- var title = global.name
 	- var description = global.description
+	- var pageClass = 'home'
 
 block content
 	.first-screen
-		div
+		.content
 			h1
 				img.logo(src='logo_trimmed_white.png', height='60', alt=title)
 				| #{title}
@@ -14,38 +15,38 @@ block content
 
 			include /components/registration/index
 
-			svg.arrows(width="30", height="36")
-				path.a1(d='M0 0 L30 32 L60 0')
-				path.a2(d='M0 20 L30 52 L60 20')
-				path.a3(d='M0 40 L30 72 L60 40')
-
+			div.js-scroll-arrow
 
 	h2 Как это работает
-	p Сначала мы выбираем новые твиты из вашей ленты, затем расставляем рейтинги опираясь на лайки/репосты/рейтинг автора, выбираем из этого лучшее и отправляем что осталось вам на почту. И так каждый день.
-	p Вы можете выбрать удобное время для отправки писем. Вдруг вы любите читать новости утром или перед сном.
+
+	ul.how-it-works
+		li.how-it-works__item
+			| Выбираем новые твиты
+		li.how-it-works__item
+			| Сортируем твиты опираясь на лайки, репосты и рейтинг автора
+		li.how-it-works__item
+			| Выбираем лучшее из этого
+		li.how-it-works__item
+			| Отправляем вам на почту
 
 	h3 Преимущества
 
-	ul
-		li
-			strong Удобно
-			br
+	ul.features
+		li.features__item
+			strong.features__title Удобно
 			| Я стал реже проверяю твитер в течении дня, а чаще и вовсе не проверяю его. Ведь вечером мне придет рассылка с самым интересным от туда.
-		li
-			strong Бесплатно
-			br
+		li.features__item
+			strong.features__title Бесплатно
 			| Никаких ежемесячных подписок, просто бесплатно. Мы собираемся зарабатывать на рекламе (когда людей будет много) в письмах и пожертвований пользователей.
-		li
-			strong Не пропустите важное
-			br
+		li.features__item
+			strong.features__title Не пропустите важное
 			| Листая ленту можно запросто пропустить хороший твит. И вы даже не узнаете об этом. А социальный дуршлаг отправит вам его если у него хватит рейтинга.
 
 
-	h2 Письма которые мы отправляем
-	img.letter-example(src="/assets/img/example.png", alt="Социальный дуршлак, пример письма")
-	p Письмо Юрию Матюхину @ymatuhin 22 декабря 2017 года
+	h2 Пример письма
+	iframe.letter-example(src="letter-example.html")
 
-	footer.quiet
+	footer.main-footer
 		small
 			| 2016 © #{' '}
 			a(href='/') socialcolander.net

@@ -7,8 +7,9 @@ block vars
 	- var pageClass = 'message:confirm'
 
 block content
-	.message
-		header.page-header
-			p: strong=step_title
-			h1=title
-			p!= global.messages.confirm.message
+	.first-screen
+		.message
+			header.page-header
+				p: strong=step_title
+				h1=title
+				p.lead!= global.messages.confirm.message

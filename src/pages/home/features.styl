@@ -1,0 +1,28 @@
+.features
+	list-style-type none
+	padding 0
+	margin -10px
+
+	display flex
+	width 100%
+	font-size 100%
+
+	@media (max-width: 800px)
+		flex-direction column
+
+	&__item
+		display flex
+		flex-direction column
+
+		flex 1
+		align-items center
+		background rgba(0, 0, 0, .25)
+		padding 15px
+		margin 10px
+		text-align left
+
+	&__title
+		display block
+		margin-bottom 12px
+		text-align center
+		font-size 120%

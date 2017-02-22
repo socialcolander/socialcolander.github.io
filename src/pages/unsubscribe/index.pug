@@ -1,12 +1,17 @@
 extends /layouts/default
 
 block vars
-	- var title = global.messages.unsubscribe.title
-	- var description = global.messages.unsubscribe.description
+	- var title = 'Вы отписались от рассылки'
+	- var description = ''
 	- var pageClass = 'message:unsubscribe'
 
 block content
-	.message
-		header.page-header
-			h1=title
-			p!= global.messages.unsubscribe.message
+	.first-screen
+		.message
+			header.page-header
+				h1=title
+				p.lead
+					| Спасибо что пользовались дуршлагом, если вам что-то не понравилось — напишите нам
+					a(href="mailto:help@socialcollander.net?subject=Отписываюсь потому что…") help@socialcollander.net
+					br
+					| Мы внимательно читаем все письма и слушаем ваши советы.

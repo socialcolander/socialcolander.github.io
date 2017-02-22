@@ -11,13 +11,20 @@ const config = {
 	],
 	output: {
 		path: './dist',
-		filename: 'index.min.js'
+		filename: 'index.min.js',
+		publicPath: '/',
 	},
 	module: {
 		loaders: [{
 			test: /\.js$/,
 			exclude: /node_modules/,
 			loader: 'babel-loader',
+		},{
+			test: /\.html/,
+			loader: 'html-loader',
+		},{
+			test: /\.styl/,
+			loaders: ["style-loader", "css-loader", "stylus-loader"]
 		}]
 	},
 	resolve: {
@@ -29,7 +36,8 @@ const config = {
 	},
 	plugins: [
 		new Webpack2Polyfill(),
-		new webpack.optimize.UglifyJsPlugin({ sourceMap: true })
+		new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
+		// new webpack.optimize.CommonsChunkPlugin({ name: "commons" }),
 	]
 }
 

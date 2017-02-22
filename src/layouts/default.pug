@@ -15,9 +15,8 @@ html(lang=global.lang)
 		meta(name='theme-color', content='#ffffff')
 		link(rel="stylesheet", href=`/index.min.css?v=${version}`)
 
-	body
-		.content
-			block content
+	body(class=pageClass)
+		block content
 
 		script.
 			window.messages = window.messages || {}

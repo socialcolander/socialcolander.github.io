@@ -1,0 +1,28 @@
+.button
+	display inline-block
+	vertical-align top
+	border 0
+	background hsl(203, 78%, 49%)
+	color #fff !important
+	font 20px 'PT Sans',Arial,sans-serif
+	border-radius 4px
+	padding 10px 30px 8px
+	cursor pointer
+	font-weight 600
+	letter-spacing .025em
+	box-shadow: 0 4px 0 0 #fff
+	box-shadow: 0 4px 0 0 hsl(203, 88%, 40%)
+	transition: background .1s ease, top .1s ease, box-shadow .1s ease
+	position relative
+	// outline: 0
+
+	&:hover
+		background hsl(203, 78%, 45%)
+		box-shadow: 0 4px 0 0 hsl(203, 88%, 30%)
+
+	&:active
+	&:focus
+		background hsl(203, 88%, 30%)
+		position relative
+		top 4px
+		box-shadow: none
