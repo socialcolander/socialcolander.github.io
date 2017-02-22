@@ -9,7 +9,7 @@ block content
 	.first-screen
 		.content
 			h1
-				img.logo(src='logo_trimmed_white.png', height='60', alt=title)
+				img.logo(src='/assets/img/logo_trimmed_white.png', height='60', alt=title)
 				| #{title}
 			p.lead= description
 
@@ -21,24 +21,31 @@ block content
 
 	ul.how-it-works
 		li.how-it-works__item
+			img.how-it-works__icon(src="/img/binoculars.svg")
 			| Выбираем новые твиты
 		li.how-it-works__item
-			| Сортируем твиты опираясь на лайки, репосты и рейтинг автора
+			img.how-it-works__icon(src="/img/sorting.svg")
+			| Сортируем их
 		li.how-it-works__item
-			| Выбираем лучшее из этого
+			img.how-it-works__icon(src="/img/crown.svg")
+			| Выбираем лучшее
 		li.how-it-works__item
+			img.how-it-works__icon(src="/img/email.svg")
 			| Отправляем вам на почту
 
 	h3 Преимущества
 
 	ul.features
 		li.features__item
+			img.features__icon(src="/img/like.svg")
 			strong.features__title Удобно
-			| Я стал реже проверяю твитер в течении дня, а чаще и вовсе не проверяю его. Ведь вечером мне придет рассылка с самым интересным от туда.
+			| Я стал реже проверять твитер в течении дня. Часто я не проверяю его вовсе, ведь по вечерам мне приходит рассылка с лучшими твитами.
 		li.features__item
+			img.features__icon(src="/img/piggy-bank.svg")
 			strong.features__title Бесплатно
-			| Никаких ежемесячных подписок, просто бесплатно. Мы собираемся зарабатывать на рекламе (когда людей будет много) в письмах и пожертвований пользователей.
+			| Никаких ежемесячных подписок, просто бесплатно. Но вы можете поддержать наш проект, пожертвовав на его развитие.
 		li.features__item
+			img.features__icon(src="/img/exclamation-mark.svg")
 			strong.features__title Не пропустите важное
 			| Листая ленту можно запросто пропустить хороший твит. И вы даже не узнаете об этом. А социальный дуршлаг отправит вам его если у него хватит рейтинга.
 
@@ -50,5 +57,7 @@ block content
 		small
 			| 2016 © #{' '}
 			a(href='/') socialcolander.net
+			| /
+			| Icons made by <a rel="nofollow" href="http://www.freepik.com" title="Freepik">Freepik</a> from <a rel="nofollow" href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
 		br
 		small твитер, фильтрация, лучшие твиты для твитера, фильтр для твиттера

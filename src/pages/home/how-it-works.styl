@@ -6,6 +6,7 @@
 	display flex
 	width 100%
 	font-size 110%
+	font-family 'PT Sans',Arial,sans-serif
 
 	@media (max-width: 800px)
 		flex-direction column
@@ -13,7 +14,7 @@
 	&__item
 		display flex
 		flex-direction column
-		justify-content center
+		// justify-content center
 
 		flex 1
 		align-items center
@@ -25,3 +26,7 @@
 		@media (max-width: 800px)
 			align-items flex-start
 			text-align left
+
+	&__icon
+		width 40%
+		padding 10% 0 15%

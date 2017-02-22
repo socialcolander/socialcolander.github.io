@@ -16,7 +16,7 @@
 		"scripts": "npm run webpack -- -p",
 		"watch:scripts": "npm run webpack -- -w -d",
 		"copypages": "cp -r ./src/pages ./dist/pages",
-		"copycomponents": "cp -r ./src/components ./dist/components",
+		"copycomponents": "cp -r ./src/components ./dist",
 		"removediststyl": "find ./dist -name '*.styl' -type f -delete",
 		"removedistjs": "find ./dist/pages -name '*.js' -type f -delete",
 		"removedistpug": "find ./dist -name '*.pug' -type f -delete",
