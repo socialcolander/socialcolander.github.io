@@ -7,6 +7,6 @@ module.exports = {
 		"./dist/**/*.html"
 	],
 	ghostMode: false,
-	reloadDelay: 200,
+	reloadDelay: 500,
 	logPrefix: 'Social Colander'
 }
