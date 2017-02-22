@@ -1,6 +1,6 @@
 'use strict'
 
-import '../_components/registration/reg.js'
+import 'components/registration'
 
 const debug = window.debug('📄 home')
 

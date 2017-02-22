@@ -1,19 +1,17 @@
 const webpack = require('webpack')
+const path = require('path')
+const Webpack2Polyfill = require("webpack2-polyfill-plugin")
 const isProd = process.env.NODE_ENV === 'production'
 
 const config = {
-	root: './dist',
-	extensions: ['', '.js'],
 	cache: true,
 	devtool: 'source-map',
 	entry: [
-		// 'babel-polyfill',
 		'./src/index.js'
 	],
 	output: {
 		path: './dist',
-		publicPath: '/',
-		filename: 'index.js'
+		filename: 'index.min.js'
 	},
 	module: {
 		loaders: [{
@@ -22,14 +20,16 @@ const config = {
 			loader: 'babel-loader',
 		}]
 	},
+	resolve: {
+		alias: {
+			pages: path.resolve(__dirname, 'src/pages/'),
+			components: path.resolve(__dirname, 'src/components/'),
+			services: path.resolve(__dirname, 'src/services/'),
+		}
+	},
 	plugins: [
-		// new webpack.optimize.CommonsChunkPlugin({
-		// 	name: "commons",
-		// 	filename: "commons.js",
-		// }),
-		// new webpack.optimize.DedupePlugin(),
-		// new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 2048 }),
-		// new webpack.optimize.AggressiveMergingPlugin()
+		new Webpack2Polyfill(),
+		new webpack.optimize.UglifyJsPlugin({ sourceMap: true })
 	]
 }
 

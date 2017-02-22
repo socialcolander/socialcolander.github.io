@@ -1,7 +1,7 @@
 'use strict'
 
 const debug = window.debug('📄 settings')
-import Api from '../_components/api/api.js'
+import Api from 'components/api/api.js'
 
 export default class Settings {
 	constructor() {
