@@ -1,0 +1,29 @@
+---
+layout: default
+title: Социальный дуршлаг
+description: Отфильтрует вашу социальную ленту от воды. Получайте только лучшие сообщения из твитера на почту в удобное время.
+permalink: /
+---
+
+<div class="whole-screen home-back align-center def-pad">
+	<h1>
+		<img class="logo" src="{{ site.img }}/logo_trimmed_white.png" width="120.5" height="60" alt="{{ page.title }}">
+		{{ page.title }}
+	</h1>
+
+	<p>
+		Отфильтрует вашу социальную ленту от воды.
+		<br>Получайте только лучшие сообщения из твитера на почту в удобное время.
+	</p>
+
+	<div class="twitter-sign-in">
+		<a class="button js-signup-button"
+			href="{{ site.server_url }}/api/v1/user/login">
+			Подключиться через твитер
+			<img src="{{ site.img }}/twitter_logo_blue.svg" width="24" height="24" alt="">
+		</a>
+		<small class="twitter-sign-in__small-text">(это бесплатно)</small>
+	</div>
+</div>
+
+<script src="{{ site.js_url }}/home.min.js"></script>

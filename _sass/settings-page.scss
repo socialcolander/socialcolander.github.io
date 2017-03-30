@@ -1,0 +1,22 @@
+.settings-form {
+	margin-bottom: 1.5rem;
+
+	input,
+	button {
+		height: 2rem;
+		vertical-align: middle;
+		padding: 0 .5em;
+		margin: 0;
+	}
+
+	[type="time"] {
+		width: 6rem;
+	}
+}
+
+.msg-success {
+	background: rgba(144,238,144, .5);
+}
+.msg-error {
+	background: rgba(238, 144,144, .5);
+}

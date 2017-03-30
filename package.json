@@ -1,68 +1,42 @@
 {
-  "name": "social_colander",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "start": "run-s build",
-    "server": "run-s start && run-p browsersync watch",
-    "//": "————————————————————————————————————————",
-    "clear": "/bin/rm -rf dist/* && /bin/rm -rf .tmp/*",
-    "clean": "run-p clear",
-    "build": "run-s -n clear scripts styles assets view",
-    "watch": "run-p -n watch:*",
-    "browsersync": "browser-sync start -c browsersync.config.js",
-    "webpack": "webpack --config webpack.config.js --display-error-details",
-    "scripts": "npm run webpack -- -p",
-    "watch:scripts": "npm run webpack -- -w -d",
-    "view": "pug --pretty --obj pug.config.js src/pages --out dist",
-    "watch:view": "onchange 'src/**/*.pug' -- run-s view",
-    "watch:view_config": "onchange 'pug.config.js' -- run-s view",
-    "styles": "stylus -u autoprefixer-stylus -m -c --inline --include-css src/index.styl -o dist/index.min.css",
-    "watch:styles": "npm run styles -- -w",
-    "components_to_tmp": "cp -r src/components/ .tmp/components",
-    "pages_to_tmp": "cp -r src/pages/ .tmp",
-    "tmp_to_dist": "cp -r .tmp/ dist",
-    "remove_extra": "find .tmp -name '*.styl' -type f -delete && find .tmp -name '*.pug' -type f -delete && find .tmp -type d -empty -delete",
-    "globals": "cp -r src/global/ dist",
-    "assets": "run-s globals pages_to_tmp components_to_tmp remove_extra tmp_to_dist",
-    "watch:assets": "onchange 'src/global/**/*' -- run-s assets",
-    "watch:assets:pages": "onchange 'src/pages/**/*' -- run-s assets"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/socialcolander/socialcolander.github.io.git"
-  },
-  "author": "ymatuhin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/socialcolander/socialcolander.github.io/issues"
-  },
-  "homepage": "https://github.com/socialcolander/socialcolander.github.io#readme",
-  "devDependencies": {
-    "autoprefixer-stylus": "^0.13.0",
-    "babel": "^6.5.2",
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-plugin-transform-runtime": "^6.9.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-es2015-webpack": "^6.4.3",
-    "babel-preset-stage-0": "^6.5.0",
-    "browser-sync": "^2.13.0",
-    "css-loader": "^0.26.1",
-    "debug": "^2.2.0",
-    "html-loader": "^0.4.4",
-    "npm": "^4.2.0",
-    "npm-run-all": "^4.0.1",
-    "onchange": "^3.2.1",
-    "pug": "^2.0.0-beta3",
-    "pug-cli": "^1.0.0-alpha6",
-    "style-loader": "^0.13.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^2.5.0",
-    "webpack": "^2.2.1",
-    "webpack2-polyfill-plugin": "^0.0.2"
-  },
-  "dependencies": {
-    "babel-runtime": "^6.9.2"
-  }
+    "name": "socialcolander.github.io",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "run-s clear dev",
+        "dev": "run-p jekyll-dev backend live-server scripts-dev",
+        "prod": "run-p clear jekyll-prod backend live-server scripts-prod",
+        "clear": "/bin/rm -rf dist/*",
+        "jekyll-dev": "jekyll build -w --config '_config.yml,_config.dev.yml'",
+        "jekyll-prod": "jekyll build --config '_config.yml,_config.prod.yml'",
+        "live-server": "cd ./dist && live-server --port=2000",
+        "backend": "run-p backend-server backend-crawler",
+        "backend-server": "cd ./_server && ./backend -c ./config.json -l ./",
+        "backend-crawler": "cd ./_server && ./crawler -c ./config.json -l ./",
+        "webpack": "webpack --config ./webpack.config.js --display-error-details",
+        "scripts-dev": "npm run webpack -- -w -d",
+        "scripts-prod": "npm run webpack -- -p"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/socialcolander/socialcolander.github.io.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/socialcolander/socialcolander.github.io/issues"
+    },
+    "homepage": "https://github.com/socialcolander/socialcolander.github.io#readme",
+    "devDependencies": {
+        "babel": "^6.23.0",
+        "babel-core": "^6.24.0",
+        "babel-loader": "^6.4.1",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-es2015": "^6.24.0",
+        "babel-preset-stage-0": "^6.22.0",
+        "npm-run-all": "^4.0.2",
+        "webpack": "^2.3.2",
+        "webpack2-polyfill-plugin": "^0.0.2"
+    }
 }

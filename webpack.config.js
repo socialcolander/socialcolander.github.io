@@ -1,37 +1,30 @@
-const webpack = require('webpack')
 const path = require('path')
+const webpack = require('webpack')
 const Webpack2Polyfill = require("webpack2-polyfill-plugin")
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
 const config = {
 	cache: true,
 	devtool: 'source-map',
-	entry: [
-		'./src/index.js'
-	],
+	entry: {
+		home: './assets/scripts/home.js',
+		settings: './assets/scripts/settings.js'
+	},
 	output: {
-		path: './dist',
-		filename: 'index.min.js',
-		publicPath: '/',
+		path: path.join(__dirname, "assets/scripts"),
+		filename: '[name].min.js',
+		publicPath: '/assets/scripts/',
 	},
 	module: {
 		loaders: [{
 			test: /\.js$/,
 			exclude: /node_modules/,
 			loader: 'babel-loader',
-		},{
-			test: /\.html/,
-			loader: 'html-loader',
-		},{
-			test: /\.styl/,
-			loaders: ["style-loader", "css-loader", "stylus-loader"]
 		}]
 	},
 	resolve: {
 		alias: {
-			pages: path.resolve(__dirname, 'src/pages/'),
-			components: path.resolve(__dirname, 'src/components/'),
-			services: path.resolve(__dirname, 'src/services/'),
+			// pages: path.resolve(__dirname, 'src/pages/'),
 		}
 	},
 	plugins: [

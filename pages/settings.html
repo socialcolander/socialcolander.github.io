@@ -1,0 +1,47 @@
+---
+layout: default
+title: Настройки
+permalink: /settings/
+---
+
+<div class="whole-screen def-pad">
+	<h1>Настройки</h1>
+
+	<p>
+		Добро пожаловать в «Социальный дуршлак».
+		<br>Вы успешно авторизовались через твитер.
+		<br>Укажите вашу электронную почту и время, удобное для получения писем.
+	</p>
+
+	<form class="settings-form / js-settings-form" action="">
+		<input type="time" name="settings-time" value="20:00" pattern="\d\d:\d\d" required>
+		<input type="email" name="settings-email" placeholder="Электронная почта" required>
+		<button>Сохранить</button>
+	</form>
+
+	<blockquote class="msg-success js-active-success" hidden>
+		<p>Настройки сохранены</p>
+	</blockquote>
+
+	<blockquote class="msg-success js-inactive-success" hidden>
+		<p>Письмо отправлено, пожалуйста подтвердите вашу почту</p>
+	</blockquote>
+
+	<blockquote class="msg-error js-error" hidden>
+		<p>
+			Произошла ошибка.
+			<br>Пожалуйста проверьте введенные данные и повторите попытку.
+			<br>Если ничего не помогает, пишите нам на <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+		</p>
+	</blockquote>
+
+	<p>
+		После сохранения почты и времени, мы отправим вам на почту письмо с подтверждением. Перейдите по ссылке из него, чтобы активировать рассылку.
+	</p>
+
+	<p>
+		Письмо может по ошибке попасть в спам. Добавьте наш адрес <b>noreply@socialcolander.net</b> в избранное, чтобы этого не произошло.
+	</p>
+</div>
+
+<script src="{{ site.js_url }}/settings.min.js"></script>

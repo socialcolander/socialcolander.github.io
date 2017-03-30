@@ -1,0 +1,24 @@
+{
+    "verbose": true,
+    "web_server": {
+        "host": "localhost",
+        "port": 8008
+    },
+    "database_config": {
+        "host": "./db.sqlite",
+        "driver": "sqlite3"
+    },
+    "frontend_config": {
+        "callback_url": "http://localhost:2000/settings/#{{.JWT}}"
+    },
+    "template_dir": "./tmpl",
+    "mail_server": {
+        "server": "mx1.socialcolander.net",
+        "username": "noreply@socialcolander.net",
+        "password": "bF7bXRyKZvJYLyDV"
+    },
+    "twitter_config": {
+        "key": "EKCEqyhuBSPZuBjqlRQZfNfgs",
+        "secret": "xJAFxN2CejXqcMc8KsMOkKzlNXgfwKZqDFZaSJ2LJCIzurZhVH"
+    }
+}

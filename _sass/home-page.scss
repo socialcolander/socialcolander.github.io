@@ -1,0 +1,70 @@
+.logo {
+	display: block;
+	margin-bottom: 2.375rem;
+}
+
+.home-back {
+	color: #fff;
+	background-color: #072C36;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		background-image: url('/assets/images/home-back.jpg');
+		background-size: cover;
+		background-position: 50% top;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: .4;
+		animation: scaleAnimate 15s infinite;
+		animation-fill-mode: both;
+		animation-timing-function: ease-in-out;
+	}
+
+	> * {
+		position: relative;
+		z-index: 10;
+	}
+
+	h1 {
+		font-size: 48px;
+		// margin: 1.5rem 0;
+	}
+
+	p {
+		font-size: 24px;
+		margin-bottom: 2.8125rem;
+	}
+}
+
+@keyframes scaleAnimate {
+  0%   { transform: scale(1); background-position: 0 50%; }
+  50%  { transform: scale(1.3); background-position: 100% 50%; }
+  100% { transform: scale(1); background-position: 0 50%; }
+}
+
+.twitter-sign-in {
+	margin: 0;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 125%;
+
+	a {
+		color: #072C36 !important;
+	}
+
+	img {
+		vertical-align: middle;
+		margin-left: .5em;
+	}
+
+	&__small-text {
+		display: block;
+		padding-top: 6px;
+		margin-bottom: 1.5em;
+		text-align: center;
+	}
+}
