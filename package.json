@@ -11,7 +11,7 @@
         "jekyll-dev": "jekyll build -w --config '_config.yml,_config.dev.yml'",
         "jekyll-prod": "jekyll build --config '_config.yml,_config.prod.yml'",
         "live-server": "cd ./dist && live-server --port=2000",
-        "backend": "run-p backend-server backend-crawler",
+        "backend": "chmod -R 777 ./_server && run-p backend-server backend-crawler",
         "backend-server": "cd ./_server && ./backend -c ./config.json -l ./",
         "backend-crawler": "cd ./_server && ./crawler -c ./config.json -l ./",
         "webpack": "webpack --config ./webpack.config.js --display-error-details",

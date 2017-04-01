@@ -10,7 +10,8 @@ class SettingsPage {
 	}
 
 	vars() {
-		this.token = location.hash.slice(1) || localStorage.token
+		// this.token = location.hash.slice(1) || localStorage.token
+		this.token = location.hash.slice(1)
 		this.$form = document.querySelector('.js-settings-form')
 		this.$email = this.$form.querySelector('[type=email]')
 		this.$time = this.$form.querySelector('[type=time]')
@@ -24,6 +25,8 @@ class SettingsPage {
 		this.checkTokenExist()
 		this.hideToken()
 		formSaver.restore(this.$form)
+
+		if (ENV == 'dev') this.setDefaultTime()
 		this.$form.addEventListener('submit', this.onFormSubmit.bind(this), false)
 	}
 
@@ -66,7 +69,8 @@ class SettingsPage {
 		const offset = (new Date()).getTimezoneOffset()/60
 
 		let newHour = +hour + offset
-		if (newHour < 0) newHour = 24 - newHour
+		if (newHour < 0) newHour = 24 + newHour
+		if (newHour > 24) newHour = 24 - newHour
 
 		return `${newHour}-${min}`
 	}
@@ -74,6 +78,20 @@ class SettingsPage {
 	checkTokenExist() {
 		if (!this.token) return location.href = '/'
 		else localStorage.token = this.token
+	}
+
+	setDefaultTime() {
+		const fiveMinute = 1000*60*2
+		const newDate = new Date(Date.now() + fiveMinute)
+		const h = this.addLeadingZero(newDate.getHours())
+		const m = this.addLeadingZero(newDate.getMinutes())
+		const formatted = h + ':' + m
+		console.log(`# formatted`, formatted)
+		this.$time.value = formatted
+	}
+
+	addLeadingZero(num) {
+		return num < 10 ? '0' + num : num
 	}
 
 	hideToken() {

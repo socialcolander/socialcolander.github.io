@@ -8,7 +8,9 @@ const config = {
 	devtool: 'source-map',
 	entry: {
 		home: './assets/scripts/home.js',
-		settings: './assets/scripts/settings.js'
+		settings: './assets/scripts/settings.js',
+		activate: './assets/scripts/activate.js',
+		unscribe: './assets/scripts/unscribe.js',
 	},
 	output: {
 		path: path.join(__dirname, "assets/scripts"),
