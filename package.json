@@ -6,7 +6,7 @@
     "scripts": {
         "start": "run-s clear dev",
         "dev": "run-p jekyll-dev backend live-server scripts-dev",
-        "prod": "run-p clear jekyll-prod backend live-server scripts-prod",
+        "prod": "run-s clear scripts-prod jekyll-prod",
         "clear": "/bin/rm -rf dist/*",
         "jekyll-dev": "jekyll build -w --config '_config.yml,_config.dev.yml'",
         "jekyll-prod": "jekyll build --config '_config.yml,_config.prod.yml'",
