@@ -4,5 +4,5 @@ dist
 .jekyll-metadata
 node_modules
 _server
-!_server/tmpl
+!_server/tmpl/
 .vscode
