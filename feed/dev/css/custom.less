@@ -41,11 +41,12 @@
 .message__account-info .to-right,
 .message__account-link {
 	display: block;
-	Margin-top: -2px;
+	padding-bottom: 2px;
 }
 .message__account-link {
 	color: #333333 !important;
 	display: block;
+	line-height: 1.2;
 
 	text-decoration: none;
 }
@@ -53,6 +54,23 @@
 	color: #999999 !important;
 	font-size: 12px;
 }
+
+.message__account-link_answer,
+.message__account-link_retweet {
+	font-size: 12px;
+}
+.message__account-link_answer span,
+.message__account-link_retweet span {
+	color: inherit !important;
+}
+.message__account-link_answer {
+	color: #0088FF !important;
+}
+.message__account-link_retweet {
+	color: #17bf63 !important;
+}
+
+
 .message__text img {
 	max-width: 100%;
 	Margin-top: 6px;
@@ -66,10 +84,18 @@
 }
 .message__counts { color: #999999; }
 .message__time { font-size: 10px !important; }
-.ads { text-align: center; }
+.ads {
+	text-align: center;
+	padding-left: 24px;
+	padding-right: 24px;
+}
 .support { text-decoration: none; }
 .mt0 { Margin-top: 0;}
 .subscribe {
 	Margin: 0 auto !important;
     padding: 24px;
+}
+
+.message__head-info {
+	padding: 10px 0 0;
 }

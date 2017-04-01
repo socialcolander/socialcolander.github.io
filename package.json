@@ -43,6 +43,7 @@
     "gulp-imagemin": "^2.4.0",
     "gulp-inline-css": "^3.0.0",
     "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.1.0"
+    "gulp-plumber": "^1.1.0",
+    "gulp-replace": "^0.5.4"
   }
 }

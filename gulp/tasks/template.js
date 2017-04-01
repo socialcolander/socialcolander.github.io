@@ -7,6 +7,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').get('sync');
 var typograf = require('gulp-typograf');
+var replace = require('gulp-replace');
 var markdown = require('nunjucks-markdown');
 var marked = require('marked');
 
@@ -21,7 +22,7 @@ gulp.task('template', function() {
 			cwd: config.cwd
 		})
 		.pipe(plumber({
-			errorHandler: notify.onError("Error: <%= error.message %>")
+			errorHandler: notify.onError("## Error: <%= error.message %>")
 		}))
 		.pipe(nunjucksRender())
 		.pipe(inlineCss({
@@ -39,6 +40,8 @@ gulp.task('template', function() {
 			processConditionalComments: false,
 			keepClosingSlash: true
 		}))*/
+		.pipe(replace(/\[\[\s/g, '{{ '))
+		.pipe(replace(/\s\]\]/g, ' }}'))
 		.pipe(notify({
 			title: 'Kilogram',
 			message: "Boooya! I'm done!",

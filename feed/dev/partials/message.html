@@ -1,0 +1,33 @@
+<div class="message__account-info">
+    <a href="[[ $tweet.Tweet.User.URL ]]" class="message__account-link blank">
+        <strong class="message__author">[[ $tweet.Tweet.User.Name ]]</strong>
+        <span>@[[ $tweet.Tweet.User.ScreenName ]]</span>
+        <span class="message__time">&nbsp;&#183;&nbsp; [[ $tweet.Tweet.CreatedAt|shortDate ]]</span>
+    </a>
+</div>
+
+<p class="message__text">
+    [[ range tweetText $tweet.Tweet ]]
+        [[ if eq .Type "text" ]]
+            [[ .Value ]]
+        [[ end ]]
+        [[ if eq .Type "media" ]]
+            <img src="[[ .Value ]]" class="" alt="">
+        [[ end ]]
+    [[ end ]]
+</p>
+
+<table width="100%" class="message__actions" cellpadding="0">
+    <tr>
+        <td valign="top" align="left">
+            <a href="https://twitter.com/statuses/[[ $tweet.Tweet.ID ]]" class="answer">
+                Посмотреть в твитере
+            </a>
+        </td>
+        <td valign="top" align="right">
+            <span class="message__counts">
+                лайков <b>[[ $tweet.Tweet.FavoriteCount ]]</b>, репостов <b>[[ $tweet.Tweet.RetweetCount ]]</b>
+            </span>
+        </td>
+    </tr>
+</table>

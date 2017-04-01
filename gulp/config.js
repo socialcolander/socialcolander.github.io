@@ -1,4 +1,4 @@
-var build = './build';
+var build = '../../_server/tmpl';
 var dev = './dev';
 
 module.exports = {

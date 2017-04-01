@@ -2,19 +2,18 @@
 html { min-height: 100%; }
 
 body {
-    background-color: #f4f4f4;
-    background-image: -webkit-linear-gradient(bottom left, hsl(0, 0%, 86%), hsl(0, 0%, 96%));
-    background-image: -o-linear-gradient(bottom left, hsl(0, 0%, 86%), hsl(0, 0%, 96%));
-    background-image: -webkit-gradient(linear, left bottom, right top, from(hsl(0, 0%, 86%)), to(hsl(0, 0%, 96%)));
-    background-image: -moz-linear-gradient(bottom left, hsl(0, 0%, 86%), hsl(0, 0%, 96%));
-    background-image: linear-gradient(to top right, hsl(0, 0%, 86%), hsl(0, 0%, 96%));
+    background-color: #fff;
     Margin: 0;
 }
 
 .outer {
     Margin: 0 auto;
-    max-width: 600px;
+    max-width: 680px;
     width:100%;
+
+	td {
+		padding: 0;
+	}
 }
 
 html, body {
@@ -23,13 +22,19 @@ html, body {
 
 
 .middle .outer {
-    background-color: #ffffff;
-	-webkit-border-radius:4px;
-	   -moz-border-radius:4px;
-	        border-radius:4px;
-    -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, .05);
-       -moz-box-shadow: 0 0 24px rgba(0, 0, 0, .05);
-            box-shadow: 0 0 24px rgba(0, 0, 0, .05)
+	padding: 12px;
+    background-color: #F5F8FA;
+	border: 1px solid #e6e6e6;
+	border-spacing: 0;
+	border-collapse: separate;
+	// -webkit-border-radius:4px;
+	//    -moz-border-radius:4px;
+	//         border-radius:4px;
+	// box-shadow: 0 4px 16px 0 #f0f0f0;
+}
+
+.default-border {
+	border: 1px solid #e6e6e6
 }
 
 .header,
@@ -42,16 +47,19 @@ html, body {
     -ms-text-size-adjust: 100%;
 }
 
+.header {
+    Margin: 24px 10px;
+}
+
+.footer {
+    Margin: 24px 10px 0;
+}
+
 .middle {
-	Margin: 8px 0 16px;
+	Margin: 0 10px -1px;
 }
 
 /* Basic Styles */
-
-a {
-    color: #0077cc !important;
-    text-decoration: underline;
-}
 
 a img {
     border: 0;
@@ -94,20 +102,6 @@ p {
 .quote {
     font-style: italic;
     color: #999999;
-}
-
-.cover {
-    padding: 0 0 0 0;
-}
-
-.cover img {
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    display: block;
-    -webkit-border-radius: 4px 4px 0 0;
-       -moz-border-radius: 4px 4px 0 0;
-            border-radius: 4px 4px 0 0;
 }
 
 /* Buttons */
