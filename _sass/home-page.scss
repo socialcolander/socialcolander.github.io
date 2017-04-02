@@ -19,9 +19,12 @@
 		width: 100%;
 		height: 100%;
 		opacity: .4;
-		animation: scaleAnimate 15s infinite;
-		animation-fill-mode: both;
-		animation-timing-function: ease-in-out;
+		-webkit-animation: scaleAnimate 15s infinite;
+		        animation: scaleAnimate 15s infinite;
+		-webkit-animation-fill-mode: both;
+		        animation-fill-mode: both;
+		-webkit-animation-timing-function: ease-in-out;
+		        animation-timing-function: ease-in-out;
 	}
 
 	> * {
@@ -40,10 +43,16 @@
 	}
 }
 
+@-webkit-keyframes scaleAnimate {
+  0%   { -webkit-transform: scale(1); transform: scale(1); background-position: 0 50%; }
+  50%  { -webkit-transform: scale(1.3); transform: scale(1.3); background-position: 100% 50%; }
+  100% { -webkit-transform: scale(1); transform: scale(1); background-position: 0 50%; }
+}
+
 @keyframes scaleAnimate {
-  0%   { transform: scale(1); background-position: 0 50%; }
-  50%  { transform: scale(1.3); background-position: 100% 50%; }
-  100% { transform: scale(1); background-position: 0 50%; }
+  0%   { -webkit-transform: scale(1); transform: scale(1); background-position: 0 50%; }
+  50%  { -webkit-transform: scale(1.3); transform: scale(1.3); background-position: 100% 50%; }
+  100% { -webkit-transform: scale(1); transform: scale(1); background-position: 0 50%; }
 }
 
 .twitter-sign-in {

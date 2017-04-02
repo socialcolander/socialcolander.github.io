@@ -35,10 +35,19 @@ a:link:hover,a:visited:hover {
 }
 
 .align-center {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .def-pad {
@@ -52,7 +61,18 @@ a:link:hover,a:visited:hover {
 
 .loader::before {
 	content: '';
-	animation: infinite loader 2s linear;
+	-webkit-animation: infinite loader 2s linear;
+	        animation: infinite loader 2s linear;
+}
+
+@-webkit-keyframes loader {
+    5%  { content: '' }
+    20%  { content: '.' }
+    35%  { content: '..' }
+    50%  { content: '...' }
+    65%  { content: '..' }
+    80%  { content: '.' }
+    95%  { content: '' }
 }
 
 @keyframes loader {

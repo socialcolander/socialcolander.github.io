@@ -6,7 +6,7 @@
     "scripts": {
         "start": "run-s clear dev",
         "dev": "run-p jekyll-dev backend live-server scripts-dev",
-        "prod": "run-s clear scripts-prod jekyll-prod",
+        "prod": "run-s clear scripts-prod prefixes jekyll-prod",
         "clear": "/bin/rm -rf dist/*",
         "jekyll-dev": "jekyll build -w --config '_config.yml,_config.dev.yml'",
         "jekyll-prod": "jekyll build --config '_config.yml,_config.prod.yml'",
@@ -16,7 +16,10 @@
         "backend-crawler": "cd ./_server && ./crawler -c ./config.json -l ./",
         "webpack": "webpack --config ./webpack.config.js --display-error-details",
         "scripts-dev": "npm run webpack -- -w -d",
-        "scripts-prod": "npm run webpack -- -p"
+        "scripts-prod": "npm run webpack -- -p",
+        "prefixes": "run-p prefixes-scss prefixes-css",
+        "prefixes-scss": "find _sass -name '*.scss' -exec autoprefixer-cli '{}' \\;",
+        "prefixes-css": "find assets -name '*.css' -exec autoprefixer-cli '{}' \\;"
     },
     "repository": {
         "type": "git",
@@ -29,6 +32,7 @@
     },
     "homepage": "https://github.com/socialcolander/socialcolander.github.io#readme",
     "devDependencies": {
+        "autoprefixer-cli": "^1.0.0",
         "babel": "^6.23.0",
         "babel-core": "^6.24.0",
         "babel-loader": "^6.4.1",

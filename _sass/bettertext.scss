@@ -140,7 +140,8 @@ ol:not([class]) ol {
 }
 ul:not([class]) li,
 ol:not([class]) li {
-  transform: translateX(2.5em);
+  -webkit-transform: translateX(2.5em);
+          transform: translateX(2.5em);
 }
 /* images */
 img {
