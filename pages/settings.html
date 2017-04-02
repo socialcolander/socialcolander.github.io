@@ -13,21 +13,21 @@ permalink: /settings/
 		<br>Укажите вашу электронную почту и время, удобное для получения писем.
 	</p>
 
-	<form class="settings-form / js-settings-form" action="">
+	<form class="settings-form / js-settings-form">
 		<input type="time" name="settings-time" value="20:00" pattern="\d\d:\d\d" required>
 		<input type="email" name="settings-email" placeholder="Электронная почта" required>
 		<button>Сохранить</button>
 	</form>
 
-	<blockquote class="msg-success js-active-success" hidden>
+	<blockquote info-message="saved" info-message-theme="success">
 		<p>Настройки сохранены</p>
 	</blockquote>
 
-	<blockquote class="msg-success js-inactive-success" hidden>
+	<blockquote info-message="sended" info-message-theme="success">
 		<p>Письмо отправлено, пожалуйста подтвердите вашу почту</p>
 	</blockquote>
 
-	<blockquote class="msg-error js-error" hidden>
+	<blockquote info-message="error" info-message-theme="error">
 		<p>
 			Произошла ошибка.
 			<br>Пожалуйста проверьте введенные данные и повторите попытку.

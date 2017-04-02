@@ -2,6 +2,7 @@
 
 import API from './helpers/api'
 import formSaver from './helpers/formSaver'
+import infoMessage from './helpers/infoMessage'
 
 class SettingsPage {
 	constructor() {
@@ -10,7 +11,6 @@ class SettingsPage {
 	}
 
 	vars() {
-		// this.token = location.hash.slice(1) || localStorage.token
 		this.token = location.hash.slice(1)
 		this.$form = document.querySelector('.js-settings-form')
 		this.$email = this.$form.querySelector('[type=email]')
@@ -49,19 +49,8 @@ class SettingsPage {
 	}
 
 	onUserSaved({ user }) {
-		if (user.active) {
-			this.$activeSuccess.removeAttribute('hidden')
-
-			setTimeout(() => {
-				this.$activeSuccess.setAttribute('hidden', 'hidden')
-			}, 3000)
-		} else {
-			this.$inactiveSuccess.removeAttribute('hidden')
-
-			setTimeout(() => {
-				this.$inactiveSuccess.setAttribute('hidden', 'hidden')
-			}, 3000)
-		}
+		if (user.active) infoMessage({ name: 'saved' })
+		else infoMessage({ name: 'sended', time: 6000 })
 	}
 
 	getTime() {
