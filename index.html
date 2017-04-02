@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Социальный дуршлаг</title>
-    <meta name="description" content="Отфильтрует вашу социальную ленту от воды. Получайте только лучшие сообщения из твитера на почту в удобное время.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/index.min.css?v=1487860434918">
-  </head>
-  <body class="home">
-    <div class="first-screen">
-      <div class="content">
-        <h1><img class="logo" src="/img/logo_trimmed_white.png" height="60" alt="Социальный дуршлаг">Социальный дуршлаг</h1>
-        <p class="lead">Отфильтрует вашу социальную ленту от воды.<br>Получайте только лучшие сообщения из твитера на почту в удобное время.</p>
-        <div class="twitter-sign-in"><a class="button js-signup-button" href="https://api.socialcolander.net/api/v1/user/login"><img src="/components/registration/twitter_logo_blue.svg" alt="">Подключиться через твитер</a><small class="twitter-sign-in__small-text">(это бесплатно)</small></div>
-        <div class="js-scroll-arrow"></div>
-      </div>
-    </div>
-    <h2>Как это работает</h2>
-    <ul class="how-it-works">
-      <li class="how-it-works__item"><img class="how-it-works__icon" src="/home/img/binoculars.svg">Выбираем новые твиты</li>
-      <li class="how-it-works__item"><img class="how-it-works__icon" src="/home/img/sorting.svg">Сортируем их</li>
-      <li class="how-it-works__item"><img class="how-it-works__icon" src="/home/img/crown.svg">Выбираем лучшее</li>
-      <li class="how-it-works__item"><img class="how-it-works__icon" src="/home/img/email.svg">Отправляем вам на почту</li>
-    </ul>
-    <h3>Преимущества</h3>
-    <ul class="features">
-      <li class="features__item"><img class="features__icon" src="/home/img/like.svg"><strong class="features__title">Удобно</strong>Я стал реже проверять твитер в течении дня. Часто я не проверяю его вовсе, ведь по вечерам мне приходит рассылка с лучшими твитами.</li>
-      <li class="features__item"><img class="features__icon" src="/home/img/piggy-bank.svg"><strong class="features__title">Бесплатно</strong>Никаких ежемесячных подписок, просто бесплатно. Но вы можете поддержать наш проект, пожертвовав на его развитие.</li>
-      <li class="features__item"><img class="features__icon" src="/home/img/exclamation-mark.svg"><strong class="features__title">Не пропустите важное</strong>Листая ленту можно запросто пропустить хороший твит. И вы даже не узнаете об этом. А социальный дуршлаг отправит вам его если у него хватит рейтинга.</li>
-    </ul>
-    <h2>Пример письма</h2>
-    <iframe class="letter-example" src="/home/letter-example.html"></iframe>
-    <footer class="main-footer"><small>2016 ©  <a href="/">socialcolander.net</a></small><br><small>Иконки за авторством <a rel="nofollow" href="http://www.freepik.com" title="Freepik">Freepik</a> от <a rel="nofollow" href="http://www.flaticon.com" title="Flaticon">flaticon.com</a></small><br><small>твитер, фильтрация, лучшие твиты для твитера, фильтр для твиттера</small></footer>
-    <script>
-      window.messages = window.messages || {}
-      window.messages.settings = window.messages.settings || {}
-      window.messages.activate = window.messages.activate || {}
-      
-      window.messages.settings.redirect = "Вы должны войти, чтобы получить доступ к настройкам"
-      window.messages.settings.success = "Мы сохранили ваши настройки, теперь вы будете получать письма на указанный адрес в выбранное время."
-      window.messages.activate.redirect = ""
-      
-    </script>
-    <script src="/index.min.js?v=1487860434918"></script><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter43022739 = new Ya.Metrika({ id:43022739, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/43022739" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  </body>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Социальный дуршлаг</title>
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="/assets/main.css?v=1491161512838670000">
+	<link rel="canonical" href="https://socialcolander.net/">
+	<meta property="og:image" content="/assets/googe_dino.png">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/assets/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/assets/icons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+	<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<script>
+		window.ENV = 'prod'
+		window.SERVER_URL = 'https://socialcolander.net'
+	</script>
+</head>
+
+
+<body class="home">
+	<div class="whole-screen home-back align-center def-pad">
+	<h1>
+		<img class="logo" src="/assets/images/logo_trimmed_white.png" width="120.5" height="60" alt="Социальный дуршлаг">
+		Социальный дуршлаг
+	</h1>
+
+	<p>
+		Отфильтрует вашу социальную ленту от воды.
+		<br>Получайте только лучшие сообщения из твитера на почту в удобное время.
+	</p>
+
+	<div class="twitter-sign-in">
+		<a class="button js-signup-button"
+			href="https://socialcolander.net/api/v1/user/login">
+			Подключиться через твитер
+			<img src="/assets/images/twitter_logo_blue.svg" width="24" height="24" alt="">
+		</a>
+		<small class="twitter-sign-in__small-text">(это бесплатно)</small>
+	</div>
+</div>
+
+<script src="/assets/scripts/home.min.js"></script>
+
+
+  <!--<script src="/assets/redirect.js?v=1491161512838670000"></script>-->
+
+</body>
 </html>

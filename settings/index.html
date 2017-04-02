@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Укажите почту и время</title>
-    <meta name="description" content="Социальный дуршлаг — Регистрация — Шаг 2">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/index.min.css?v=1487860435072">
-  </head>
-  <body class="settings">
-    <div class="first-screen">
-      <p><strong>Шаг 2</strong></p>
-      <h1>Укажите почту и время</h1>
-      <p class="post-title">Вы <b>успешно</b> вошли через твиттер.<br>Чтобы начать получать письма — укажите свой email и выберите удобное время для получения.</p>
-      <form class="settings-form js-settings-form" method="POST" action="https://api.socialcolander.net/api/v1/user">
-        <input type="hidden" name="token" value="">
-        <input type="hidden" name="time" value="">
-        <input type="email" name="email" placeholder="Электронная почта" required autofocus><br>
-        <select class="js-time" required>
-          <option value="08">С утра пораньше (08:00)</option>
-          <option value="10">Утром (10:00)</option>
-          <option value="14">В обед (14:00)</option>
-          <option value="18">Под вечер (18:00)</option>
-          <option value="20" selected>Вечером (20:00)</option>
-          <option value="22">Ближе к ночи (22:00)</option>
-          <option value="24">Ночью (24:00)</option>
-        </select>
-        <select class="js-zone" required>
-          <option value="-12.0">(GMT -12:00) Эниветок, Кваджалейн</option>
-          <option value="-11.0">(GMT -11:00) Остров Мидуэй, Самоа</option>
-          <option value="-10.0">(GMT -10:00) Гавайи</option>
-          <option value="-9.0">(GMT -9:00) Аляска</option>
-          <option value="-8.0">(GMT -8:00) Тихоокеанское время (США и Канада) &lt;/</option>
-          <option value="-7.0">(GMT -7:00) Горное время (США и Канада) &lt;/</option>
-          <option value="-6.0">(GMT -6:00) Центральное время (США и Канада), Мехико</option>
-          <option value="-5.0">(GMT -5:00) Восточное время (США и Канада), Богота, Лима</option>
-          <option value="-4.0">(GMT -4:00) Атлантическое время (Канада), Каракас, Ла-Пас</option>
-          <option value="-3.5">(GMT -3:30) Ньюфаундленд</option>
-          <option value="-3.0">(GMT -3:00) Бразилия, Буэнос-Айрес, Джорджтаун</option>
-          <option value="-2.0">(GMT -2:00) Срединно-Атлантического</option>
-          <option value="-1.0">(GMT -1:00 час) Азорские острова, острова Зеленого Мыса</option>
-          <option value="0.0">(GMT) Время Западной Европе, Лондон, Лиссабон, Касабланка</option>
-          <option value="1.0">(GMT +1:00 час) Брюссель, Копенгаген, Мадрид, Париж</option>
-          <option value="2.0">(GMT +2:00) Киев, Калининград, Южная Африка</option>
-          <option value="3.0" selected>(GMT +3:00) Москва, Санкт-Петербург, Багдад, Эр-Рияд, </option>
-          <option value="3.5">(GMT +3:30) Тегеран</option>
-          <option value="4.0">(GMT +4:00) Абу-Даби, Мускат, Баку, Тбилиси</option>
-          <option value="4.5">(GMT +4:30) Кабул</option>
-          <option value="5.0">(GMT +5:00) Екатеринбург, Исламабад, Карачи, Ташкент</option>
-          <option value="5.5">(GMT +5:30) Бомбей, Калькутта, Мадрас, Нью-Дели</option>
-          <option value="5.75">(GMT +5:45) Катманду</option>
-          <option value="6.0">(GMT +6:00) Алматы, Дакке, Коломбо</option>
-          <option value="7.0">(GMT +7:00) Бангкок, Ханой, Джакарта</option>
-          <option value="8.0">(GMT +8:00) Пекин, Перт, Сингапур, Гонконг</option>
-          <option value="9.0">(GMT +9:00) Токио, Сеул, Осака, Саппоро, Якутск</option>
-          <option value="9.5">(GMT +9:30) Аделаида, Дарвин</option>
-          <option value="10.0">(GMT +10:00) Восточная Австралия, Гуам, Владивосток</option>
-          <option value="11.0">(GMT +11:00) Магадан, Соломоновы острова, Новая Каледония</option>
-          <option value="12.0">(GMT +12:00) Окленд, Веллингтон, Фиджи, Камчатка</option>
-        </select><br>
-        <button class="button">Отправить письмо с подтверждением</button>
-      </form>
-    </div>
-    <script>
-      window.messages = window.messages || {}
-      window.messages.settings = window.messages.settings || {}
-      window.messages.activate = window.messages.activate || {}
-      
-      window.messages.settings.redirect = "Вы должны войти, чтобы получить доступ к настройкам"
-      window.messages.settings.success = "Мы сохранили ваши настройки, теперь вы будете получать письма на указанный адрес в выбранное время."
-      window.messages.activate.redirect = ""
-      
-    </script>
-    <script src="/index.min.js?v=1487860435072"></script><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter43022739 = new Ya.Metrika({ id:43022739, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/43022739" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  </body>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Настройки</title>
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="/assets/main.css?v=1491161512838670000">
+	<link rel="canonical" href="https://socialcolander.net/settings/">
+	<meta property="og:image" content="/assets/googe_dino.png">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/assets/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/assets/icons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+	<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<script>
+		window.ENV = 'prod'
+		window.SERVER_URL = 'https://socialcolander.net'
+	</script>
+</head>
+
+
+<body class="home">
+	<div class="def-pad">
+	<h1>Настройки</h1>
+
+	<p>
+		Добро пожаловать в «Социальный дуршлак».
+		<br>Вы авторизовались через твитер.
+		<br>Укажите вашу электронную почту и время, удобное для получения писем.
+	</p>
+
+	<form class="settings-form / js-settings-form">
+		<input type="time" name="settings-time" value="20:00" pattern="\d\d:\d\d" required>
+		<input type="email" name="settings-email" placeholder="Электронная почта" required>
+		<button>Сохранить</button>
+	</form>
+
+	<blockquote info-message="saved" info-message-theme="success">
+		<p>Настройки сохранены</p>
+	</blockquote>
+
+	<blockquote info-message="sended" info-message-theme="success">
+		<p>Письмо отправлено, пожалуйста подтвердите вашу почту</p>
+	</blockquote>
+
+	<blockquote info-message="error" info-message-theme="error">
+		<p>
+			Произошла ошибка.
+			<br>Пожалуйста проверьте введенные данные и повторите попытку.
+			<br>Если ничего не помогает, пишите нам на <a href="mailto:info@socialcolander.net">info@socialcolander.net</a>
+		</p>
+	</blockquote>
+
+	<p>
+		После сохранения почты и времени, мы отправим вам на почту письмо с подтверждением. Перейдите по ссылке из него, чтобы активировать рассылку.
+	</p>
+
+	<p>
+		Письмо может по ошибке попасть в спам. Добавьте наш адрес <b>noreply@socialcolander.net</b> в избранное, чтобы этого не произошло.
+	</p>
+</div>
+
+<script src="/assets/scripts/settings.min.js"></script>
+
+
+  <!--<script src="/assets/redirect.js?v=1491161512838670000"></script>-->
+
+</body>
 </html>
