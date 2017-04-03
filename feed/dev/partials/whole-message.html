@@ -1,0 +1,54 @@
+<div class="middle">
+    <!--[if (gte mso 9)|(IE)]>
+    <table width="600" align="center">
+    <tr>
+    <td>
+    <![endif]-->
+    <table class="outer" cellpadding="0" align="center">
+        <tr>
+            <td class="one-column content">
+                <div class="column">
+                    <table width="680" cellpadding="0">
+                        <tr>
+                            <td width="48"></td>
+                            <td class="message__head-info" align="left" valign="top">
+                                <div class="message__account-info">
+                                    [[ if $tweet.Retweet ]]
+                                        <a href="[[ $tweet.Retweet.User.URL ]]" class="message__account-link message__account-link_retweet blank">
+                                            <strong class="message__author">[[ $tweet.Retweet.User.Name ]]</strong>
+                                            <span>@[[ $tweet.Retweet.User.ScreenName ]]</span>
+                                            ретвитнул
+                                        </a>
+                                    [[ end ]]
+
+                                    [[ if $tweet.InReply ]]
+                                        <a href="[[ $tweet.InReply.User.URL ]]" class="message__account-link message__account-link_answer blank">
+                                            <strong class="message__author">[[ $tweet.InReply.User.Name ]]</strong>
+                                            <span>@[[ $tweet.InReply.User.ScreenName ]]</span>
+                                            ответил на твит
+                                        </a>
+                                    [[ end ]]
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="48" align="left" valign="top" style="padding-right: 10px">
+                                <img class="message__avatar " width="48" height="48" src="[[ $tweet.Tweet.User.ProfileImageURL ]]" alt="">
+                            </td>
+
+                            <td align="left" valign="top">
+                                {% include "partials/message.html" %}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+</div>
