@@ -59,20 +59,20 @@ subject: Лучшее за сутки / Социальный дуршлаг
       <table class="actions-table">
         <tr>
           <td class="actions-table__col">
-            <a href="#" class="actions-table__link blue">
+            <a href="https://twitter.com/[[ $tweet.Tweet.User.ScreenName ]]/status/[[ $tweet.Tweet.Id ]]" class="actions-table__link blue">
               <img src="assets/img/dialog@2x.png" class="base" width="20" height="20" alt="">
               <img src="assets/img/dialog@2x-hover.png" class="hovered" width="20" height="20" alt="">
             </a>
           </td>
           <td class="actions-table__col">
-            <a href="#" class="actions-table__link green">
+            <a href="https://twitter.com/intent/retweet?tweet_id=[[ $tweet.Tweet.Id ]]" class="actions-table__link green">
               <img src="assets/img/retweet@2x.png" class="base" width="24" height="17" alt="">
               <img src="assets/img/retweet@2x-hover.png" class="hovered" width="24" height="17" alt="">
               <span class="actions-table__count">[[ $tweet.Tweet.RetweetCount ]]</span>
             </a>
-          </td>
+					</td>
           <td class="actions-table__col">
-            <a href="#" class="actions-table__link red">
+            <a href="https://twitter.com/intent/favorite?tweet_id=[[ $tweet.Tweet.Id ]]" class="actions-table__link red">
               <img src="assets/img/like@2x.png" class="base" width="20" height="19" alt="">
               <img src="assets/img/like@2x-hover.png" class="hovered" width="20" height="19" alt="">
               <span class="actions-table__count">[[ $tweet.Tweet.FavoriteCount ]]</span>

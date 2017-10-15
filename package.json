@@ -8,8 +8,7 @@
     "start": "gulp",
     "build": "gulp --production",
     "zip": "gulp zip --production",
-    "litmus": "gulp litmus --production",
-    "mail": "gulp mail --production"
+    "send": "./mac_mail_tester_cli ./dist/index.html ym@ymatuhin.ru"
   },
   "author": "ZURB <foundation@zurb.com>",
   "license": "MIT",
