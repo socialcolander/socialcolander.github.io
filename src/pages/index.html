@@ -1,0 +1,107 @@
+---
+layout: index-layout
+subject: Лучшее за сутки / Социальный дуршлаг
+---
+
+<spacer size="16"></spacer>
+<h1 class="text-center">Лучшее за сутки</h1>
+<spacer size="16"></spacer>
+
+[[ range $index, $tweet := .Tweets ]]
+  <!-- Place for ads -->
+  [[ if eq $index 3 ]][[ end ]]
+  <container class="single-tweet">
+    [[ if $tweet.Retweet ]]
+      <table class="retweet-table">
+          <tr>
+            <td><img src="assets/img/small-rt@2x.png" width="16" height="12" alt=""></td>
+            <td><a href="[[ $tweet.Retweet.User.URL ]]">
+              <small>[[ $tweet.Retweet.User.Name ]]</small>
+            </a></td>
+          </tr>
+        </table>
+        <spacer size="6"></spacer>
+    [[ end ]]
+
+      <table class="avatar-table" width="100%">
+        <tr class="avatar-table__row">
+          <td class="avatar-table__col first" width="48">
+            <img width="48" height="48" src="[[ $tweet.Tweet.User.ProfileImageURL ]]" alt="" class="avatar-table__avatar">
+          </td>
+          <td class="avatar-table__col">
+            <p>[[ $tweet.Tweet.User.Name ]]</p>
+            <p><small>@[[ $tweet.Tweet.User.ScreenName ]] · [[ $tweet.Tweet.CreatedAt|shortDate ]]</small></p>
+          </td>
+        </tr>
+      </table>
+
+      [[ if $tweet.InReply ]]
+        <p><small>
+          Ответ на сообщение @[[ $tweet.InReply.User.ScreenName ]]
+        </small></p>
+        <spacer size="6"></spacer>
+      [[ end ]]
+
+      <spacer size="12"></spacer>
+      <p class="single-tweet__text">
+        [[ range tweetText $tweet.Tweet ]]
+            [[ if eq .Type "text" ]]
+                [[ .Value ]]
+            [[ end ]]
+            [[ if eq .Type "media" ]]
+              <spacer size="12"></spacer>
+              <img src="[[ .Value ]]" alt="">
+            [[ end ]]
+        [[ end ]]
+      </p>
+
+      <spacer size="16"></spacer>
+      <table class="actions-table">
+        <tr>
+          <td class="actions-table__col">
+            <a href="#" class="actions-table__link blue">
+              <img src="assets/img/dialog@2x.png" class="base" width="20" height="20" alt="">
+              <img src="assets/img/dialog@2x-hover.png" class="hovered" width="20" height="20" alt="">
+            </a>
+          </td>
+          <td class="actions-table__col">
+            <a href="#" class="actions-table__link green">
+              <img src="assets/img/retweet@2x.png" class="base" width="24" height="17" alt="">
+              <img src="assets/img/retweet@2x-hover.png" class="hovered" width="24" height="17" alt="">
+              <span class="actions-table__count">[[ $tweet.Tweet.RetweetCount ]]</span>
+            </a>
+          </td>
+          <td class="actions-table__col">
+            <a href="#" class="actions-table__link red">
+              <img src="assets/img/like@2x.png" class="base" width="20" height="19" alt="">
+              <img src="assets/img/like@2x-hover.png" class="hovered" width="20" height="19" alt="">
+              <span class="actions-table__count">[[ $tweet.Tweet.FavoriteCount ]]</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </container>
+    <spacer size="24"></spacer>
+[[ end ]]
+
+<container class="footer">
+  <center>
+    <p>
+      <small>Вы получили письмо, потому что подписались на рассылку лучших твитов из вашей ленты на сайте
+        <a href="https://socialcolander.net">socialcolander.net</a>
+      </small>
+    </p>
+    <p>
+      <small>Если вы больше не хотите получать письма, вы можете
+        <a href="https://socialcolander.net/unscribe/?token=[[ .TwitterUser.User.ActivationToken ]]" target="_blank">отписаться</a> от них. </small>
+    </p>
+
+    <p>
+      <small>
+        Предложения и пожелания отправляйте на электронную почту
+        <a href="mailto:ym@ymatuhin.ru">ym@ymatuhin.ru</a>
+      </small>
+    </p>
+  </center>
+</container>
+<spacer size="12"></spacer>
