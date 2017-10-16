@@ -1,0 +1,24 @@
+{
+	"name": "socialcolander.github.io",
+	"exportDir": "dist",
+	"minify": true,
+	"compile": true,
+	"exclusions": [
+		{
+			"path": "node_modules",
+			"action": "exclude",
+			"type": "dir"
+		},
+		{
+			"path": "letters",
+			"action": "exclude",
+			"type": "dir"
+		},
+		{
+			"path": "partials",
+			"action": "exclude",
+			"type": "dir"
+		}
+	],
+	"port": 49717
+}
