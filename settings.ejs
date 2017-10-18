@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include('partials/head', { title: 'Настройки' }); %>
+
+<div class="page-settings">
+	<h1>Настройки</h1>
+
+	<form class="pane pane_small_top settings-form">
+		<p>Укажите электронную почту и время, удобное вам для получения писем.</p>
+
+		<div class="settings-form__timeline">
+			<input type="text" placeholder="21:00" class="settings-form__time">
+			<select class="settings-form__period">
+				<option value="1">1</option>
+				<option>2</option>
+			</select>
+		</div>
+		<input type="email" placeholder="Электронная почта" class="settings-form__email">
+		<button class="button settings-form__save">Сохранить</button>
+	</form>
+
+	<div class="pane-after">
+		<small>
+			После сохранения мы отправим вам письмо для подтверждения электронной почты. В письме будет ссылка для активации, перейдите по ней и мы начнем собирать вам подборку.
+		</small>
+	</div>
+</div>
+<%- include('partials/scripts'); %>
